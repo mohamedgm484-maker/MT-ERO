@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perl | MT ERO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><div class="logo">MT <span>| ERO</span></div><nav><ul><li><a href="../index.html">الرئيسية</a></li><li><a href="../index.html#langs">اللغات</a></li></ul></nav></header>
+    <div class="tool-page">
+        <a href="../index.html#langs" class="back-btn"><i class="fas fa-arrow-right"></i> رجوع للغات</a>
+        <div class="tool-header">
+            <span class="tool-icon-big"><i class="fas fa-camel"></i></span>
+            <h1>Perl</h1>
+            <p>لغة معالجة النصوص والأتمتة</p>
+        </div>
+        <div class="tool-content">
+            <h2><i class="fas fa-book"></i> يعني إيه Perl؟</h2>
+            <p>Perl هي لغة برمجة نصية قوية، بتستخدم في معالجة النصوص، الأتمتة، وإدارة الأنظمة. بتعتبر "سكين الجيش السويسري" في اللغات.</p>
+            <p>بتستخدمها شركات كتير في الـ Web والأنظمة — وفي الأمن السيبراني بتستخدم في كتابة الـ Exploits.</p>
+
+            <h2><i class="fas fa-bullseye"></i> الأساسيات</h2>
+
+            <h3>1. البرنامج الأول</h3>
+            <div class="code-block" data-lang="Perl"><code>#!/usr/bin/perl
+use strict;
+use warnings;
+
+print "Hello World\n";</code></div>
+
+            <h3>2. المتغيرات</h3>
+            <div class="code-block" data-lang="Perl"><code>my $name = "Ahmed";
+my $age = 25;
+my $salary = 5000.50;
+
+print "أهلاً $name\n";
+print "عمرك $age\n";</code></div>
+
+            <h3>3. الشروط</h3>
+            <div class="code-block" data-lang="Perl"><code>my $age = 20;
+
+if ($age &gt;= 18) {
+    print "بالغ\n";
+} elsif ($age &gt;= 13) {
+    print "مراهق\n";
+} else {
+    print "طفل\n";
+}</code></div>
+
+            <h3>4. الحلقات</h3>
+            <div class="code-block" data-lang="Perl"><code><span class="comment"># For</span>
+for (my $i = 0; $i &lt; 5; $i++) {
+    print "$i\n";
+}
+
+<span class="comment"># Foreach</span>
+my @tools = ("nmap", "hydra", "sqlmap");
+foreach my $tool (@tools) {
+    print "$tool\n";
+}
+
+<span class="comment"># While</span>
+my $count = 0;
+while ($count &lt; 5) {
+    print "$count\n";
+    $count++;
+}</code></div>
+
+            <h3>5. الدوال</h3>
+            <div class="code-block" data-lang="Perl"><code>sub greet {
+    my ($name) = @_;
+    return "أهلاً $name";
+}
+
+sub add {
+    my ($a, $b) = @_;
+    return $a + $b;
+}
+
+print greet("Ahmed") . "\n";
+print add(5, 3) . "\n";</code></div>
+
+            <h3>6. معالجة النصوص</h3>
+            <div class="code-block" data-lang="Perl"><code>my $text = "Hello World";
+
+<span class="comment"># بحث واستبدال</span>
+$text =~ s/World/Perl/;
+print "$text\n";
+
+<span class="comment"># بحث</span>
+if ($text =~ /Perl/) {
+    print "لقيت Perl\n";
+}
+
+<span class="comment"># فصل</span>
+my @words = split(/ /, $text);
+print join(" | ", @words) . "\n";</code></div>
+
+            <h3>7. الملفات</h3>
+            <div class="code-block" data-lang="Perl"><code><span class="comment"># قراءة</span>
+open(my $fh, "&lt;", "file.txt") or die "مش قادر أفتح";
+while (my $line = &lt;$fh&gt;) {
+    print $line;
+}
+close($fh);
+
+<span class="comment"># كتابة</span>
+open(my $out, "&gt;", "output.txt") or die "مش قادر أكتب";
+print $out "Hello World\n";
+close($out);</code></div>
+
+            <h2><i class="fas fa-graduation-cap"></i> خطة التعلم</h2>
+
+            <h3>المستوى 1: المبتدئ (شهر)</h3>
+            <ul>
+                <li>الأساسيات</li>
+                <li>Variables و Types</li>
+                <li>Conditions و Loops</li>
+            </ul>
+
+            <h3>المستوى 2: المتوسط (2-3 شهور)</h3>
+            <ul>
+                <li>Regular Expressions</li>
+                <li>File Handling</li>
+                <li>Modules (CPAN)</li>
+                <li>References</li>
+            </ul>
+
+            <h3>المستوى 3: الاحتراف (6 شهور)</h3>
+            <ul>
+                <li>OOP in Perl</li>
+                <li>Networking</li>
+                <li>CGI</li>
+                <li>Exploit Writing</li>
+            </ul>
+
+            <h2><i class="fas fa-link"></i> مصادر</h2>
+            <ul>
+                <li><a href="https://www.perl.org/" target="_blank" style="color: #00d4ff;">Perl Official</a></li>
+                <li><a href="https://learn.perl.org/" target="_blank" style="color: #00d4ff;">Learn Perl</a></li>
+            </ul>
+        </div>
+    </div>
+    <footer><div class="footer-content"><div class="footer-logo">MT ERO</div><p class="copyright">© 2025 MT ERO.</p></div></footer>
+    <a href="https://t.me/Mozex_3" target="_blank" class="telegram-float"><i class="fab fa-telegram"></i></a>
+    <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFUF | MT ERO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><div class="logo">MT <span>| ERO</span></div><nav><ul><li><a href="../index.html">الرئيسية</a></li><li><a href="../index.html#tools">الأدوات</a></li></ul></nav></header>
+    <div class="tool-page">
+        <a href="../index.html#tools" class="back-btn"><i class="fas fa-arrow-right"></i> رجوع للأدوات</a>
+        <div class="tool-header">
+            <span class="tool-icon-big"><i class="fas fa-bolt"></i></span>
+            <h1>FFUF</h1>
+            <p>Fuzz Faster U Fool - أداة Fuzzing سريعة</p>
+        </div>
+        <div class="tool-content">
+            <h2><i class="fas fa-book"></i> يعني إيه FFUF؟</h2>
+            <p>FFUF هي أداة مكتوبة بـ Go لـ Fuzzing مواقع الويب. بتستخدمها لاكتشاف المسارات، الباراميترات، والـ Subdomains بسرعة كبيرة.</p>
+            <p>الأداة دي بتعتبر من أسرع أدوات Fuzzing — لأنها بتشتغل بـ Multi-threading.</p>
+
+            <h3><i class="fas fa-check-circle"></i> الاستخدامات</h3>
+            <ul>
+                <li>Directory Discovery</li>
+                <li>Parameter Fuzzing</li>
+                <li>Subdomain Fuzzing</li>
+                <li>Virtual Host Discovery</li>
+            </ul>
+
+            <h2><i class="fas fa-cog"></i> التثبيت</h2>
+            <div class="code-block" data-lang="Termux"><code>pkg install ffuf -y
+ffuf -h</code></div>
+
+            <h2><i class="fas fa-bullseye"></i> الأوامر الأساسية</h2>
+
+            <h3>1. Directory Fuzzing</h3>
+            <div class="code-block" data-lang="Bash"><code>ffuf -w wordlist.txt -u http://example.com/FUZZ</code></div>
+
+            <h3>2. Subdomain Fuzzing</h3>
+            <div class="code-block" data-lang="Bash"><code>ffuf -w subdomains.txt -u http://FUZZ.example.com</code></div>
+
+            <h3>3. Parameter Fuzzing</h3>
+            <div class="code-block" data-lang="Bash"><code>ffuf -w params.txt -u http://example.com/page.php?FUZZ=test</code></div>
+
+            <h3>4. فلترة النتايج</h3>
+            <div class="code-block" data-lang="Bash"><code>ffuf -w wordlist.txt -u http://example.com/FUZZ -fc 404</code></div>
+
+            <div class="info-box warning"><strong><i class="fas fa-exclamation-triangle"></i> تحذير:</strong> استخدم FFUF على مواقعك إنت.</div>
+
+            <h2><i class="fas fa-dumbbell"></i> تمارين</h2>
+            <ol>
+                <li>اكتشف مسارات موقعك</li>
+                <li>جرب Parameter Fuzzing</li>
+                <li>اتعلم Fuzzing</li>
+            </ol>
+
+            <h2><i class="fas fa-link"></i> مصادر</h2>
+            <ul>
+                <li><a href="https://github.com/ffuf/ffuf" target="_blank" style="color: #00d4ff;">FFUF GitHub</a></li>
+            </ul>
+        </div>
+    </div>
+    <footer><div class="footer-content"><div class="footer-logo">MT ERO</div><p class="copyright">© 2025 MT ERO.</p></div></footer>
+    <a href="https://t.me/Mozex_3" target="_blank" class="telegram-float"><i class="fab fa-telegram"></i></a>
+    <script src="../js/main.js"></script>
+</body>
+</html>

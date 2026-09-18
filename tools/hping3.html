@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hping3 | MT ERO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><div class="logo">MT <span>| ERO</span></div><nav><ul><li><a href="../index.html">الرئيسية</a></li><li><a href="../index.html#tools">الأدوات</a></li></ul></nav></header>
+    <div class="tool-page">
+        <a href="../index.html#tools" class="back-btn"><i class="fas fa-arrow-right"></i> رجوع للأدوات</a>
+        <div class="tool-header">
+            <span class="tool-icon-big"><i class="fas fa-wave-square"></i></span>
+            <h1>Hping3</h1>
+            <p>أداة إرسال حزم TCP/IP مخصصة</p>
+        </div>
+        <div class="tool-content">
+            <h2><i class="fas fa-book"></i> يعني إيه Hping3؟</h2>
+            <p>Hping3 هي أداة سطر أوامر لإرسال حزم TCP/IP مخصصة. بتستخدمها في تحليل الشبكات، Firewall Testing، واختبار أمان الشبكات.</p>
+            <p>الأداة دي بتعتبر بديل متقدم لـ ping العادي — وبتدعم TCP, UDP, ICMP.</p>
+
+            <h3><i class="fas fa-check-circle"></i> الاستخدامات</h3>
+            <ul>
+                <li>اختبار Firewall</li>
+                <li>تحليل الشبكة</li>
+                <li>Port Scanning</li>
+                <li>DoS Testing (للأخلاقي)</li>
+            </ul>
+
+            <h2><i class="fas fa-cog"></i> التثبيت</h2>
+            <div class="code-block" data-lang="Kali"><code><span class="comment"># على Kali Linux</span>
+sudo apt install hping3
+
+<span class="comment"># على Termux (محدود)</span>
+pkg install hping3</code></div>
+
+            <h2><i class="fas fa-bullseye"></i> الأوامر الأساسية</h2>
+
+            <h3>1. Ping TCP</h3>
+            <div class="code-block" data-lang="Bash"><code>hping3 -S -p 80 example.com</code></div>
+
+            <h3>2. Ping ICMP</h3>
+            <div class="code-block" data-lang="Bash"><code>hping3 -1 example.com</code></div>
+
+            <h3>3. Port Scan</h3>
+            <div class="code-block" data-lang="Bash"><code>hping3 -S -p ++1 example.com</code></div>
+
+            <h3>4. Traceroute</h3>
+            <div class="code-block" data-lang="Bash"><code>hping3 -T -p 80 --traceroute example.com</code></div>
+
+            <div class="info-box danger"><strong><i class="fas fa-exclamation-triangle"></i> خطر:</strong> Hping3 بتقدر تعمل DoS Attacks. متستخدمهاش على أي حاجة مش بتاعتك.</div>
+
+            <h2><i class="fas fa-dumbbell"></i> تمارين</h2>
+            <ol>
+                <li>جرب Ping TCP</li>
+                <li>اعمل Port Scan لجهازك</li>
+                <li>اتعلم تحليل الشبكة</li>
+            </ol>
+
+            <h2><i class="fas fa-link"></i> مصادر</h2>
+            <ul>
+                <li><a href="http://www.hping.org/" target="_blank" style="color: #00d4ff;">Hping3 Official</a></li>
+            </ul>
+        </div>
+    </div>
+    <footer><div class="footer-content"><div class="footer-logo">MT ERO</div><p class="copyright">© 2025 MT ERO.</p></div></footer>
+    <a href="https://t.me/Mozex_3" target="_blank" class="telegram-float"><i class="fab fa-telegram"></i></a>
+    <script src="../js/main.js"></script>
+</body>
+</html>

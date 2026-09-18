@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ | MT ERO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><div class="logo">MT <span>| ERO</span></div><nav><ul><li><a href="../index.html">الرئيسية</a></li><li><a href="../index.html#langs">اللغات</a></li></ul></nav></header>
+    <div class="tool-page">
+        <a href="../index.html#langs" class="back-btn"><i class="fas fa-arrow-right"></i> رجوع للغات</a>
+        <div class="tool-header">
+            <span class="tool-icon-big"><i class="fas fa-code"></i></span>
+            <h1>C++</h1>
+            <p>لغة قوية للأنظمة والألعاب</p>
+        </div>
+        <div class="tool-content">
+            <h2><i class="fas fa-book"></i> يعني إيه C++؟</h2>
+            <p>C++ هي لغة برمجة عالية الأداء، بتستخدم في الأنظمة، الألعاب، التطبيقات اللي محتاجة سرعة عالية. بتعتبر من أقوى اللغات في العالم.</p>
+            <p>بتستخدمها شركات كتير زي Microsoft و Adobe و Google — وكمان في الأمن السيبراني لفهم الذاكرة والـ Buffer Overflow.</p>
+
+            <h3><i class="fas fa-check-circle"></i> استخدامات C++</h3>
+            <ul>
+                <li>أنظمة التشغيل (Windows, Linux)</li>
+                <li>الألعاب (Unreal Engine)</li>
+                <li>المتصفحات (Chrome, Firefox)</li>
+                <li>الأدوات الأمنية</li>
+                <li>الأنظمة المدمجة</li>
+                <li>البرامج اللي محتاجة أداء عالي</li>
+            </ul>
+
+            <h2><i class="fas fa-cog"></i> التثبيت</h2>
+            <div class="code-block" data-lang="Termux"><code>pkg install clang -y
+
+<span class="comment"># اختبار</span>
+clang++ --version</code></div>
+
+            <h2><i class="fas fa-bullseye"></i> الأساسيات</h2>
+
+            <h3>1. البرنامج الأول</h3>
+            <div class="code-block" data-lang="C++"><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    cout &lt;&lt; "Hello World" &lt;&lt; endl;
+    return 0;
+}</code></div>
+
+            <h3>2. المتغيرات</h3>
+            <div class="code-block" data-lang="C++"><code>int age = 25;
+float salary = 5000.50;
+double pi = 3.14159;
+char letter = 'A';
+string name = "Ahmed";
+bool is_hacker = true;
+
+cout &lt;&lt; name &lt;&lt; endl;
+cout &lt;&lt; age &lt;&lt; endl;</code></div>
+
+            <h3>3. المدخلات</h3>
+            <div class="code-block" data-lang="C++"><code>int age;
+cout &lt;&lt; "اكتب عمرك: ";
+cin &gt;&gt; age;
+
+string name;
+cout &lt;&lt; "اكتب اسمك: ";
+cin &gt;&gt; name;
+
+cout &lt;&lt; "أهلاً " &lt;&lt; name &lt;&lt; endl;</code></div>
+
+            <h3>4. الشروط</h3>
+            <div class="code-block" data-lang="C++"><code>int age = 20;
+
+if (age &gt;= 18) {
+    cout &lt;&lt; "بالغ" &lt;&lt; endl;
+} else if (age &gt;= 13) {
+    cout &lt;&lt; "مراهق" &lt;&lt; endl;
+} else {
+    cout &lt;&lt; "طفل" &lt;&lt; endl;
+}</code></div>
+
+            <h3>5. الحلقات</h3>
+            <div class="code-block" data-lang="C++"><code><span class="comment">// for</span>
+for (int i = 0; i &lt; 5; i++) {
+    cout &lt;&lt; i &lt;&lt; endl;
+}
+
+<span class="comment">// while</span>
+int count = 0;
+while (count &lt; 5) {
+    cout &lt;&lt; count &lt;&lt; endl;
+    count++;
+}</code></div>
+
+            <h3>6. الدوال</h3>
+            <div class="code-block" data-lang="C++"><code>int add(int a, int b) {
+    return a + b;
+}
+
+void greet(string name) {
+    cout &lt;&lt; "أهلاً " &lt;&lt; name &lt;&lt; endl;
+}
+
+int main() {
+    cout &lt;&lt; add(5, 3) &lt;&lt; endl;
+    greet("Ahmed");
+    return 0;
+}</code></div>
+
+            <h3>7. المصفوفات</h3>
+            <div class="code-block" data-lang="C++"><code>int numbers[5] = {1, 2, 3, 4, 5};
+
+for (int i = 0; i &lt; 5; i++) {
+    cout &lt;&lt; numbers[i] &lt;&lt; endl;
+}</code></div>
+
+            <h3>8. المؤشرات (Pointers)</h3>
+            <div class="code-block" data-lang="C++"><code>int x = 10;
+int* ptr = &amp;x;
+
+cout &lt;&lt; "القيمة: " &lt;&lt; x &lt;&lt; endl;
+cout &lt;&lt; "العنوان: " &lt;&lt; ptr &lt;&lt; endl;
+cout &lt;&lt; "القيمة من المؤشر: " &lt;&lt; *ptr &lt;&lt; endl;</code></div>
+
+            <h2><i class="fas fa-graduation-cap"></i> خطة التعلم</h2>
+
+            <h3>المستوى 1: المبتدئ (شهرين)</h3>
+            <ul>
+                <li>الأساسيات: Variables, Loops, Functions</li>
+                <li>Arrays و Strings</li>
+                <li>Pointers</li>
+                <li>References</li>
+            </ul>
+
+            <h3>المستوى 2: المتوسط (3-4 شهور)</h3>
+            <ul>
+                <li>OOP (Classes, Objects)</li>
+                <li>Inheritance و Polymorphism</li>
+                <li>Templates</li>
+                <li>STL</li>
+            </ul>
+
+            <h3>المستوى 3: المتقدم (6 شهور)</h3>
+            <ul>
+                <li>Memory Management</li>
+                <li>Multithreading</li>
+                <li>File I/O</li>
+                <li>Networking</li>
+            </ul>
+
+            <h3>المستوى 4: الاحتراف (سنة+)</h3>
+            <ul>
+                <li>Game Development (Unreal)</li>
+                <li>Systems Programming</li>
+                <li>Reverse Engineering</li>
+                <li>Exploit Development</li>
+            </ul>
+
+            <h2><i class="fas fa-dumbbell"></i> تمارين</h2>
+            <ol>
+                <li>اكتب آلة حاسبة</li>
+                <li>اكتب برنامج إدارة طلاب</li>
+                <li>اكتب لعبة Guess Number</li>
+                <li>اكتب برنامج Sorting</li>
+            </ol>
+
+            <h2><i class="fas fa-link"></i> مصادر</h2>
+            <ul>
+                <li><a href="https://www.w3schools.com/cpp/" target="_blank" style="color: #00d4ff;">W3Schools C++</a></li>
+                <li><a href="https://www.learncpp.com/" target="_blank" style="color: #00d4ff;">LearnCpp</a></li>
+                <li><a href="https://elzero.org/category/courses/c-plus-plus/" target="_blank" style="color: #00d4ff;">Elzero C++ (عربي)</a></li>
+            </ul>
+        </div>
+    </div>
+    <footer><div class="footer-content"><div class="footer-logo">MT ERO</div><p class="copyright">© 2025 MT ERO.</p></div></footer>
+    <a href="https://t.me/Mozex_3" target="_blank" class="telegram-float"><i class="fab fa-telegram"></i></a>
+    <script src="../js/main.js"></script>
+</body>
+</html>

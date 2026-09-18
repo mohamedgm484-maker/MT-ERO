@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python | MT ERO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><div class="logo">MT <span>| ERO</span></div><nav><ul><li><a href="../index.html">الرئيسية</a></li><li><a href="../index.html#langs">اللغات</a></li></ul></nav></header>
+    <div class="tool-page">
+        <a href="../index.html#langs" class="back-btn"><i class="fas fa-arrow-right"></i> رجوع للغات</a>
+        <div class="tool-header">
+            <span class="tool-icon-big"><i class="fab fa-python"></i></span>
+            <h1>Python</h1>
+            <p>اللغة الأساسية في الأمن السيبراني</p>
+        </div>
+        <div class="tool-content">
+            <h2><i class="fas fa-book"></i> يعني إيه Python؟</h2>
+            <p>Python هي لغة برمجة عالية المستوى، سهلة التعلم، وقوية جداً. بتستخدمها في الأمن السيبراني عشان تكتب أدوات، تسكربت هجمات، تحلل بيانات، وتعمل أتمتة للمهام المتكررة.</p>
+            <p>بتعتبر اللغة رقم 1 في مجال الأمن السيبراني — لأنها سهلة وبسيطة وفيها مكتبات جاهزة كتير بتوفر وقت كبير. وكمان بتستخدمها شركات كتير زي Google و NASA و Intel.</p>
+
+            <h3><i class="fas fa-check-circle"></i> ليه Python مهمة؟</h3>
+            <ul>
+                <li>سهلة التعلم — مناسبة للمبتدئين</li>
+                <li>مكتبات كتير جاهزة (requests, scapy, hashlib)</li>
+                <li>بتشتغل على كل الأنظمة</li>
+                <li>أدوات كتير مكتوبة بيها (SQLMap, theHarvester)</li>
+                <li>سريعة في التطوير</li>
+                <li>مجتمع ضخم</li>
+                <li>بتدعم الذكاء الاصطناعي</li>
+            </ul>
+
+            <h3><i class="fas fa-check-circle"></i> استخدامات Python</h3>
+            <ul>
+                <li>كتابة أدوات الأمن السيبراني</li>
+                <li>أتمتة المهام المتكررة</li>
+                <li>تحليل البيانات</li>
+                <li>تطوير الويب (Django, Flask)</li>
+                <li>الذكاء الاصطناعي (TensorFlow, PyTorch)</li>
+                <li>علم البيانات</li>
+                <li>كتابة سكربتات النظام</li>
+            </ul>
+
+            <h2><i class="fas fa-cog"></i> التثبيت</h2>
+            <div class="code-block" data-lang="Termux"><code><span class="comment"># على Termux</span>
+pkg install python -y
+
+<span class="comment"># التأكد</span>
+python --version
+pip --version
+
+<span class="comment"># على Kali Linux</span>
+sudo apt install python3 python3-pip</code></div>
+
+            <h2><i class="fas fa-bullseye"></i> الأساسيات</h2>
+
+            <h3>1. المتغيرات</h3>
+            <div class="code-block" data-lang="Python"><code><span class="comment"># المتغيرات</span>
+name = "Ahmed"
+age = 25
+is_hacker = True
+salary = 5000.50
+
+<span class="comment"># طباعة</span>
+print(f"أهلاً {name}")
+print(f"عمرك {age}")
+print(f"مرتبك {salary}")</code></div>
+
+            <h3>2. أنواع البيانات</h3>
+            <div class="code-block" data-lang="Python"><code><span class="comment"># النصوص</span>
+text = "Hello World"
+
+<span class="comment"># الأرقام</span>
+integer = 42
+decimal = 3.14
+
+<span class="comment"># القوائم</span>
+list_tools = ["nmap", "hydra", "sqlmap"]
+
+<span class="comment"># القواميس</span>
+user = {"name": "Ahmed", "age": 25}
+
+<span class="comment"># المجموعات</span>
+unique = {1, 2, 3}
+
+<span class="comment"># Tuple</span>
+point = (10, 20)</code></div>
+
+            <h3>3. الشروط</h3>
+            <div class="code-block" data-lang="Python"><code>password = input("اكتب الباسورد: ")
+
+if len(password) < 8:
+    print("ضعيف")
+elif len(password) < 12:
+    print("متوسط")
+else:
+    print("قوي")</code></div>
+
+            <h3>4. الحلقات</h3>
+            <div class="code-block" data-lang="Python"><code><span class="comment"># حلقة for</span>
+for i in range(5):
+    print(f"رقم: {i}")
+
+<span class="comment"># حلقة while</span>
+count = 0
+while count < 5:
+    print(count)
+    count += 1
+
+<span class="comment"># مع قائمة</span>
+tools = ["nmap", "hydra"]
+for tool in tools:
+    print(tool)</code></div>
+
+            <h3>5. الدوال</h3>
+            <div class="code-block" data-lang="Python"><code>def check_password(pwd):
+    if len(pwd) < 8:
+        return "ضعيف"
+    return "قوي"
+
+print(check_password("123456"))
+
+<span class="comment"># مع parameters</span>
+def greet(name, age):
+    return f"أهلاً {name}, عمرك {age}"
+
+print(greet("Ahmed", 25))</code></div>
+
+            <h3>6. التعامل مع الملفات</h3>
+            <div class="code-block" data-lang="Python"><code><span class="comment"># قراءة</span>
+with open("file.txt", "r") as f:
+    content = f.read()
+
+<span class="comment"># كتابة</span>
+with open("file.txt", "w") as f:
+    f.write("Hello World")
+
+<span class="comment"># إضافة</span>
+with open("file.txt", "a") as f:
+    f.write("\nNew Line")</code></div>
+
+            <h3>7. التعامل مع الأخطاء</h3>
+            <div class="code-block" data-lang="Python"><code>try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("مش ممكن القسمة على صفر")
+except Exception as e:
+    print(f"خطأ: {e}")
+finally:
+    print("ده هيتنفذ دايماً")</code></div>
+
+            <h2><i class="fas fa-lock"></i> مكتبات مهمة للأمن السيبراني</h2>
+
+            <h3>1. hashlib — التشفير</h3>
+            <div class="code-block" data-lang="Python"><code>import hashlib
+
+password = "123456"
+md5 = hashlib.md5(password.encode()).hexdigest()
+sha256 = hashlib.sha256(password.encode()).hexdigest()
+
+print(f"MD5: {md5}")
+print(f"SHA256: {sha256}")</code></div>
+
+            <h3>2. requests — HTTP</h3>
+            <div class="code-block" data-lang="Python"><code>import requests
+
+<span class="comment"># GET Request</span>
+response = requests.get("https://api.github.com")
+print(response.status_code)
+print(response.json())
+
+<span class="comment"># POST Request</span>
+data = {"username": "admin", "password": "123"}
+response = requests.post("https://example.com/login", data=data)</code></div>
+
+            <h3>3. socket — الشبكات</h3>
+            <div class="code-block" data-lang="Python"><code>import socket
+
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.settimeout(2)
+
+target = "scanme.nmap.org"
+port = 80
+
+result = s.connect_ex((target, port))
+if result == 0:
+    print(f"البورت {port} مفتوح")
+else:
+    print(f"البورت {port} مقفول")
+s.close()</code></div>
+
+            <h3>4. os — النظام</h3>
+            <div class="code-block" data-lang="Python"><code>import os
+
+print(os.getcwd())
+os.system("ls -la")
+os.mkdir("new_folder")
+os.remove("file.txt")</code></div>
+
+            <h3>5. subprocess — تشغيل أوامر</h3>
+            <div class="code-block" data-lang="Python"><code>import subprocess
+
+result = subprocess.run(["ls", "-la"], capture_output=True, text=True)
+print(result.stdout)</code></div>
+
+            <h3>6. scapy — حزم الشبكة</h3>
+            <div class="code-block" data-lang="Python"><code>from scapy.all import *
+
+<span class="comment"># إرسال ping</span>
+packet = IP(dst="8.8.8.8")/ICMP()
+response = sr1(packet, timeout=2)
+print(response.summary())</code></div>
+
+            <h2><i class="fas fa-tools"></i> أداة كاملة: Port Scanner</h2>
+            <div class="code-block" data-lang="Python"><code>import socket
+import sys
+from datetime import datetime
+
+def scan_port(target, port):
+    try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.settimeout(1)
+        result = s.connect_ex((target, port))
+        s.close()
+        return result == 0
+    except:
+        return False
+
+def scan_target(target, start=1, end=1024):
+    print(f"فحص {target}")
+    print(f"الوقت: {datetime.now()}")
+    open_ports = []
+    
+    for port in range(start, end + 1):
+        if scan_port(target, port):
+            print(f"البورت {port} مفتوح")
+            open_ports.append(port)
+    
+    print(f"\nالنتيجة: {len(open_ports)} بورت مفتوح")
+    return open_ports
+
+if __name__ == "__main__":
+    target = input("اكتب الهدف: ")
+    scan_target(target)</code></div>
+
+            <h2><i class="fas fa-graduation-cap"></i> خطة التعلم (من الصفر للاحتراف)</h2>
+
+            <h3>المستوى 1: المبتدئ (شهر)</h3>
+            <ul>
+                <li>الأساسيات: المتغيرات، الشروط، الحلقات</li>
+                <li>الدوال والقوائم والقواميس</li>
+                <li>التعامل مع الملفات</li>
+                <li>التعامل مع الأخطاء</li>
+            </ul>
+
+            <h3>المستوى 2: المتوسط (2-3 شهور)</h3>
+            <ul>
+                <li>البرمجة الكائنية (OOP)</li>
+                <li>المكتبات: requests, os, socket</li>
+                <li>التعامل مع APIs</li>
+                <li>Web Scraping (BeautifulSoup)</li>
+                <li>قواعد البيانات (SQLite, MySQL)</li>
+            </ul>
+
+            <h3>المستوى 3: المتقدم (6 شهور)</h3>
+            <ul>
+                <li>الأدوات الأمنية</li>
+                <li>Automation</li>
+                <li>Multithreading</li>
+                <li>Network Programming</li>
+                <li>Cryptography</li>
+            </ul>
+
+            <h3>المستوى 4: الاحتراف (سنة+)</h3>
+            <ul>
+                <li>تطوير الأدوات الكبيرة</li>
+                <li>Machine Learning</li>
+                <li>Data Science</li>
+                <li>تطوير الويب (Django, Flask)</li>
+                <li>المساهمة في مشاريع مفتوحة المصدر</li>
+            </ul>
+
+            <h2><i class="fas fa-dumbbell"></i> تمارين</h2>
+            <ol>
+                <li>اكتب سكربت بيطبع الأرقام من 1 لـ 100</li>
+                <li>اكتب سكربت بيشيك على قوة الباسورد</li>
+                <li>اعمل بصمة MD5 لأي نص</li>
+                <li>اعمل Port Scanner بسيط</li>
+                <li>اعمل Web Scraper يجيب عناوين مواقع</li>
+                <li>اعمل Bot تليجرام بسيط</li>
+            </ol>
+
+            <h2><i class="fas fa-link"></i> مصادر</h2>
+            <ul>
+                <li><a href="https://www.w3schools.com/python/" target="_blank" style="color: #00d4ff;">W3Schools Python</a></li>
+                <li><a href="https://automatetheboringstuff.com/" target="_blank" style="color: #00d4ff;">Automate the Boring Stuff</a></li>
+                <li><a href="https://www.python.org/doc/" target="_blank" style="color: #00d4ff;">Python Docs</a></li>
+                <li><a href="https://elzero.org/category/courses/mastering-python/" target="_blank" style="color: #00d4ff;">Elzero Python (عربي)</a></li>
+            </ul>
+        </div>
+    </div>
+    <footer><div class="footer-content"><div class="footer-logo">MT ERO</div><p class="copyright">© 2025 MT ERO.</p></div></footer>
+    <a href="https://t.me/Mozex_3" target="_blank" class="telegram-float"><i class="fab fa-telegram"></i></a>
+    <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNSRecon | MT ERO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><div class="logo">MT <span>| ERO</span></div><nav><ul><li><a href="../index.html">الرئيسية</a></li><li><a href="../index.html#tools">الأدوات</a></li></ul></nav></header>
+    <div class="tool-page">
+        <a href="../index.html#tools" class="back-btn"><i class="fas fa-arrow-right"></i> رجوع للأدوات</a>
+        <div class="tool-header">
+            <span class="tool-icon-big"><i class="fas fa-server"></i></span>
+            <h1>DNSRecon</h1>
+            <p>أداة جمع معلومات DNS</p>
+        </div>
+        <div class="tool-content">
+            <h2><i class="fas fa-book"></i> يعني إيه DNSRecon؟</h2>
+            <p>DNSRecon هي أداة Python لجمع معلومات DNS. بتستخدمها لاكتشاف Subdomains، Mail Servers، Name Servers، وإعدادات DNS التانية.</p>
+            <p>الأداة دي بتعتبر أساسية في مرحلة Recon — وبتوفر معلومات مهمة عن البنية التحتية للهدف.</p>
+
+            <h2><i class="fas fa-cog"></i> التثبيت</h2>
+            <div class="code-block" data-lang="Termux"><code>pip install dnsrecon
+dnsrecon -h</code></div>
+
+            <h2><i class="fas fa-bullseye"></i> الأوامر الأساسية</h2>
+
+            <h3>1. فحص DNS أساسي</h3>
+            <div class="code-block" data-lang="Bash"><code>dnsrecon -d example.com</code></div>
+
+            <h3>2. فحص Zone Transfer</h3>
+            <div class="code-block" data-lang="Bash"><code>dnsrecon -d example.com -t axfr</code></div>
+
+            <h3>3. Brute Force Subdomains</h3>
+            <div class="code-block" data-lang="Bash"><code>dnsrecon -d example.com -D subdomains.txt -t brt</code></div>
+
+            <h3>4. فحص Reverse Lookup</h3>
+            <div class="code-block" data-lang="Bash"><code>dnsrecon -r 192.168.1.0/24</code></div>
+
+            <div class="info-box warning"><strong><i class="fas fa-exclamation-triangle"></i> تحذير:</strong> استخدم DNSRecon على نطاقاتك إنت.</div>
+
+            <h2><i class="fas fa-dumbbell"></i> تمارين</h2>
+            <ol>
+                <li>افحص نطاقك</li>
+                <li>اكتشف Subdomains</li>
+                <li>اتعلم DNS Enumeration</li>
+            </ol>
+
+            <h2><i class="fas fa-link"></i> مصادر</h2>
+            <ul>
+                <li><a href="https://github.com/darkoperator/dnsrecon" target="_blank" style="color: #00d4ff;">DNSRecon GitHub</a></li>
+            </ul>
+        </div>
+    </div>
+    <footer><div class="footer-content"><div class="footer-logo">MT ERO</div><p class="copyright">© 2025 MT ERO.</p></div></footer>
+    <a href="https://t.me/Mozex_3" target="_blank" class="telegram-float"><i class="fab fa-telegram"></i></a>
+    <script src="../js/main.js"></script>
+</body>
+</html>

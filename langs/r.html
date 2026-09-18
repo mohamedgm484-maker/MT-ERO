@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R | MT ERO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><div class="logo">MT <span>| ERO</span></div><nav><ul><li><a href="../index.html">الرئيسية</a></li><li><a href="../index.html#langs">اللغات</a></li></ul></nav></header>
+    <div class="tool-page">
+        <a href="../index.html#langs" class="back-btn"><i class="fas fa-arrow-right"></i> رجوع للغات</a>
+        <div class="tool-header">
+            <span class="tool-icon-big"><i class="fas fa-chart-line"></i></span>
+            <h1>R</h1>
+            <p>لغة تحليل البيانات والإحصاء</p>
+        </div>
+        <div class="tool-content">
+            <h2><i class="fas fa-book"></i> يعني إيه R؟</h2>
+            <p>R هي لغة برمجة وبيئة حوسبة إحصائية. بتستخدم في تحليل البيانات، الإحصاء، وعلوم البيانات.</p>
+            <p>بتعتبر اللغة رقم 1 في الأكاديميا والإحصاء — وبتستخدمها شركات كتير في Data Science.</p>
+
+            <h3><i class="fas fa-check-circle"></i> استخدامات R</h3>
+            <ul>
+                <li>تحليل البيانات</li>
+                <li>الإحصاء</li>
+                <li>Machine Learning</li>
+                <li>Data Visualization</li>
+                <li>تحليل البيانات الأمنية</li>
+            </ul>
+
+            <h2><i class="fas fa-bullseye"></i> الأساسيات</h2>
+
+            <h3>1. المتغيرات</h3>
+            <div class="code-block" data-lang="R"><code>name &lt;- "Ahmed"
+age &lt;- 25
+salary &lt;- 5000.50
+is_hacker &lt;- TRUE
+
+print(name)
+print(age)</code></div>
+
+            <h3>2. أنواع البيانات</h3>
+            <div class="code-block" data-lang="R"><code>numbers &lt;- c(1, 2, 3, 4, 5)
+names &lt;- c("Ahmed", "Mohamed", "Sara")
+
+<span class="comment"># Vector</span>
+x &lt;- 1:10
+
+<span class="comment"># List</span>
+person &lt;- list(name = "Ahmed", age = 25)
+
+<span class="comment"># Data Frame</span>
+df &lt;- data.frame(
+    name = c("Ahmed", "Sara"),
+    age = c(25, 22)
+)
+
+print(df)</code></div>
+
+            <h3>3. الشروط</h3>
+            <div class="code-block" data-lang="R"><code>age &lt;- 20
+
+if (age &gt;= 18) {
+    print("بالغ")
+} else if (age &gt;= 13) {
+    print("مراهق")
+} else {
+    print("طفل")
+}</code></div>
+
+            <h3>4. الحلقات</h3>
+            <div class="code-block" data-lang="R"><code><span class="comment"># For</span>
+for (i in 1:5) {
+    print(i)
+}
+
+<span class="comment"># While</span>
+count &lt;- 0
+while (count &lt; 5) {
+    print(count)
+    count &lt;- count + 1
+}
+
+<span class="comment"># Apply</span>
+numbers &lt;- 1:5
+sapply(numbers, function(x) x * 2)</code></div>
+
+            <h3>5. الدوال</h3>
+            <div class="code-block" data-lang="R"><code>greet &lt;- function(name) {
+    paste("أهلاً", name)
+}
+
+add &lt;- function(a, b) {
+    a + b
+}
+
+print(greet("Ahmed"))
+print(add(5, 3))</code></div>
+
+            <h3>6. تحليل البيانات</h3>
+            <div class="code-block" data-lang="R"><code>df &lt;- data.frame(
+    name = c("Ahmed", "Sara", "Mohamed"),
+    age = c(25, 22, 30)
+)
+
+<span class="comment"># عرض البيانات</span>
+print(df)
+
+<span class="comment"># ملخص</span>
+summary(df)
+
+<span class="comment"># فلترة</span>
+df[df$age &gt; 24, ]
+
+<span class="comment"># إحصاء</span>
+mean(df$age)
+median(df$age)
+max(df$age)
+min(df$age)</code></div>
+
+            <h2><i class="fas fa-graduation-cap"></i> خطة التعلم</h2>
+
+            <h3>المستوى 1: المبتدئ (شهر)</h3>
+            <ul>
+                <li>الأساسيات</li>
+                <li>Vectors و Data Frames</li>
+                <li>Functions</li>
+            </ul>
+
+            <h3>المستوى 2: المتوسط (2-3 شهور)</h3>
+            <ul>
+                <li>Data Manipulation (dplyr)</li>
+                <li>Visualization (ggplot2)</li>
+                <li>Statistics</li>
+                <li>Import/Export Data</li>
+            </ul>
+
+            <h3>المستوى 3: الاحتراف (6 شهور)</h3>
+            <ul>
+                <li>Machine Learning</li>
+                <li>Time Series</li>
+                <li>R Markdown</li>
+                <li>Shiny Apps</li>
+            </ul>
+
+            <h2><i class="fas fa-link"></i> مصادر</h2>
+            <ul>
+                <li><a href="https://www.r-project.org/" target="_blank" style="color: #00d4ff;">R Official</a></li>
+                <li><a href="https://www.r-bloggers.com/" target="_blank" style="color: #00d4ff;">R-Bloggers</a></li>
+            </ul>
+        </div>
+    </div>
+    <footer><div class="footer-content"><div class="footer-logo">MT ERO</div><p class="copyright">© 2025 MT ERO.</p></div></footer>
+    <a href="https://t.me/Mozex_3" target="_blank" class="telegram-float"><i class="fab fa-telegram"></i></a>
+    <script src="../js/main.js"></script>
+</body>
+</html>

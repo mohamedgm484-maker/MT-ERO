@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeScript | MT ERO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><div class="logo">MT <span>| ERO</span></div><nav><ul><li><a href="../index.html">الرئيسية</a></li><li><a href="../index.html#langs">اللغات</a></li></ul></nav></header>
+    <div class="tool-page">
+        <a href="../index.html#langs" class="back-btn"><i class="fas fa-arrow-right"></i> رجوع للغات</a>
+        <div class="tool-header">
+            <span class="tool-icon-big"><i class="fas fa-code"></i></span>
+            <h1>TypeScript</h1>
+            <p>JavaScript مع أنواع</p>
+        </div>
+        <div class="tool-content">
+            <h2><i class="fas fa-book"></i> يعني إيه TypeScript؟</h2>
+            <p>TypeScript هي لغة برمجة من Microsoft، بتبني على JavaScript وبتحط عليها نظام أنواع (Types). بتستخدم في تطوير المشاريع الكبيرة.</p>
+            <p>بتعتبر النسخة المتطورة من JavaScript — وبتستخدمها شركات كتير زي Google و Airbnb و Slack.</p>
+
+            <h2><i class="fas fa-cog"></i> التثبيت</h2>
+            <div class="code-block" data-lang="Termux"><code>npm install -g typescript
+tsc --version</code></div>
+
+            <h2><i class="fas fa-bullseye"></i> الأساسيات</h2>
+
+            <h3>1. الأنواع</h3>
+            <div class="code-block" data-lang="TypeScript"><code>let name: string = "Ahmed";
+let age: number = 25;
+let isHacker: boolean = true;
+
+<span class="comment">// Array</span>
+let tools: string[] = ["nmap", "hydra"];
+let numbers: number[] = [1, 2, 3];
+
+<span class="comment">// Any</span>
+let anything: any = "hello";
+anything = 42;
+
+<span class="comment">// Union</span>
+let id: string | number = "abc";
+id = 123;</code></div>
+
+            <h3>2. Interfaces</h3>
+            <div class="code-block" data-lang="TypeScript"><code>interface User {
+    name: string;
+    age: number;
+    email?: string;  <span class="comment">// Optional</span>
+}
+
+const user: User = {
+    name: "Ahmed",
+    age: 25
+};</code></div>
+
+            <h3>3. Types</h3>
+            <div class="code-block" data-lang="TypeScript"><code>type Status = "active" | "inactive" | "pending";
+
+type Product = {
+    name: string;
+    price: number;
+};
+
+const p: Product = { name: "Laptop", price: 5000 };</code></div>
+
+            <h3>4. Functions</h3>
+            <div class="code-block" data-lang="TypeScript"><code>function greet(name: string): string {
+    return "أهلاً " + name;
+}
+
+const add = (a: number, b: number): number =&gt; a + b;
+
+<span class="comment">// Optional params</span>
+function buildName(first: string, last?: string): string {
+    return last ? first + " " + last : first;
+}</code></div>
+
+            <h3>5. Generics</h3>
+            <div class="code-block" data-lang="TypeScript"><code>function identity&lt;T&gt;(arg: T): T {
+    return arg;
+}
+
+let output = identity&lt;string&gt;("hello");
+let output2 = identity&lt;number&gt;(42);
+
+<span class="comment">// مع Arrays</span>
+function getFirst&lt;T&gt;(arr: T[]): T {
+    return arr[0];
+}</code></div>
+
+            <h2><i class="fas fa-graduation-cap"></i> خطة التعلم</h2>
+
+            <h3>المستوى 1: المبتدئ (شهر)</h3>
+            <ul>
+                <li>Types الأساسية</li>
+                <li>Interfaces</li>
+                <li>Functions</li>
+            </ul>
+
+            <h3>المستوى 2: المتوسط (2-3 شهور)</h3>
+            <ul>
+                <li>Generics</li>
+                <li>Enums</li>
+                <li>Decorators</li>
+                <li>Modules</li>
+            </ul>
+
+            <h3>المستوى 3: الاحتراف (6 شهور)</h3>
+            <ul>
+                <li>React + TypeScript</li>
+                <li>Node.js + TypeScript</li>
+                <li>Type Guards</li>
+                <li>Utility Types</li>
+            </ul>
+
+            <h2><i class="fas fa-link"></i> مصادر</h2>
+            <ul>
+                <li><a href="https://www.typescriptlang.org/docs/" target="_blank" style="color: #00d4ff;">TypeScript Docs</a></li>
+                <li><a href="https://www.tutorialsteacher.com/typescript" target="_blank" style="color: #00d4ff;">TutorialsTeacher</a></li>
+            </ul>
+        </div>
+    </div>
+    <footer><div class="footer-content"><div class="footer-logo">MT ERO</div><p class="copyright">© 2025 MT ERO.</p></div></footer>
+    <a href="https://t.me/Mozex_3" target="_blank" class="telegram-float"><i class="fab fa-telegram"></i></a>
+    <script src="../js/main.js"></script>
+</body>
+</html>

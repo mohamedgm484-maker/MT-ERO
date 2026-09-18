@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java | MT ERO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><div class="logo">MT <span>| ERO</span></div><nav><ul><li><a href="../index.html">الرئيسية</a></li><li><a href="../index.html#langs">اللغات</a></li></ul></nav></header>
+    <div class="tool-page">
+        <a href="../index.html#langs" class="back-btn"><i class="fas fa-arrow-right"></i> رجوع للغات</a>
+        <div class="tool-header">
+            <span class="tool-icon-big"><i class="fab fa-java"></i></span>
+            <h1>Java</h1>
+            <p>لغة الأنظمة الكبيرة والأندرويد</p>
+        </div>
+        <div class="tool-content">
+            <h2><i class="fas fa-book"></i> يعني إيه Java؟</h2>
+            <p>Java هي لغة برمجة كائنية التوجه (OOP)، بتستخدم في الأنظمة الكبيرة، تطبيقات الأندرويد، وتطبيقات الويب.</p>
+            <p>بتعتبر من أشهر اللغات في العالم — وبتستخدمها شركات كتير زي Netflix و Amazon و Twitter. وكمان هي اللغة الأساسية لتطوير الأندرويد.</p>
+
+            <h3><i class="fas fa-check-circle"></i> استخدامات Java</h3>
+            <ul>
+                <li>تطبيقات الأندرويد</li>
+                <li>تطبيقات الويب (Spring)</li>
+                <li>الأنظمة الكبيرة (Enterprise)</li>
+                <li>تطبيقات الديسكتوب</li>
+                <li>الألعاب (Minecraft)</li>
+            </ul>
+
+            <h2><i class="fas fa-bullseye"></i> الأساسيات</h2>
+
+            <h3>1. البرنامج الأول</h3>
+            <div class="code-block" data-lang="Java"><code>public class Hello {
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+    }
+}</code></div>
+
+            <h3>2. المتغيرات</h3>
+            <div class="code-block" data-lang="Java"><code>int age = 25;
+double salary = 5000.50;
+String name = "Ahmed";
+boolean isHacker = true;
+char letter = 'A';
+
+System.out.println(name);
+System.out.println(age);</code></div>
+
+            <h3>3. الشروط</h3>
+            <div class="code-block" data-lang="Java"><code>int age = 20;
+
+if (age >= 18) {
+    System.out.println("بالغ");
+} else if (age >= 13) {
+    System.out.println("مراهق");
+} else {
+    System.out.println("طفل");
+}</code></div>
+
+            <h3>4. الحلقات</h3>
+            <div class="code-block" data-lang="Java"><code>for (int i = 0; i < 5; i++) {
+    System.out.println(i);
+}
+
+int count = 0;
+while (count < 5) {
+    System.out.println(count);
+    count++;
+}</code></div>
+
+            <h3>5. الدوال</h3>
+            <div class="code-block" data-lang="Java"><code>public static int add(int a, int b) {
+    return a + b;
+}
+
+public static void greet(String name) {
+    System.out.println("أهلاً " + name);
+}
+
+public static void main(String[] args) {
+    System.out.println(add(5, 3));
+    greet("Ahmed");
+}</code></div>
+
+            <h3>6. الكلاسات (OOP)</h3>
+            <div class="code-block" data-lang="Java"><code>public class User {
+    private String name;
+    private int age;
+    
+    public User(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    public String getName() { return name; }
+    public int getAge() { return age; }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        User user = new User("Ahmed", 25);
+        System.out.println(user.getName());
+    }
+}</code></div>
+
+            <h2><i class="fas fa-graduation-cap"></i> خطة التعلم</h2>
+
+            <h3>المستوى 1: المبتدئ (شهرين)</h3>
+            <ul>
+                <li>الأساسيات</li>
+                <li>OOP (Classes, Objects)</li>
+                <li>Inheritance و Polymorphism</li>
+            </ul>
+
+            <h3>المستوى 2: المتوسط (3 شهور)</h3>
+            <ul>
+                <li>Collections</li>
+                <li>Exception Handling</li>
+                <li>File I/O</li>
+                <li>Multithreading</li>
+            </ul>
+
+            <h3>المستوى 3: الاحتراف (6 شهور)</h3>
+            <ul>
+                <li>Spring Framework</li>
+                <li>Hibernate</li>
+                <li>REST APIs</li>
+                <li>Android Development</li>
+            </ul>
+
+            <h2><i class="fas fa-link"></i> مصادر</h2>
+            <ul>
+                <li><a href="https://www.w3schools.com/java/" target="_blank" style="color: #00d4ff;">W3Schools Java</a></li>
+                <li><a href="https://www.javatpoint.com/" target="_blank" style="color: #00d4ff;">JavaTPoint</a></li>
+                <li><a href="https://elzero.org/category/courses/java/" target="_blank" style="color: #00d4ff;">Elzero Java (عربي)</a></li>
+            </ul>
+        </div>
+    </div>
+    <footer><div class="footer-content"><div class="footer-logo">MT ERO</div><p class="copyright">© 2025 MT ERO.</p></div></footer>
+    <a href="https://t.me/Mozex_3" target="_blank" class="telegram-float"><i class="fab fa-telegram"></i></a>
+    <script src="../js/main.js"></script>
+</body>
+</html>

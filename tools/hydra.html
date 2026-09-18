@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydra | MT ERO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><div class="logo">MT <span>| ERO</span></div><nav><ul><li><a href="../index.html">الرئيسية</a></li><li><a href="../index.html#tools">الأدوات</a></li></ul></nav></header>
+    <div class="tool-page">
+        <a href="../index.html#tools" class="back-btn"><i class="fas fa-arrow-right"></i> رجوع للأدوات</a>
+        <div class="tool-header">
+            <span class="tool-icon-big"><i class="fas fa-key"></i></span>
+            <h1>Hydra</h1>
+            <p>أداة كسر باسوردات الخدمات الشبكية</p>
+        </div>
+        <div class="tool-content">
+            <h2><i class="fas fa-book"></i> يعني إيه Hydra؟</h2>
+            <p>Hydra هي أداة لكسر باسوردات الخدمات الشبكية (SSH, FTP, HTTP, MySQL, RDP وغيرها). بتشتغل بطريقة "القوة الغاشمة" عن طريق تجريب قوائم من اليوزرنيمات والباسوردات على خدمة معينة.</p>
+            <p>الأداة دي بتدعم أكتر من 50 بروتوكول — وبتعتبر الأسرع في مجالها.</p>
+
+            <h3><i class="fas fa-check-circle"></i> الخدمات اللي بتدعمها</h3>
+            <ul>
+                <li>SSH (بورت 22)</li>
+                <li>FTP (بورت 21)</li>
+                <li>HTTP/HTTPS (بورت 80/443)</li>
+                <li>MySQL (بورت 3306)</li>
+                <li>RDP (بورت 3389)</li>
+                <li>SMTP, POP3, IMAP</li>
+            </ul>
+
+            <h2><i class="fas fa-cog"></i> التثبيت</h2>
+            <div class="code-block" data-lang="Termux"><code>pkg install hydra -y
+hydra -h</code></div>
+
+            <h2><i class="fas fa-bullseye"></i> الأوامر الأساسية</h2>
+
+            <h3>1. كسر SSH</h3>
+            <div class="code-block" data-lang="Bash"><code>hydra -l admin -P passwords.txt ssh://192.168.1.1</code></div>
+            <p><strong>-l:</strong> يوزر واحد | <strong>-P:</strong> قائمة باسوردات</p>
+
+            <h3>2. كسر FTP</h3>
+            <div class="code-block" data-lang="Bash"><code>hydra -l admin -P passwords.txt ftp://192.168.1.1</code></div>
+
+            <h3>3. كسر HTTP Login</h3>
+            <div class="code-block" data-lang="Bash"><code>hydra -l admin -P passwords.txt 192.168.1.1 http-post-form "/login:user=^USER^&pass=^PASS^:Invalid"</code></div>
+
+            <h3>4. كسر MySQL</h3>
+            <div class="code-block" data-lang="Bash"><code>hydra -l root -P passwords.txt mysql://192.168.1.1</code></div>
+
+            <h2><i class="fas fa-list"></i> الخيارات</h2>
+            <ul>
+                <li><strong>-l:</strong> يوزر واحد</li>
+                <li><strong>-L:</strong> قائمة يوزرز من ملف</li>
+                <li><strong>-p:</strong> باسورد واحد</li>
+                <li><strong>-P:</strong> قائمة باسوردات من ملف</li>
+                <li><strong>-t:</strong> عدد العمليات المتوازية (افتراضي 16)</li>
+                <li><strong>-s:</strong> بورت مخصص</li>
+                <li><strong>-V:</strong> عرض كل محاولة</li>
+                <li><strong>-f:</strong> وقف عند أول نجاح</li>
+            </ul>
+
+            <div class="info-box warning"><strong><i class="fas fa-exclamation-triangle"></i> تحذير:</strong> Hydra بتلمس السيرفر وبتتسجل في اللوجات. متستخدمهاش على أي خدمة مش بتاعتك. قانون 175/2018 — حبس 3-5 سنين.</div>
+
+            <h2><i class="fas fa-dumbbell"></i> تمارين</h2>
+            <ol>
+                <li>شغّل SSH على جهازك وجرب Hydra على localhost</li>
+                <li>جرب Hydra على TryHackMe (بيئة آمنة)</li>
+                <li>اعمل قائمة باسوردات مخصصة</li>
+            </ol>
+
+            <h2><i class="fas fa-link"></i> مصادر</h2>
+            <ul>
+                <li><a href="https://tryhackme.com/room/hydra" target="_blank" style="color: #00d4ff;">TryHackMe Hydra</a></li>
+                <li><a href="https://github.com/vanhauser-thc/thc-hydra" target="_blank" style="color: #00d4ff;">Hydra GitHub</a></li>
+            </ul>
+        </div>
+    </div>
+    <footer><div class="footer-content"><div class="footer-logo">MT ERO</div><p class="copyright">© 2025 MT ERO.</p></div></footer>
+    <a href="https://t.me/Mozex_3" target="_blank" class="telegram-float"><i class="fab fa-telegram"></i></a>
+    <script src="../js/main.js"></script>
+</body>
+</html>

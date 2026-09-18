@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nmap | MT ERO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><div class="logo">MT <span>| ERO</span></div><nav><ul><li><a href="../index.html">الرئيسية</a></li><li><a href="../index.html#tools">الأدوات</a></li></ul></nav></header>
+    <div class="tool-page">
+        <a href="../index.html#tools" class="back-btn"><i class="fas fa-arrow-right"></i> رجوع للأدوات</a>
+        <div class="tool-header">
+            <span class="tool-icon-big"><i class="fas fa-network-wired"></i></span>
+            <h1>Nmap</h1>
+            <p>أداة فحص الشبكات الأشهر في العالم</p>
+        </div>
+        <div class="tool-content">
+            <h2><i class="fas fa-book"></i> يعني إيه Nmap؟</h2>
+            <p>Nmap (Network Mapper) هي أداة مفتوحة المصدر لفحص الشبكات واكتشاف البورتات المفتوحة والخدمات الشغالة. بتستخدمها في اختبار الاختراق الأخلاقي عشان تعرف نقاط الدخول المحتملة. الأداة دي بتعتبر الأساس في أي عملية اختبار اختراق — لأنها بتديك صورة كاملة عن الشبكة اللي بتفحصها.</p>
+            <p>Nmap بتشتغل على كل أنظمة التشغيل — Linux و Windows و macOS. وبتدعم IPv6 وعدد كبير من تقنيات الفحص المتقدمة. المميز فيها إنها سريعة جداً وبتقدر تفحص آلاف الأجهزة في وقت قصير.</p>
+
+            <h3><i class="fas fa-check-circle"></i> الاستخدامات</h3>
+            <ul>
+                <li>اكتشاف الأجهزة المتصلة بالشبكة</li>
+                <li>معرفة البورتات المفتوحة والمقفولة</li>
+                <li>كشف الخدمات وإصداراتها</li>
+                <li>كشف نظام التشغيل</li>
+                <li>فحص الثغرات المعروفة</li>
+                <li>مراقبة الشبكة</li>
+            </ul>
+
+            <h2><i class="fas fa-cog"></i> التثبيت</h2>
+            <div class="code-block" data-lang="Termux"><code><span class="comment"># على Termux</span>
+pkg install nmap -y
+
+<span class="comment"># التأكد</span>
+nmap --version</code></div>
+
+            <h2><i class="fas fa-bullseye"></i> الأوامر الأساسية</h2>
+            <h3>1. فحص أساسي</h3>
+            <div class="code-block" data-lang="Bash"><code>nmap scanme.nmap.org</code></div>
+            <p>بيفحص أول 1000 بورت شائع.</p>
+
+            <h3>2. كشف الخدمات</h3>
+            <div class="code-block" data-lang="Bash"><code>nmap -sV scanme.nmap.org</code></div>
+            <p>بيعرف نوع الخدمة والإصدار.</p>
+
+            <h3>3. كشف نظام التشغيل</h3>
+            <div class="code-block" data-lang="Bash"><code>nmap -O scanme.nmap.org</code></div>
+
+            <h3>4. فحص الشبكة كاملة</h3>
+            <div class="code-block" data-lang="Bash"><code>nmap -sn 192.168.1.0/24</code></div>
+
+            <h3>5. فحص بورتات محددة</h3>
+            <div class="code-block" data-lang="Bash"><code>nmap -p 22,80,443 192.168.1.1</code></div>
+
+            <h3>6. فحص سريع</h3>
+            <div class="code-block" data-lang="Bash"><code>nmap -T4 -F 192.168.1.1</code></div>
+
+            <h3>7. فحص كل حاجة</h3>
+            <div class="code-block" data-lang="Bash"><code>nmap -A -v 192.168.1.1</code></div>
+
+            <h2><i class="fas fa-chart-bar"></i> شرح النتائج</h2>
+            <div class="code-block" data-lang="Output"><code>PORT     STATE  SERVICE   VERSION
+22/tcp   open   ssh       OpenSSH 8.2
+80/tcp   open   http      nginx 1.18.0
+443/tcp  open   ssl/https nginx 1.18.0</code></div>
+
+            <ul>
+                <li><strong>PORT:</strong> رقم البورت</li>
+                <li><strong>STATE:</strong> open / closed / filtered</li>
+                <li><strong>SERVICE:</strong> الخدمة</li>
+                <li><strong>VERSION:</strong> الإصدار</li>
+            </ul>
+
+            <h3>حالات البورتات</h3>
+            <ul>
+                <li><strong>open:</strong> البورت مفتوح ومستقبل اتصالات</li>
+                <li><strong>closed:</strong> مقفول لكن السيرفر موجود</li>
+                <li><strong>filtered:</strong> فيه فايروول بيمنع</li>
+                <li><strong>unfiltered:</strong> مش متأكد</li>
+            </ul>
+
+            <div class="info-box warning"><strong><i class="fas fa-exclamation-triangle"></i> تحذير:</strong> متفحصش شبكات مش بتاعتك. Nmap بيسجل في اللوجات.</div>
+
+            <h2><i class="fas fa-dumbbell"></i> تمارين</h2>
+            <ol>
+                <li>افحص <code>scanme.nmap.org</code></li>
+                <li>افحص شبكتك المحلية</li>
+                <li>اعرف إصدار الخدمات على الراوتر</li>
+                <li>دوّر على بورت 22 في شبكتك</li>
+            </ol>
+
+            <h2><i class="fas fa-link"></i> مصادر</h2>
+            <ul>
+                <li><a href="https://tryhackme.com/room/furthernmap" target="_blank" style="color: #00d4ff;">TryHackMe Nmap</a></li>
+                <li><a href="https://nmap.org/book/" target="_blank" style="color: #00d4ff;">Nmap Book</a></li>
+            </ul>
+        </div>
+    </div>
+    <footer><div class="footer-content"><div class="footer-logo">MT ERO</div><p class="copyright">© 2025 MT ERO.</p></div></footer>
+    <a href="https://t.me/Mozex_3" target="_blank" class="telegram-float"><i class="fab fa-telegram"></i></a>
+    <script src="../js/main.js"></script>
+</body>
+</html>

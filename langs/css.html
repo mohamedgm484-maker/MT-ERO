@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS | MT ERO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><div class="logo">MT <span>| ERO</span></div><nav><ul><li><a href="../index.html">الرئيسية</a></li><li><a href="../index.html#langs">اللغات</a></li></ul></nav></header>
+    <div class="tool-page">
+        <a href="../index.html#langs" class="back-btn"><i class="fas fa-arrow-right"></i> رجوع للغات</a>
+        <div class="tool-header">
+            <span class="tool-icon-big"><i class="fab fa-css3-alt"></i></span>
+            <h1>CSS</h1>
+            <p>تصميم وتنسيق صفحات الويب</p>
+        </div>
+        <div class="tool-content">
+            <h2><i class="fas fa-book"></i> يعني إيه CSS؟</h2>
+            <p>CSS (Cascading Style Sheets) هي لغة تنسيق صفحات الويب. بتستخدمها لتحديد الألوان، الخطوط، الأحجام، والتصميم العام للصفحة.</p>
+            <p>CSS بتعتبر أساس التصميم في الويب — ومن غيرها الصفحة تبقى نص عادي من غير أي جمال.</p>
+
+            <h3><i class="fas fa-check-circle"></i> ليه CSS مهمة؟</h3>
+            <ul>
+                <li>بتخلي الموقع شكله حلو</li>
+                <li>بتخلي الموقع متجاوب (Responsive)</li>
+                <li>بتشتغل على كل المتصفحات</li>
+                <li>بتوفر وقت (بتعدل تصميم كامل من مكان واحد)</li>
+            </ul>
+
+            <h2><i class="fas fa-bullseye"></i> الأساسيات</h2>
+
+            <h3>1. طريقة الاستخدام</h3>
+            <div class="code-block" data-lang="CSS"><code><span class="comment">/* Inline */</span>
+&lt;p style="color: red;"&gt;نص أحمر&lt;/p&gt;
+
+<span class="comment">/* Internal */</span>
+&lt;style&gt;
+p { color: red; }
+&lt;/style&gt;
+
+<span class="comment">/* External (الأفضل) */</span>
+&lt;link rel="stylesheet" href="style.css"&gt;</code></div>
+
+            <h3>2. المحددات (Selectors)</h3>
+            <div class="code-block" data-lang="CSS"><code><span class="comment">/* Element */</span>
+p { color: red; }
+
+<span class="comment">/* Class */</span>
+.my-class { color: blue; }
+
+<span class="comment">/* ID */</span>
+#my-id { color: green; }
+
+<span class="comment">/* Descendant */</span>
+div p { color: yellow; }
+
+<span class="comment">/* Child */</span>
+div &gt; p { color: orange; }</code></div>
+
+            <h3>3. الألوان</h3>
+            <div class="code-block" data-lang="CSS"><code>color: red;                    <span class="comment">/* الاسم */</span>
+color: #ff0000;                <span class="comment">/* Hex */</span>
+color: rgb(255, 0, 0);         <span class="comment">/* RGB */</span>
+color: rgba(255, 0, 0, 0.5);   <span class="comment">/* RGB مع شفافية */</span>
+color: hsl(0, 100%, 50%);      <span class="comment">/* HSL */</span></code></div>
+
+            <h3>4. الخطوط</h3>
+            <div class="code-block" data-lang="CSS"><code>font-family: Arial, sans-serif;
+font-size: 16px;
+font-weight: bold;
+font-style: italic;
+line-height: 1.5;
+text-align: center;</code></div>
+
+            <h3>5. Box Model</h3>
+            <div class="code-block" data-lang="CSS"><code>.box {
+    width: 200px;
+    height: 100px;
+    padding: 20px;       <span class="comment">/* داخلي */</span>
+    border: 2px solid red;
+    margin: 10px;        <span class="comment">/* خارجي */</span>
+}</code></div>
+
+            <h3>6. Flexbox</h3>
+            <div class="code-block" data-lang="CSS"><code>.container {
+    display: flex;
+    justify-content: center;   <span class="comment">/* أفقي */</span>
+    align-items: center;       <span class="comment">/* عمودي */</span>
+    gap: 20px;
+    flex-wrap: wrap;
+}</code></div>
+
+            <h3>7. Grid</h3>
+            <div class="code-block" data-lang="CSS"><code>.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}</code></div>
+
+            <h3>8. Media Queries</h3>
+            <div class="code-block" data-lang="CSS"><code><span class="comment">/* موبايل */</span>
+@media (max-width: 768px) {
+    body { font-size: 14px; }
+}
+
+<span class="comment">/* تابلت */</span>
+@media (min-width: 769px) and (max-width: 1024px) {
+    body { font-size: 16px; }
+}</code></div>
+
+            <h3>9. الحركات (Animations)</h3>
+            <div class="code-block" data-lang="CSS"><code><span class="comment">/* Transition */</span>
+.box {
+    transition: all 0.3s ease;
+}
+.box:hover {
+    transform: scale(1.1);
+}
+
+<span class="comment">/* Animation */</span>
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+.element {
+    animation: pulse 2s infinite;
+}</code></div>
+
+            <h2><i class="fas fa-graduation-cap"></i> خطة التعلم</h2>
+
+            <h3>المستوى 1: المبتدئ (أسبوعين)</h3>
+            <ul>
+                <li>الألوان والخطوط</li>
+                <li>Box Model</li>
+                <li>Selectors</li>
+            </ul>
+
+            <h3>المستوى 2: المتوسط (شهر)</h3>
+            <ul>
+                <li>Flexbox</li>
+                <li>Grid</li>
+                <li>Media Queries</li>
+                <li>Positioning</li>
+            </ul>
+
+            <h3>المستوى 3: الاحتراف (شهرين)</h3>
+            <ul>
+                <li>Animations</li>
+                <li>Transitions</li>
+                <li>CSS Variables</li>
+                <li>SASS/SCSS</li>
+                <li>Tailwind CSS</li>
+            </ul>
+
+            <h2><i class="fas fa-dumbbell"></i> تمارين</h2>
+            <ol>
+                <li>صمم بطاقة شخصية</li>
+                <li>صمم Navbar</li>
+                <li>صمم Pricing Table</li>
+                <li>صمم صفحة كاملة Responsive</li>
+            </ol>
+
+            <h2><i class="fas fa-link"></i> مصادر</h2>
+            <ul>
+                <li><a href="https://www.w3schools.com/css/" target="_blank" style="color: #00d4ff;">W3Schools CSS</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" style="color: #00d4ff;">MDN CSS</a></li>
+                <li><a href="https://elzero.org/category/courses/css/" target="_blank" style="color: #00d4ff;">Elzero CSS (عربي)</a></li>
+            </ul>
+        </div>
+    </div>
+    <footer><div class="footer-content"><div class="footer-logo">MT ERO</div><p class="copyright">© 2025 MT ERO.</p></div></footer>
+    <a href="https://t.me/Mozex_3" target="_blank" class="telegram-float"><i class="fab fa-telegram"></i></a>
+    <script src="../js/main.js"></script>
+</body>
+</html>

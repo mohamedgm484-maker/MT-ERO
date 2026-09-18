@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go | MT ERO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><div class="logo">MT <span>| ERO</span></div><nav><ul><li><a href="../index.html">الرئيسية</a></li><li><a href="../index.html#langs">اللغات</a></li></ul></nav></header>
+    <div class="tool-page">
+        <a href="../index.html#langs" class="back-btn"><i class="fas fa-arrow-right"></i> رجوع للغات</a>
+        <div class="tool-header">
+            <span class="tool-icon-big"><i class="fas fa-rocket"></i></span>
+            <h1>Go (Golang)</h1>
+            <p>لغة سريعة وبسيطة من Google</p>
+        </div>
+        <div class="tool-content">
+            <h2><i class="fas fa-book"></i> يعني إيه Go؟</h2>
+            <p>Go (Golang) هي لغة برمجة مفتوحة المصدر من Google. بتتميز بالسرعة والبساطة والكفاءة في التعامل مع الأنظمة المتوازية.</p>
+            <p>بتستخدمها شركات كتير زي Google و Uber و Docker. وفي الأمن السيبراني، أدوات كتير مكتوبة بـ Go (زي ffuf, nuclei).</p>
+
+            <h3><i class="fas fa-check-circle"></i> استخدامات Go</h3>
+            <ul>
+                <li>تطوير السيرفرات</li>
+                <li>أدوات CLI</li>
+                <li>الأدوات الأمنية</li>
+                <li>Cloud Services</li>
+                <li>Blockchain</li>
+            </ul>
+
+            <h2><i class="fas fa-bullseye"></i> الأساسيات</h2>
+
+            <h3>1. البرنامج الأول</h3>
+            <div class="code-block" data-lang="Go"><code>package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Hello World")
+}</code></div>
+
+            <h3>2. المتغيرات</h3>
+            <div class="code-block" data-lang="Go"><code>var name string = "Ahmed"
+var age int = 25
+var salary float64 = 5000.50
+var isHacker bool = true
+
+<span class="comment">// Short declaration</span>
+city := "Cairo"
+
+fmt.Println(name, age, salary, isHacker, city)</code></div>
+
+            <h3>3. الشروط</h3>
+            <div class="code-block" data-lang="Go"><code>age := 20
+
+if age >= 18 {
+    fmt.Println("بالغ")
+} else if age >= 13 {
+    fmt.Println("مراهق")
+} else {
+    fmt.Println("طفل")
+}</code></div>
+
+            <h3>4. الحلقات</h3>
+            <div class="code-block" data-lang="Go"><code>for i := 0; i &lt; 5; i++ {
+    fmt.Println(i)
+}
+
+<span class="comment">// While style</span>
+count := 0
+for count &lt; 5 {
+    fmt.Println(count)
+    count++
+}
+
+<span class="comment">// Range</span>
+tools := []string{"nmap", "hydra"}
+for i, tool := range tools {
+    fmt.Println(i, tool)
+}</code></div>
+
+            <h3>5. الدوال</h3>
+            <div class="code-block" data-lang="Go"><code>func greet(name string) string {
+    return "أهلاً " + name
+}
+
+func add(a, b int) int {
+    return a + b
+}
+
+<span class="comment">// Multiple returns</span>
+func divide(a, b float64) (float64, error) {
+    if b == 0 {
+        return 0, fmt.Errorf("قسمة على صفر")
+    }
+    return a / b, nil
+}</code></div>
+
+            <h3>6. Structs</h3>
+            <div class="code-block" data-lang="Go"><code>type User struct {
+    Name string
+    Age  int
+}
+
+func main() {
+    user := User{Name: "Ahmed", Age: 25}
+    fmt.Println(user.Name)
+    fmt.Println(user.Age)
+}</code></div>
+
+            <h3>7. Goroutines</h3>
+            <div class="code-block" data-lang="Go"><code>func task(id int) {
+    fmt.Println("Task", id)
+}
+
+func main() {
+    for i := 1; i &lt;= 5; i++ {
+        go task(i)
+    }
+    time.Sleep(time.Second)
+}</code></div>
+
+            <h2><i class="fas fa-graduation-cap"></i> خطة التعلم</h2>
+
+            <h3>المستوى 1: المبتدئ (شهر)</h3>
+            <ul>
+                <li>الأساسيات</li>
+                <li>Structs و Interfaces</li>
+                <li>Slices و Maps</li>
+            </ul>
+
+            <h3>المستوى 2: المتوسط (2-3 شهور)</h3>
+            <ul>
+                <li>Goroutines و Channels</li>
+                <li>Error Handling</li>
+                <li>File I/O</li>
+                <li>HTTP Server</li>
+            </ul>
+
+            <h3>المستوى 3: الاحتراف (6 شهور)</h3>
+            <ul>
+                <li>REST APIs</li>
+                <li>gRPC</li>
+                <li>Testing</li>
+                <li>Microservices</li>
+            </ul>
+
+            <h2><i class="fas fa-link"></i> مصادر</h2>
+            <ul>
+                <li><a href="https://go.dev/tour/" target="_blank" style="color: #00d4ff;">Go Tour</a></li>
+                <li><a href="https://gobyexample.com/" target="_blank" style="color: #00d4ff;">Go by Example</a></li>
+            </ul>
+        </div>
+    </div>
+    <footer><div class="footer-content"><div class="footer-logo">MT ERO</div><p class="copyright">© 2025 MT ERO.</p></div></footer>
+    <a href="https://t.me/Mozex_3" target="_blank" class="telegram-float"><i class="fab fa-telegram"></i></a>
+    <script src="../js/main.js"></script>
+</body>
+</html>

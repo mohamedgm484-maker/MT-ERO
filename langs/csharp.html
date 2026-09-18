@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C# | MT ERO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><div class="logo">MT <span>| ERO</span></div><nav><ul><li><a href="../index.html">الرئيسية</a></li><li><a href="../index.html#langs">اللغات</a></li></ul></nav></header>
+    <div class="tool-page">
+        <a href="../index.html#langs" class="back-btn"><i class="fas fa-arrow-right"></i> رجوع للغات</a>
+        <div class="tool-header">
+            <span class="tool-icon-big"><i class="fas fa-hashtag"></i></span>
+            <h1>C#</h1>
+            <p>لغة Microsoft لتطوير التطبيقات</p>
+        </div>
+        <div class="tool-content">
+            <h2><i class="fas fa-book"></i> يعني إيه C#؟</h2>
+            <p>C# (C-Sharp) هي لغة برمجة من Microsoft، بتستخدم في تطوير تطبيقات الويندوز، الألعاب (Unity)، وتطبيقات الويب.</p>
+            <p>بتعتبر اللغة الأساسية في بيئة .NET — وبتستخدمها شركات كتير في التطبيقات الكبيرة.</p>
+
+            <h2><i class="fas fa-bullseye"></i> الأساسيات</h2>
+
+            <h3>1. البرنامج الأول</h3>
+            <div class="code-block" data-lang="C#"><code>using System;
+
+class Program {
+    static void Main() {
+        Console.WriteLine("Hello World");
+    }
+}</code></div>
+
+            <h3>2. المتغيرات</h3>
+            <div class="code-block" data-lang="C#"><code>string name = "Ahmed";
+int age = 25;
+double salary = 5000.50;
+bool isHacker = true;
+char letter = 'A';
+
+Console.WriteLine(name);
+Console.WriteLine(age);</code></div>
+
+            <h3>3. الشروط</h3>
+            <div class="code-block" data-lang="C#"><code>int age = 20;
+
+if (age >= 18) {
+    Console.WriteLine("بالغ");
+} else if (age >= 13) {
+    Console.WriteLine("مراهق");
+} else {
+    Console.WriteLine("طفل");
+}</code></div>
+
+            <h3>4. الحلقات</h3>
+            <div class="code-block" data-lang="C#"><code>for (int i = 0; i &lt; 5; i++) {
+    Console.WriteLine(i);
+}
+
+int count = 0;
+while (count &lt; 5) {
+    Console.WriteLine(count);
+    count++;
+}
+
+string[] tools = {"nmap", "hydra"};
+foreach (string tool in tools) {
+    Console.WriteLine(tool);
+}</code></div>
+
+            <h3>5. الدوال</h3>
+            <div class="code-block" data-lang="C#"><code>static int Add(int a, int b) {
+    return a + b;
+}
+
+static void Greet(string name) {
+    Console.WriteLine($"أهلاً {name}");
+}
+
+static void Main() {
+    Console.WriteLine(Add(5, 3));
+    Greet("Ahmed");
+}</code></div>
+
+            <h3>6. الكلاسات</h3>
+            <div class="code-block" data-lang="C#"><code>class User {
+    public string Name { get; set; }
+    public int Age { get; set; }
+    
+    public User(string name, int age) {
+        Name = name;
+        Age = age;
+    }
+    
+    public void Greet() {
+        Console.WriteLine($"أهلاً {Name}");
+    }
+}
+
+class Program {
+    static void Main() {
+        User user = new User("Ahmed", 25);
+        user.Greet();
+    }
+}</code></div>
+
+            <h2><i class="fas fa-graduation-cap"></i> خطة التعلم</h2>
+
+            <h3>المستوى 1: المبتدئ (شهر)</h3>
+            <ul>
+                <li>الأساسيات</li>
+                <li>OOP</li>
+                <li>Collections</li>
+            </ul>
+
+            <h3>المستوى 2: المتوسط (3 شهور)</h3>
+            <ul>
+                <li>LINQ</li>
+                <li>Async/Await</li>
+                <li>File I/O</li>
+                <li>Entity Framework</li>
+            </ul>
+
+            <h3>المستوى 3: الاحتراف (6 شهور)</h3>
+            <ul>
+                <li>ASP.NET Core</li>
+                <li>Unity (Game Dev)</li>
+                <li>WPF (Desktop)</li>
+                <li>Xamarin (Mobile)</li>
+            </ul>
+
+            <h2><i class="fas fa-link"></i> مصادر</h2>
+            <ul>
+                <li><a href="https://www.w3schools.com/cs/" target="_blank" style="color: #00d4ff;">W3Schools C#</a></li>
+                <li><a href="https://learn.microsoft.com/en-us/dotnet/csharp/" target="_blank" style="color: #00d4ff;">Microsoft C# Docs</a></li>
+            </ul>
+        </div>
+    </div>
+    <footer><div class="footer-content"><div class="footer-logo">MT ERO</div><p class="copyright">© 2025 MT ERO.</p></div></footer>
+    <a href="https://t.me/Mozex_3" target="_blank" class="telegram-float"><i class="fab fa-telegram"></i></a>
+    <script src="../js/main.js"></script>
+</body>
+</html>

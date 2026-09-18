@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kotlin | MT ERO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><div class="logo">MT <span>| ERO</span></div><nav><ul><li><a href="../index.html">الرئيسية</a></li><li><a href="../index.html#langs">اللغات</a></li></ul></nav></header>
+    <div class="tool-page">
+        <a href="../index.html#langs" class="back-btn"><i class="fas fa-arrow-right"></i> رجوع للغات</a>
+        <div class="tool-header">
+            <span class="tool-icon-big"><i class="fas fa-mobile-alt"></i></span>
+            <h1>Kotlin</h1>
+            <p>لغة Android الرسمية</p>
+        </div>
+        <div class="tool-content">
+            <h2><i class="fas fa-book"></i> يعني إيه Kotlin؟</h2>
+            <p>Kotlin هي لغة برمجة من JetBrains، بتستخدم في تطوير تطبيقات الأندرويد. بتعتبر اللغة الرسمية للأندرويد من Google.</p>
+            <p>بتتميز بالبساطة والأمان — وبتشتغل على JVM و Android و JavaScript.</p>
+
+            <h2><i class="fas fa-bullseye"></i> الأساسيات</h2>
+
+            <h3>1. البرنامج الأول</h3>
+            <div class="code-block" data-lang="Kotlin"><code>fun main() {
+    println("Hello World")
+}</code></div>
+
+            <h3>2. المتغيرات</h3>
+            <div class="code-block" data-lang="Kotlin"><code><span class="comment">// Mutable</span>
+var name = "Ahmed"
+name = "Mohamed"
+
+<span class="comment">// Immutable</span>
+val pi = 3.14
+
+<span class="comment">// Types</span>
+val age: Int = 25
+val salary: Double = 5000.50
+val isHacker: Boolean = true
+
+println(name)
+println(age)</code></div>
+
+            <h3>3. الشروط</h3>
+            <div class="code-block" data-lang="Kotlin"><code>val age = 20
+
+if (age &gt;= 18) {
+    println("بالغ")
+} else if (age &gt;= 13) {
+    println("مراهق")
+} else {
+    println("طفل")
+}
+
+<span class="comment">// When (Switch)</span>
+when (age) {
+    18 -&gt; println("18 سنة")
+    in 19..30 -&gt; println("شاب")
+    else -&gt; println("تاني")
+}</code></div>
+
+            <h3>4. الحلقات</h3>
+            <div class="code-block" data-lang="Kotlin"><code>for (i in 0..4) {
+    println(i)
+}
+
+var count = 0
+while (count &lt; 5) {
+    println(count)
+    count++
+}
+
+val tools = listOf("nmap", "hydra")
+tools.forEach { println(it) }</code></div>
+
+            <h3>5. الدوال</h3>
+            <div class="code-block" data-lang="Kotlin"><code>fun greet(name: String): String {
+    return "أهلاً $name"
+}
+
+fun add(a: Int, b: Int) = a + b
+
+println(greet("Ahmed"))
+println(add(5, 3))</code></div>
+
+            <h3>6. Classes</h3>
+            <div class="code-block" data-lang="Kotlin"><code>class User(val name: String, val age: Int) {
+    fun greet() = "أهلاً $name"
+}
+
+fun main() {
+    val user = User("Ahmed", 25)
+    println(user.greet())
+}
+
+<span class="comment">// Data Class</span>
+data class Product(val name: String, val price: Double)
+
+val p = Product("Laptop", 5000.0)
+println(p)</code></div>
+
+            <h2><i class="fas fa-graduation-cap"></i> خطة التعلم</h2>
+
+            <h3>المستوى 1: المبتدئ (شهر)</h3>
+            <ul>
+                <li>الأساسيات</li>
+                <li>Null Safety</li>
+                <li>Collections</li>
+            </ul>
+
+            <h3>المستوى 2: المتوسط (3 شهور)</h3>
+            <ul>
+                <li>OOP</li>
+                <li>Lambda و Higher-order Functions</li>
+                <li>Coroutines</li>
+                <li>Extensions</li>
+            </ul>
+
+            <h3>المستوى 3: الاحتراف (6 شهور)</h3>
+            <ul>
+                <li>Android Development</li>
+                <li>Jetpack Compose</li>
+                <li>Room Database</li>
+                <li>Retrofit (APIs)</li>
+            </ul>
+
+            <h2><i class="fas fa-link"></i> مصادر</h2>
+            <ul>
+                <li><a href="https://kotlinlang.org/" target="_blank" style="color: #00d4ff;">Kotlin Official</a></li>
+                <li><a href="https://developer.android.com/kotlin" target="_blank" style="color: #00d4ff;">Android Kotlin</a></li>
+            </ul>
+        </div>
+    </div>
+    <footer><div class="footer-content"><div class="footer-logo">MT ERO</div><p class="copyright">© 2025 MT ERO.</p></div></footer>
+    <a href="https://t.me/Mozex_3" target="_blank" class="telegram-float"><i class="fab fa-telegram"></i></a>
+    <script src="../js/main.js"></script>
+</body>
+</html>

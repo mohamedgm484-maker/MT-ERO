@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John the Ripper | MT ERO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><div class="logo">MT <span>| ERO</span></div><nav><ul><li><a href="../index.html">الرئيسية</a></li><li><a href="../index.html#tools">الأدوات</a></li></ul></nav></header>
+    <div class="tool-page">
+        <a href="../index.html#tools" class="back-btn"><i class="fas fa-arrow-right"></i> رجوع للأدوات</a>
+        <div class="tool-header">
+            <span class="tool-icon-big"><i class="fas fa-unlock-alt"></i></span>
+            <h1>John the Ripper</h1>
+            <p>أداة كسر البصمات (Hashes)</p>
+        </div>
+        <div class="tool-content">
+            <h2><i class="fas fa-book"></i> يعني إيه John؟</h2>
+            <p>John the Ripper هي أداة مفتوحة المصدر لكسر البصمات (Hashes). بتدعم أنواع كتير من البصمات (MD5, SHA1, SHA256, bcrypt, وغيرها). بتستخدم Dictionary Attack و Brute Force.</p>
+            <p>الأداة دي بتعتبر من أقدم وأشهر أدوات كسر الباسوردات — وبتدعم تشغيل على كل الأنظمة.</p>
+
+            <h3><i class="fas fa-check-circle"></i> الاستخدامات</h3>
+            <ul>
+                <li>كسر باسوردات من ملفات مسربة</li>
+                <li>اختبار قوة الباسوردات</li>
+                <li>تحليل ملفات Linux (/etc/shadow)</li>
+                <li>كسر ملفات ZIP و RAR</li>
+            </ul>
+
+            <h2><i class="fas fa-cog"></i> التثبيت</h2>
+            <div class="code-block" data-lang="Kali"><code><span class="comment"># مش متوفر في Termux</span>
+<span class="comment"># على Kali Linux</span>
+sudo apt install john
+
+<span class="comment"># أو من GitHub</span>
+git clone https://github.com/openwall/john.git</code></div>
+
+            <h2><i class="fas fa-bullseye"></i> الأوامر الأساسية</h2>
+
+            <h3>1. كسر بصمة</h3>
+            <div class="code-block" data-lang="Bash"><code>john hash.txt</code></div>
+
+            <h3>2. تحديد نوع البصمة</h3>
+            <div class="code-block" data-lang="Bash"><code>john --format=raw-md5 hash.txt</code></div>
+
+            <h3>3. استخدام قاموس</h3>
+            <div class="code-block" data-lang="Bash"><code>john --wordlist=rockyou.txt hash.txt</code></div>
+
+            <h3>4. عرض النتايج</h3>
+            <div class="code-block" data-lang="Bash"><code>john --show hash.txt</code></div>
+
+            <h3>5. القوة الغاشمة</h3>
+            <div class="code-block" data-lang="Bash"><code>john --incremental hash.txt</code></div>
+
+            <h3>6. كسر ملف ZIP</h3>
+            <div class="code-block" data-lang="Bash"><code>zip2john file.zip > hash.txt
+john hash.txt</code></div>
+
+            <h2><i class="fas fa-list"></i> الخيارات</h2>
+            <ul>
+                <li><code>--wordlist=</code> — قاموس</li>
+                <li><code>--format=</code> — نوع البصمة</li>
+                <li><code>--incremental</code> — قوة غاشمة</li>
+                <li><code>--show</code> — عرض النتايج</li>
+                <li><code>--rules</code> — قواعد للقاموس</li>
+            </ul>
+
+            <div class="info-box warning"><strong><i class="fas fa-exclamation-triangle"></i> تحذير:</strong> استخدم John على بصماتك أو على بيئة تدريب. كسر بصمات حد تاني جريمة.</div>
+
+            <h2><i class="fas fa-dumbbell"></i> تمارين</h2>
+            <ol>
+                <li>اعمل بصمة MD5 لباسوردك</li>
+                <li>حطها في ملف وجرب John</li>
+                <li>جرب John على TryHackMe</li>
+            </ol>
+
+            <h2><i class="fas fa-link"></i> مصادر</h2>
+            <ul>
+                <li><a href="https://www.openwall.com/john/" target="_blank" style="color: #00d4ff;">John Official</a></li>
+                <li><a href="https://tryhackme.com/room/johntheripper0" target="_blank" style="color: #00d4ff;">TryHackMe John</a></li>
+            </ul>
+        </div>
+    </div>
+    <footer><div class="footer-content"><div class="footer-logo">MT ERO</div><p class="copyright">© 2025 MT ERO.</p></div></footer>
+    <a href="https://t.me/Mozex_3" target="_blank" class="telegram-float"><i class="fab fa-telegram"></i></a>
+    <script src="../js/main.js"></script>
+</body>
+</html>

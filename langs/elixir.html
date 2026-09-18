@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elixir | MT ERO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><div class="logo">MT <span>| ERO</span></div><nav><ul><li><a href="../index.html">الرئيسية</a></li><li><a href="../index.html#langs">اللغات</a></li></ul></nav></header>
+    <div class="tool-page">
+        <a href="../index.html#langs" class="back-btn"><i class="fas fa-arrow-right"></i> رجوع للغات</a>
+        <div class="tool-header">
+            <span class="tool-icon-big"><i class="fas fa-flask"></i></span>
+            <h1>Elixir</h1>
+            <p>لغة Functional حديثة</p>
+        </div>
+        <div class="tool-content">
+            <h2><i class="fas fa-book"></i> يعني إيه Elixir؟</h2>
+            <p>Elixir هي لغة برمجة Functional حديثة، بتشتغل على Erlang VM. بتتميز بالتوازي والأداء العالي والتسامح مع الأخطاء.</p>
+            <p>بتستخدمها شركات كتير زي Discord و Pinterest في الأنظمة اللي محتاجة Scale كبير.</p>
+
+            <h2><i class="fas fa-bullseye"></i> الأساسيات</h2>
+
+            <h3>1. البرنامج الأول</h3>
+            <div class="code-block" data-lang="Elixir"><code>IO.puts("Hello World")</code></div>
+
+            <h3>2. المتغيرات</h3>
+            <div class="code-block" data-lang="Elixir"><code>name = "Ahmed"
+age = 25
+salary = 5000.50
+
+IO.puts("أهلاً #{name}")
+IO.puts("عمرك #{age}")</code></div>
+
+            <h3>3. الشروط</h3>
+            <div class="code-block" data-lang="Elixir"><code>age = 20
+
+if age &gt;= 18 do
+    IO.puts("بالغ")
+else
+    IO.puts("طفل")
+end
+
+<span class="comment"># Case</span>
+case age do
+    a when a &gt;= 18 -&gt; IO.puts("بالغ")
+    _ -&gt; IO.puts("طفل")
+end</code></div>
+
+            <h3>4. الحلقات والـ Recursion</h3>
+            <div class="code-block" data-lang="Elixir"><code><span class="comment"># Enum</span>
+Enum.each(1..5, fn i -&gt; IO.puts(i) end)
+
+Enum.map(1..5, fn i -&gt; i * 2 end)
+
+<span class="comment"># Recursion</span>
+defmodule Counter do
+    def count(0), do: nil
+    def count(n) do
+        IO.puts(n)
+        count(n - 1)
+    end
+end</code></div>
+
+            <h3>5. الدوال</h3>
+            <div class="code-block" data-lang="Elixir"><code>defmodule Greet do
+    def hello(name) do
+        "أهلاً #{name}"
+    end
+    
+    def add(a, b), do: a + b
+end
+
+IO.puts(Greet.hello("Ahmed"))
+IO.puts(Greet.add(5, 3))</code></div>
+
+            <h3>6. Modules</h3>
+            <div class="code-block" data-lang="Elixir"><code>defmodule User do
+    defstruct name: "", age: 0
+    
+    def greet(%User{name: name}) do
+        "أهلاً #{name}"
+    end
+end
+
+user = %User{name: "Ahmed", age: 25}
+IO.puts(User.greet(user))</code></div>
+
+            <h2><i class="fas fa-graduation-cap"></i> خطة التعلم</h2>
+
+            <h3>المستوى 1: المبتدئ (شهرين)</h3>
+            <ul>
+                <li>الأساسيات</li>
+                <li>Pattern Matching</li>
+                <li>Modules و Functions</li>
+            </ul>
+
+            <h3>المستوى 2: المتوسط (3 شهور)</h3>
+            <ul>
+                <li>Processes</li>
+                <li>OTP</li>
+                <li>GenServer</li>
+                <li>Mix</li>
+            </ul>
+
+            <h3>المستوى 3: الاحتراف (6 شهور)</h3>
+            <ul>
+                <li>Phoenix Framework</li>
+                <li>Ecto</li>
+                <li>LiveView</li>
+                <li>Distributed Systems</li>
+            </ul>
+
+            <h2><i class="fas fa-link"></i> مصادر</h2>
+            <ul>
+                <li><a href="https://elixir-lang.org/" target="_blank" style="color: #00d4ff;">Elixir Official</a></li>
+                <li><a href="https://elixirschool.com/" target="_blank" style="color: #00d4ff;">Elixir School</a></li>
+            </ul>
+        </div>
+    </div>
+    <footer><div class="footer-content"><div class="footer-logo">MT ERO</div><p class="copyright">© 2025 MT ERO.</p></div></footer>
+    <a href="https://t.me/Mozex_3" target="_blank" class="telegram-float"><i class="fab fa-telegram"></i></a>
+    <script src="../js/main.js"></script>
+</body>
+</html>

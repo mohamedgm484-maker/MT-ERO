@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hashcat | MT ERO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><div class="logo">MT <span>| ERO</span></div><nav><ul><li><a href="../index.html">الرئيسية</a></li><li><a href="../index.html#tools">الأدوات</a></li></ul></nav></header>
+    <div class="tool-page">
+        <a href="../index.html#tools" class="back-btn"><i class="fas fa-arrow-right"></i> رجوع للأدوات</a>
+        <div class="tool-header">
+            <span class="tool-icon-big"><i class="fas fa-bolt"></i></span>
+            <h1>Hashcat</h1>
+            <p>أسرع أداة كسر بصمات (تستخدم GPU)</p>
+        </div>
+        <div class="tool-content">
+            <h2><i class="fas fa-book"></i> يعني إيه Hashcat؟</h2>
+            <p>Hashcat هي أسرع أداة كسر بصمات في العالم. بتستخدم كارت الشاشة (GPU) عشان توصل لسرعات خيالية (مليارات البصمات في الثانية). بتدعم أكتر من 300 نوع بصمة.</p>
+            <p>الأداة دي بتعتبر المعيار في مجال كسر الباسوردات — ومفيش أداة بتنافسها في السرعة.</p>
+
+            <h3><i class="fas fa-check-circle"></i> المميزات</h3>
+            <ul>
+                <li>أسرع أداة كسر بصمات</li>
+                <li>بتستخدم GPU (مش CPU)</li>
+                <li>بتدعم 300+ نوع بصمة</li>
+                <li>Dictionary, Brute Force, Mask, Rules</li>
+                <li>بتشتغل على Windows, Linux, Mac</li>
+            </ul>
+
+            <h2><i class="fas fa-cog"></i> التثبيت</h2>
+            <div class="code-block" data-lang="Kali"><code><span class="comment"># مش هتشتغل على Termux (محتاج GPU)</span>
+<span class="comment"># على Kali Linux</span>
+sudo apt install hashcat
+
+<span class="comment"># على Windows</span>
+<span class="comment">حمّلها من https://hashcat.net/hashcat/</span></code></div>
+
+            <h2><i class="fas fa-bullseye"></i> الأوامر الأساسية</h2>
+
+            <h3>1. Dictionary Attack</h3>
+            <div class="code-block" data-lang="Bash"><code>hashcat -m 0 -a 0 hash.txt rockyou.txt</code></div>
+            <p><strong>-m 0:</strong> نوع MD5 | <strong>-a 0:</strong> Dictionary</p>
+
+            <h3>2. Brute Force</h3>
+            <div class="code-block" data-lang="Bash"><code>hashcat -m 0 -a 3 hash.txt ?a?a?a?a</code></div>
+            <p><strong>-a 3:</strong> Brute Force | <strong>?a:</strong> كل الرموز</p>
+
+            <h3>3. Mask Attack</h3>
+            <div class="code-block" data-lang="Bash"><code>hashcat -m 0 -a 3 hash.txt ?u?l?l?l?d?d?d?d</code></div>
+            <p><strong>?u:</strong> حرف كبير | <strong>?l:</strong> صغير | <strong>?d:</strong> رقم</p>
+
+            <h3>4. عرض النتايج</h3>
+            <div class="code-block" data-lang="Bash"><code>hashcat -m 0 hash.txt --show</code></div>
+
+            <h2><i class="fas fa-list"></i> أنواع البصمات</h2>
+            <ul>
+                <li><code>-m 0</code> — MD5</li>
+                <li><code>-m 100</code> — SHA1</li>
+                <li><code>-m 1400</code> — SHA256</li>
+                <li><code>-m 1700</code> — SHA512</li>
+                <li><code>-m 1000</code> — NTLM</li>
+                <li><code>-m 3200</code> — bcrypt</li>
+                <li><code>-m 2500</code> — WPA/WPA2</li>
+            </ul>
+
+            <h2><i class="fas fa-list"></i> أوضاع الهجوم</h2>
+            <ul>
+                <li><code>-a 0</code> — Dictionary</li>
+                <li><code>-a 1</code> — Combination</li>
+                <li><code>-a 3</code> — Brute Force / Mask</li>
+                <li><code>-a 6</code> — Hybrid Wordlist + Mask</li>
+                <li><code>-a 7</code> — Hybrid Mask + Wordlist</li>
+            </ul>
+
+            <div class="info-box success"><strong><i class="fas fa-bolt"></i> السرعة:</strong> مع RTX 4090، Hashcat بيكسر 100+ مليار MD5/ثانية. مع CPU، بيكسر 100 مليون/ثانية.</div>
+
+            <div class="info-box warning"><strong><i class="fas fa-exclamation-triangle"></i> تحذير:</strong> استخدم Hashcat على بصماتك أو بيئة تدريب. كسر بصمات حد تاني جريمة.</div>
+
+            <h2><i class="fas fa-dumbbell"></i> تمارين</h2>
+            <ol>
+                <li>اعمل بصمة MD5 لباسورد ضعيف</li>
+                <li>جرب Hashcat عليها</li>
+                <li>جرب أنواع بصمات مختلفة</li>
+                <li>جرب Mask Attack</li>
+            </ol>
+
+            <h2><i class="fas fa-link"></i> مصادر</h2>
+            <ul>
+                <li><a href="https://hashcat.net/hashcat/" target="_blank" style="color: #00d4ff;">Hashcat Official</a></li>
+                <li><a href="https://hashcat.net/wiki/" target="_blank" style="color: #00d4ff;">Hashcat Wiki</a></li>
+                <li><a href="https://tryhackme.com/room/hashcat" target="_blank" style="color: #00d4ff;">TryHackMe Hashcat</a></li>
+            </ul>
+        </div>
+    </div>
+    <footer><div class="footer-content"><div class="footer-logo">MT ERO</div><p class="copyright">© 2025 MT ERO.</p></div></footer>
+    <a href="https://t.me/Mozex_3" target="_blank" class="telegram-float"><i class="fab fa-telegram"></i></a>
+    <script src="../js/main.js"></script>
+</body>
+</html>

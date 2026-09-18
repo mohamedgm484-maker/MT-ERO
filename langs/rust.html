@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rust | MT ERO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><div class="logo">MT <span>| ERO</span></div><nav><ul><li><a href="../index.html">الرئيسية</a></li><li><a href="../index.html#langs">اللغات</a></li></ul></nav></header>
+    <div class="tool-page">
+        <a href="../index.html#langs" class="back-btn"><i class="fas fa-arrow-right"></i> رجوع للغات</a>
+        <div class="tool-header">
+            <span class="tool-icon-big"><i class="fas fa-shield-alt"></i></span>
+            <h1>Rust</h1>
+            <p>لغة آمنة وسريعة للأنظمة</p>
+        </div>
+        <div class="tool-content">
+            <h2><i class="fas fa-book"></i> يعني إيه Rust؟</h2>
+            <p>Rust هي لغة برمجة أنظمة (Systems Programming) مفتوحة المصدر، بتتميز بالأمان والسرعة. بتستخدم بدل C++ في مشاريع كتير.</p>
+            <p>بتعتبر الأكثر أماناً في إدارة الذاكرة — وبتستخدمها شركات زي Mozilla و Microsoft و Dropbox.</p>
+
+            <h3><i class="fas fa-check-circle"></i> استخدامات Rust</h3>
+            <ul>
+                <li>أنظمة التشغيل</li>
+                <li>أدوات CLI</li>
+                <li>WebAssembly</li>
+                <li>Blockchain</li>
+                <li>الألعاب</li>
+                <li>الأدوات الأمنية</li>
+            </ul>
+
+            <h2><i class="fas fa-bullseye"></i> الأساسيات</h2>
+
+            <h3>1. البرنامج الأول</h3>
+            <div class="code-block" data-lang="Rust"><code>fn main() {
+    println!("Hello World");
+}</code></div>
+
+            <h3>2. المتغيرات</h3>
+            <div class="code-block" data-lang="Rust"><code><span class="comment">// Immutable</span>
+let name = "Ahmed";
+
+<span class="comment">// Mutable</span>
+let mut age = 25;
+age = 26;
+
+<span class="comment">// Types</span>
+let salary: f64 = 5000.50;
+let is_hacker: bool = true;
+
+println!("{}", name);</code></div>
+
+            <h3>3. الشروط</h3>
+            <div class="code-block" data-lang="Rust"><code>let age = 20;
+
+if age >= 18 {
+    println!("بالغ");
+} else if age >= 13 {
+    println!("مراهق");
+} else {
+    println!("طفل");
+}</code></div>
+
+            <h3>4. الحلقات</h3>
+            <div class="code-block" data-lang="Rust"><code>for i in 0..5 {
+    println!("{}", i);
+}
+
+let mut count = 0;
+while count &lt; 5 {
+    println!("{}", count);
+    count += 1;
+}
+
+let tools = vec!["nmap", "hydra"];
+for tool in &amp;tools {
+    println!("{}", tool);
+}</code></div>
+
+            <h3>5. الدوال</h3>
+            <div class="code-block" data-lang="Rust"><code>fn greet(name: &amp;str) -&gt; String {
+    format!("أهلاً {}", name)
+}
+
+fn add(a: i32, b: i32) -&gt; i32 {
+    a + b
+}
+
+fn main() {
+    println!("{}", greet("Ahmed"));
+    println!("{}", add(5, 3));
+}</code></div>
+
+            <h3>6. Ownership</h3>
+            <div class="code-block" data-lang="Rust"><code>let s1 = String::from("Hello");
+let s2 = s1;  <span class="comment">// s1 moved to s2</span>
+
+<span class="comment">// println!("{}", s1); // خطأ!</span>
+
+<span class="comment">// Cloning</span>
+let s3 = String::from("World");
+let s4 = s3.clone();</code></div>
+
+            <h3>7. Structs</h3>
+            <div class="code-block" data-lang="Rust"><code>struct User {
+    name: String,
+    age: u32,
+}
+
+fn main() {
+    let user = User {
+        name: String::from("Ahmed"),
+        age: 25,
+    };
+    
+    println!("{}", user.name);
+    println!("{}", user.age);
+}</code></div>
+
+            <h2><i class="fas fa-graduation-cap"></i> خطة التعلم</h2>
+
+            <h3>المستوى 1: المبتدئ (شهرين)</h3>
+            <ul>
+                <li>الأساسيات</li>
+                <li>Ownership و Borrowing</li>
+                <li>Structs و Enums</li>
+            </ul>
+
+            <h3>المستوى 2: المتوسط (3 شهور)</h3>
+            <ul>
+                <li>Error Handling</li>
+                <li>Traits</li>
+                <li>Lifetimes</li>
+                <li>Smart Pointers</li>
+            </ul>
+
+            <h3>المستوى 3: الاحتراف (6 شهور)</h3>
+            <ul>
+                <li>Concurrency</li>
+                <li>Async/Await</li>
+                <li>Networking</li>
+                <li>WebAssembly</li>
+            </ul>
+
+            <h2><i class="fas fa-link"></i> مصادر</h2>
+            <ul>
+                <li><a href="https://doc.rust-lang.org/book/" target="_blank" style="color: #00d4ff;">The Rust Book</a></li>
+                <li><a href="https://www.rust-lang.org/learn" target="_blank" style="color: #00d4ff;">Rust Learn</a></li>
+            </ul>
+        </div>
+    </div>
+    <footer><div class="footer-content"><div class="footer-logo">MT ERO</div><p class="copyright">© 2025 MT ERO.</p></div></footer>
+    <a href="https://t.me/Mozex_3" target="_blank" class="telegram-float"><i class="fab fa-telegram"></i></a>
+    <script src="../js/main.js"></script>
+</body>
+</html>

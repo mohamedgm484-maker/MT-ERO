@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL | MT ERO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><div class="logo">MT <span>| ERO</span></div><nav><ul><li><a href="../index.html">الرئيسية</a></li><li><a href="../index.html#langs">اللغات</a></li></ul></nav></header>
+    <div class="tool-page">
+        <a href="../index.html#langs" class="back-btn"><i class="fas fa-arrow-right"></i> رجوع للغات</a>
+        <div class="tool-header">
+            <span class="tool-icon-big"><i class="fas fa-database"></i></span>
+            <h1>SQL</h1>
+            <p>لغة قواعد البيانات</p>
+        </div>
+        <div class="tool-content">
+            <h2><i class="fas fa-book"></i> يعني إيه SQL؟</h2>
+            <p>SQL (Structured Query Language) هي لغة إدارة قواعد البيانات العلائقية. بتستخدمها للتعامل مع البيانات — إضافة، تعديل، حذف، واستعلام.</p>
+            <p>بتعتبر أساسية في الأمن السيبراني — عشان تفهم SQL Injection لازم تكون فاهم SQL كويس.</p>
+
+            <h3><i class="fas fa-check-circle"></i> أنواع قواعد البيانات</h3>
+            <ul>
+                <li>MySQL (الأشهر)</li>
+                <li>PostgreSQL</li>
+                <li>SQLite</li>
+                <li>Oracle</li>
+                <li>SQL Server</li>
+            </ul>
+
+            <h2><i class="fas fa-bullseye"></i> الأساسيات</h2>
+
+            <h3>1. إنشاء قاعدة بيانات</h3>
+            <div class="code-block" data-lang="SQL"><code>CREATE DATABASE mydb;
+USE mydb;</code></div>
+
+            <h3>2. إنشاء جدول</h3>
+            <div class="code-block" data-lang="SQL"><code>CREATE TABLE users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100),
+    email VARCHAR(100),
+    age INT
+);</code></div>
+
+            <h3>3. إدخال بيانات</h3>
+            <div class="code-block" data-lang="SQL"><code>INSERT INTO users (name, email, age)
+VALUES ('Ahmed', 'ahmed@test.com', 25);
+
+INSERT INTO users (name, email, age)
+VALUES 
+    ('Mohamed', 'mo@test.com', 30),
+    ('Sara', 'sara@test.com', 22);</code></div>
+
+            <h3>4. استعلام البيانات</h3>
+            <div class="code-block" data-lang="SQL"><code><span class="comment">-- كل البيانات</span>
+SELECT * FROM users;
+
+<span class="comment">-- أعمدة محددة</span>
+SELECT name, email FROM users;
+
+<span class="comment">-- مع شرط</span>
+SELECT * FROM users WHERE age &gt; 20;
+
+<span class="comment">-- ترتيب</span>
+SELECT * FROM users ORDER BY age DESC;
+
+<span class="comment">-- حد</span>
+SELECT * FROM users LIMIT 10;
+
+<span class="comment">-- بحث</span>
+SELECT * FROM users WHERE name LIKE '%Ahmed%';</code></div>
+
+            <h3>5. تعديل البيانات</h3>
+            <div class="code-block" data-lang="SQL"><code>UPDATE users 
+SET age = 26 
+WHERE name = 'Ahmed';</code></div>
+
+            <h3>6. حذف البيانات</h3>
+            <div class="code-block" data-lang="SQL"><code>DELETE FROM users WHERE id = 1;</code></div>
+
+            <h3>7. الدوال التجميعية</h3>
+            <div class="code-block" data-lang="SQL"><code>SELECT COUNT(*) FROM users;
+SELECT AVG(age) FROM users;
+SELECT MAX(age) FROM users;
+SELECT MIN(age) FROM users;
+SELECT SUM(age) FROM users;</code></div>
+
+            <h3>8. GROUP BY</h3>
+            <div class="code-block" data-lang="SQL"><code>SELECT age, COUNT(*) as count
+FROM users
+GROUP BY age;</code></div>
+
+            <h3>9. JOIN</h3>
+            <div class="code-block" data-lang="SQL"><code><span class="comment">-- INNER JOIN</span>
+SELECT users.name, orders.product
+FROM users
+INNER JOIN orders ON users.id = orders.user_id;
+
+<span class="comment">-- LEFT JOIN</span>
+SELECT users.name, orders.product
+FROM users
+LEFT JOIN orders ON users.id = orders.user_id;</code></div>
+
+            <h2><i class="fas fa-lock"></i> SQL Injection</h2>
+            <p>SQL Injection هي ثغرة أمنية بتحصل لما الموقع بياخد بيانات من المستخدم وبيحطها في استعلام SQL من غير تأمين.</p>
+
+            <div class="code-block" data-lang="SQL"><code><span class="comment">-- استعلام عادي</span>
+SELECT * FROM users 
+WHERE username = 'admin' AND password = '123';
+
+<span class="comment">-- SQL Injection</span>
+SELECT * FROM users 
+WHERE username = 'admin' OR '1'='1' --' AND password = '';</code></div>
+
+            <h2><i class="fas fa-graduation-cap"></i> خطة التعلم</h2>
+
+            <h3>المستوى 1: المبتدئ (شهر)</h3>
+            <ul>
+                <li>SELECT, INSERT, UPDATE, DELETE</li>
+                <li>WHERE, ORDER BY, LIMIT</li>
+                <li>الدوال التجميعية</li>
+            </ul>
+
+            <h3>المستوى 2: المتوسط (شهرين)</h3>
+            <ul>
+                <li>JOINs</li>
+                <li>Subqueries</li>
+                <li>Indexes</li>
+                <li>Views</li>
+            </ul>
+
+            <h3>المستوى 3: الاحتراف (3 شهور)</h3>
+            <ul>
+                <li>Stored Procedures</li>
+                <li>Triggers</li>
+                <li>Optimization</li>
+                <li>NoSQL</li>
+            </ul>
+
+            <h2><i class="fas fa-dumbbell"></i> تمارين</h2>
+            <ol>
+                <li>اعمل قاعدة بيانات متجر</li>
+                <li>اعمل نظام إدارة طلاب</li>
+                <li>جرب SQL Injection على DVWA</li>
+            </ol>
+
+            <h2><i class="fas fa-link"></i> مصادر</h2>
+            <ul>
+                <li><a href="https://www.w3schools.com/sql/" target="_blank" style="color: #00d4ff;">W3Schools SQL</a></li>
+                <li><a href="https://sqlzoo.net/" target="_blank" style="color: #00d4ff;">SQLZoo</a></li>
+            </ul>
+        </div>
+    </div>
+    <footer><div class="footer-content"><div class="footer-logo">MT ERO</div><p class="copyright">© 2025 MT ERO.</p></div></footer>
+    <a href="https://t.me/Mozex_3" target="_blank" class="telegram-float"><i class="fab fa-telegram"></i></a>
+    <script src="../js/main.js"></script>
+</body>
+</html>

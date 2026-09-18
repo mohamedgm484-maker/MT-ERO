@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MT ERO | تعلم الأمن السيبراني والبرمجة</title>
+    <meta name="description" content="منصة تعليمية شاملة للأمن السيبراني وأدوات الهاكر الأخلاقي ولغات البرمجة">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* تأثيرات إضافية للصفحة الرئيسية */
+        
+        /* شريط متحرك في الأعلى */
+        .top-banner {
+            background: linear-gradient(90deg, #00d4ff, #7b2ff7, #ff2d75, #00d4ff);
+            background-size: 300% 100%;
+            color: white;
+            text-align: center;
+            padding: 0.6rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            animation: gradientMove 5s linear infinite;
+            position: relative;
+            z-index: 1001;
+        }
+        
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 300% 50%; }
+        }
+        
+        .top-banner i {
+            margin: 0 0.5rem;
+            animation: pulse 1.5s infinite;
+        }
+        
+        /* كارت الأدوات - تأثير 3D */
+        .tool-card, .lang-card {
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        
+        .tool-card:hover, .lang-card:hover {
+            animation: cardFloat 2s ease-in-out infinite;
+        }
+        
+        @keyframes cardFloat {
+            0%, 100% { transform: translateY(-10px) rotateX(0deg) rotateY(0deg); }
+            25% { transform: translateY(-15px) rotateX(3deg) rotateY(-3deg); }
+            75% { transform: translateY(-15px) rotateX(-3deg) rotateY(3deg); }
+        }
+        
+        /* تأثير الجلو على الأيقونات */
+        .tool-card:hover .tool-icon,
+        .lang-card:hover .lang-icon {
+            animation: iconGlow 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes iconGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(0, 212, 255, 0.4); }
+            50% { box-shadow: 0 0 40px rgba(123, 47, 247, 0.6); }
+        }
+        
+        /* شبكة متحركة في الخلفية */
+        .grid-bg {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: -2;
+            animation: gridMove 20s linear infinite;
+        }
+        
+        @keyframes gridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+        
+        /* عداد الأدوات */
+        .tools-count, .langs-count {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--text-dim);
+            font-size: 1rem;
+        }
+        
+        .tools-count span, .langs-count span {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        
+        /* قسم البحث */
+        .search-box {
+            max-width: 500px;
+            margin: 0 auto 2rem;
+            position: relative;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 1rem 3rem 1rem 1.5rem;
+            border: 2px solid var(--border);
+            border-radius: 50px;
+            background: var(--bg-card);
+            color: var(--text);
+            font-size: 1rem;
+            outline: none;
+            transition: 0.3s;
+        }
+        
+        .search-box input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+        }
+        
+        .search-box i {
+            position: absolute;
+            right: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-dim);
+            font-size: 1.2rem;
+        }
+        
+        /* فلتر الأدوات */
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+        
+        .filter-btn {
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            border: 2px solid var(--border);
+            background: var(--bg-card);
+            color: var(--text-dim);
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 0.9rem;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            border-color: transparent;
+            transform: translateY(-2px);
+        }
+        
+        /* شارة "جديد" */
+        .badge-new {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: linear-gradient(45deg, #00d4ff, #7b2ff7);
+            color: white;
+            padding: 0.2rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            animation: pulse 2s infinite;
+        }
+        
+        /* Hover للأدوات */
+        .tool-card {
+            position: relative;
+        }
+        
+        .tool-card:hover h3 {
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--primary);
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+        
+        /* تأثير الكتابة على العنوان */
+        .hero h1 {
+            position: relative;
+        }
+        
+        .hero h1::after {
+            content: '_';
+            color: var(--primary);
+            animation: blink 1s infinite;
+        }
+        
+        /* كروت مميزة */
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto 4rem;
+        }
+        
+        .featured-card {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(123, 47, 247, 0.1));
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: 0.3s;
+        }
+        
+        .featured-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+        }
+        
+        .featured-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .featured-card h3 {
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+        
+        .featured-card p {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- شبكة الخلفية -->
+    <div class="grid-bg"></div>
+
+    <!-- شريط متحرك -->
+    <div class="top-banner">
+        <i class="fas fa-shield-alt"></i>
+        منصة MT ERO التعليمية — تعلم الأمن السيبراني من الصفر
+        <i class="fas fa-shield-alt"></i>
+    </div>
+
+    <!-- Loader -->
+    <div class="loader-screen">
+        <div class="loader-logo">MT ERO</div>
+        <div class="loader-bar"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">MT <span>| ERO</span></div>
+        <nav>
+            <ul>
+                <li><a href="#tools">الأدوات</a></li>
+                <li><a href="#langs">اللغات</a></li>
+                <li><a href="#about">من أنا</a></li>
+                <li><a href="#contact">تواصل</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>MT ERO</h1>
+        <p class="subtitle">منصة تعليمية شاملة للأمن السيبراني والبرمجة</p>
+        <div class="hero-buttons">
+            <a href="#tools" class="btn btn-primary">
+                <i class="fas fa-tools"></i> تصفح الأدوات
+            </a>
+            <a href="#langs" class="btn btn-outline">
+                <i class="fas fa-code"></i> تعلم اللغات
+            </a>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Featured Section -->
+    <section>
+        <h2 class="section-title">ليه MT ERO؟</h2>
+        <p class="section-subtitle">منصة تعليمية عربية شاملة</p>
+        <div class="featured-grid">
+            <div class="featured-card">
+                <i class="fas fa-book-open"></i>
+                <h3>محتوى عربي</h3>
+                <p>شرح كامل بالعربي لكل أداة ولغة برمجة</p>
+            </div>
+            <div class="featured-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>أمن سيبراني</h3>
+                <p>أدوات الهاكر الأخلاقي مع شرح مفصل</p>
+            </div>
+            <div class="featured-card">
+                <i class="fas fa-code"></i>
+                <h3>لغات برمجة</h3>
+                <p>تعلم من الصفر للاحتراف</p>
+            </div>
+            <div class="featured-card">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>مجاني</h3>
+                <p>كل المحتوى مجاني 100%</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools">
+        <h2 class="section-title">أدوات الهاكر الأخلاقي</h2>
+        <p class="section-subtitle">32 أداة مع شرح مفصل لكل أداة</p>
+        
+        <div class="tools-count">
+            إجمالي الأدوات: <span>32</span> أداة
+        </div>
+        
+        <div class="search-box">
+            <input type="text" id="searchTools" placeholder="ابحث عن أداة...">
+            <i class="fas fa-search"></i>
+        </div>
+        
+        <div class="filter-buttons" id="filterButtons">
+            <button class="filter-btn active" data-filter="all">الكل</button>
+            <button class="filter-btn" data-filter="network">الشبكات</button>
+            <button class="filter-btn" data-filter="web">الويب</button>
+            <button class="filter-btn" data-filter="password">الباسوردات</button>
+            <button class="filter-btn" data-filter="osint">OSINT</button>
+            <button class="filter-btn" data-filter="forensics">Forensics</button>
+            <button class="filter-btn" data-filter="exploit">Exploit</button>
+        </div>
+        
+        <div class="tools-grid" id="toolsGrid">
+            
+            <a href="tools/nmap.html" class="tool-card" data-category="network">
+                <span class="tool-icon"><i class="fas fa-network-wired"></i></span>
+                <h3>Nmap</h3>
+                <p>فحص الشبكات واكتشاف البورتات والخدمات المفتوحة</p>
+                <div class="tool-tags"><span class="tool-tag">Network</span><span class="tool-tag">Scanning</span></div>
+            </a>
+            
+            <a href="tools/wireshark.html" class="tool-card" data-category="network">
+                <span class="tool-icon"><i class="fas fa-satellite-dish"></i></span>
+                <h3>Wireshark</h3>
+                <p>تحليل حزم الشبكة واعتراض البيانات</p>
+                <div class="tool-tags"><span class="tool-tag">Network</span><span class="tool-tag">Analysis</span></div>
+            </a>
+            
+            <a href="tools/metasploit.html" class="tool-card" data-category="exploit">
+                <span class="tool-icon"><i class="fas fa-crosshairs"></i></span>
+                <h3>Metasploit</h3>
+                <p>إطار استغلال الثغرات الأمنية</p>
+                <div class="tool-tags"><span class="tool-tag">Exploit</span><span class="tool-tag">Framework</span></div>
+            </a>
+            
+            <a href="tools/burp.html" class="tool-card" data-category="web">
+                <span class="tool-icon"><i class="fas fa-spider"></i></span>
+                <h3>Burp Suite</h3>
+                <p>اعتراض وتحليل طلبات HTTP/HTTPS</p>
+                <div class="tool-tags"><span class="tool-tag">Web</span><span class="tool-tag">Proxy</span></div>
+            </a>
+            
+            <a href="tools/sqlmap.html" class="tool-card" data-category="web">
+                <span class="tool-icon"><i class="fas fa-database"></i></span>
+                <h3>SQLMap</h3>
+                <p>كشف واستغلال ثغرات SQL Injection</p>
+                <div class="tool-tags"><span class="tool-tag">Web</span><span class="tool-tag">Database</span></div>
+            </a>
+            
+            <a href="tools/hydra.html" class="tool-card" data-category="password">
+                <span class="tool-icon"><i class="fas fa-key"></i></span>
+                <h3>Hydra</h3>
+                <p>كسر باسوردات الخدمات الشبكية</p>
+                <div class="tool-tags"><span class="tool-tag">Password</span><span class="tool-tag">Cracking</span></div>
+            </a>
+            
+            <a href="tools/hashcat.html" class="tool-card" data-category="password">
+                <span class="tool-icon"><i class="fas fa-bolt"></i></span>
+                <h3>Hashcat</h3>
+                <p>أسرع أداة كسر بصمات (تستخدم GPU)</p>
+                <div class="tool-tags"><span class="tool-tag">Password</span><span class="tool-tag">GPU</span></div>
+            </a>
+            
+            <a href="tools/john.html" class="tool-card" data-category="password">
+                <span class="tool-icon"><i class="fas fa-unlock-alt"></i></span>
+                <h3>John the Ripper</h3>
+                <p>كسر البصمات (MD5, SHA, bcrypt)</p>
+                <div class="tool-tags"><span class="tool-tag">Password</span><span class="tool-tag">Hash</span></div>
+            </a>
+            
+            <a href="tools/aircrack.html" class="tool-card" data-category="network">
+                <span class="tool-icon"><i class="fas fa-wifi"></i></span>
+                <h3>Aircrack-ng</h3>
+                <p>كسر شبكات الواي فاي</p>
+                <div class="tool-tags"><span class="tool-tag">Wireless</span></div>
+            </a>
+            
+            <a href="tools/nikto.html" class="tool-card" data-category="web">
+                <span class="tool-icon"><i class="fas fa-bug"></i></span>
+                <h3>Nikto</h3>
+                <p>فحص ثغرات الويب</p>
+                <div class="tool-tags"><span class="tool-tag">Web</span></div>
+            </a>
+            
+            <a href="tools/gobuster.html" class="tool-card" data-category="web">
+                <span class="tool-icon"><i class="fas fa-folder-open"></i></span>
+                <h3>Gobuster</h3>
+                <p>البحث عن مسارات مخفية</p>
+                <div class="tool-tags"><span class="tool-tag">Web</span></div>
+            </a>
+            
+            <a href="tools/netcat.html" class="tool-card" data-category="network">
+                <span class="tool-icon"><i class="fas fa-plug"></i></span>
+                <h3>Netcat</h3>
+                <p>سكين الجيش السويسري للشبكات</p>
+                <div class="tool-tags"><span class="tool-tag">Network</span></div>
+            </a>
+            
+            <a href="tools/tcpdump.html" class="tool-card" data-category="network">
+                <span class="tool-icon"><i class="fas fa-eye"></i></span>
+                <h3>Tcpdump</h3>
+                <p>تحليل حزم الشبكة</p>
+                <div class="tool-tags"><span class="tool-tag">Network</span></div>
+            </a>
+            
+            <a href="tools/theharvester.html" class="tool-card" data-category="osint">
+                <span class="tool-icon"><i class="fas fa-envelope"></i></span>
+                <h3>theHarvester</h3>
+                <p>جمع الإيميلات</p>
+                <div class="tool-tags"><span class="tool-tag">OSINT</span></div>
+            </a>
+            
+            <a href="tools/sherlock.html" class="tool-card" data-category="osint">
+                <span class="tool-icon"><i class="fas fa-user-secret"></i></span>
+                <h3>Sherlock</h3>
+                <p>البحث عن أسماء المستخدمين</p>
+                <div class="tool-tags"><span class="tool-tag">OSINT</span></div>
+            </a>
+            
+            <a href="tools/dnsrecon.html" class="tool-card" data-category="osint">
+                <span class="tool-icon"><i class="fas fa-server"></i></span>
+                <h3>DNSRecon</h3>
+                <p>جمع معلومات DNS</p>
+                <div class="tool-tags"><span class="tool-tag">OSINT</span></div>
+            </a>
+            
+            <a href="tools/sublist3r.html" class="tool-card" data-category="osint">
+                <span class="tool-icon"><i class="fas fa-sitemap"></i></span>
+                <h3>Sublist3r</h3>
+                <p>اكتشاف Subdomains</p>
+                <div class="tool-tags"><span class="tool-tag">Recon</span></div>
+            </a>
+            
+            <a href="tools/wpscan.html" class="tool-card" data-category="web">
+                <span class="tool-icon"><i class="fab fa-wordpress"></i></span>
+                <h3>WPScan</h3>
+                <p>فحص WordPress</p>
+                <div class="tool-tags"><span class="tool-tag">Web</span></div>
+            </a>
+            
+            <a href="tools/ffuf.html" class="tool-card" data-category="web">
+                <span class="tool-icon"><i class="fas fa-bolt"></i></span>
+                <h3>FFUF</h3>
+                <p>Fuzzing سريع</p>
+                <div class="tool-tags"><span class="tool-tag">Web</span></div>
+            </a>
+            
+            <a href="tools/hping3.html" class="tool-card" data-category="network">
+                <span class="tool-icon"><i class="fas fa-wave-square"></i></span>
+                <h3>Hping3</h3>
+                <p>إرسال حزم TCP/IP</p>
+                <div class="tool-tags"><span class="tool-tag">Network</span></div>
+            </a>
+            
+            <a href="tools/medusa.html" class="tool-card" data-category="password">
+                <span class="tool-icon"><i class="fas fa-skull"></i></span>
+                <h3>Medusa</h3>
+                <p>كسر باسوردات سريع</p>
+                <div class="tool-tags"><span class="tool-tag">Password</span></div>
+            </a>
+            
+            <a href="tools/recon-ng.html" class="tool-card" data-category="osint">
+                <span class="tool-icon"><i class="fas fa-search"></i></span>
+                <h3>Recon-ng</h3>
+                <p>إطار OSINT</p>
+                <div class="tool-tags"><span class="tool-tag">OSINT</span></div>
+            </a>
+            
+            <a href="tools/maltego.html" class="tool-card" data-category="osint">
+                <span class="tool-icon"><i class="fas fa-project-diagram"></i></span>
+                <h3>Maltego</h3>
+                <p>تحليل الروابط</p>
+                <div class="tool-tags"><span class="tool-tag">OSINT</span></div>
+            </a>
+            
+            <a href="tools/shodan.html" class="tool-card" data-category="osint">
+                <span class="tool-icon"><i class="fas fa-globe"></i></span>
+                <h3>Shodan</h3>
+                <p>محرك بحث الأجهزة</p>
+                <div class="tool-tags"><span class="tool-tag">OSINT</span></div>
+            </a>
+            
+            <a href="tools/dirb.html" class="tool-card" data-category="web">
+                <span class="tool-icon"><i class="fas fa-folder"></i></span>
+                <h3>Dirb</h3>
+                <p>البحث عن المسارات</p>
+                <div class="tool-tags"><span class="tool-tag">Web</span></div>
+            </a>
+            
+            <a href="tools/social-engineer.html" class="tool-card" data-category="exploit">
+                <span class="tool-icon"><i class="fas fa-user-secret"></i></span>
+                <h3>SET</h3>
+                <p>هجمات الهندسة الاجتماعية</p>
+                <div class="tool-tags"><span class="tool-tag">Social</span></div>
+            </a>
+            
+            <a href="tools/beef.html" class="tool-card" data-category="exploit">
+                <span class="tool-icon"><i class="fas fa-cow"></i></span>
+                <h3>BeEF</h3>
+                <p>Browser Exploitation</p>
+                <div class="tool-tags"><span class="tool-tag">Web</span></div>
+            </a>
+            
+            <a href="tools/searchsploit.html" class="tool-card" data-category="exploit">
+                <span class="tool-icon"><i class="fas fa-search"></i></span>
+                <h3>Searchsploit</h3>
+                <p>البحث في Exploit-DB</p>
+                <div class="tool-tags"><span class="tool-tag">Exploit</span></div>
+            </a>
+            
+            <a href="tools/autopsy.html" class="tool-card" data-category="forensics">
+                <span class="tool-icon"><i class="fas fa-search-plus"></i></span>
+                <h3>Autopsy</h3>
+                <p>التحقيق الجنائي</p>
+                <div class="tool-tags"><span class="tool-tag">Forensics</span></div>
+            </a>
+            
+            <a href="tools/volatility.html" class="tool-card" data-category="forensics">
+                <span class="tool-icon"><i class="fas fa-memory"></i></span>
+                <h3>Volatility</h3>
+                <p>تحليل ذاكرة RAM</p>
+                <div class="tool-tags"><span class="tool-tag">Forensics</span></div>
+            </a>
+            
+            <a href="tools/gophish.html" class="tool-card" data-category="exploit">
+                <span class="tool-icon"><i class="fas fa-fish"></i></span>
+                <h3>GoPhish</h3>
+                <p>اختبار Phishing</p>
+                <div class="tool-tags"><span class="tool-tag">Social</span></div>
+            </a>
+            
+            <a href="tools/maltego-ce.html" class="tool-card" data-category="osint">
+                <span class="tool-icon"><i class="fas fa-network-wired"></i></span>
+                <h3>Maltego CE</h3>
+                <p>الإصدار المجاني من Maltego</p>
+                <div class="tool-tags"><span class="tool-tag">OSINT</span></div>
+            </a>
+            
+        </div>
+    </section>
+
+    <!-- Languages Section -->
+    <section id="langs">
+        <h2 class="section-title">لغات البرمجة</h2>
+        <p class="section-subtitle">24 لغة برمجة مع شرح مفصل</p>
+        
+        <div class="langs-count">
+            إجمالي اللغات: <span>24</span> لغة
+        </div>
+        
+        <div class="search-box">
+            <input type="text" id="searchLangs" placeholder="ابحث عن لغة...">
+            <i class="fas fa-search"></i>
+        </div>
+        
+        <div class="langs-grid" id="langsGrid">
+            
+            <a href="langs/python.html" class="lang-card" data-lang="python">
+                <span class="lang-icon"><i class="fab fa-python"></i></span>
+                <h3>Python</h3>
+                <p>الأساسية في الأمن السيبراني والأتمتة</p>
+                <div class="tool-tags"><span class="tool-tag">Scripting</span><span class="tool-tag">Security</span></div>
+            </a>
+            
+            <a href="langs/javascript.html" class="lang-card" data-lang="javascript">
+                <span class="lang-icon"><i class="fab fa-js"></i></span>
+                <h3>JavaScript</h3>
+                <p>لغة الويب الأساسية — Frontend و Backend</p>
+                <div class="tool-tags"><span class="tool-tag">Web</span><span class="tool-tag">Frontend</span></div>
+            </a>
+            
+            <a href="langs/html.html" class="lang-card" data-lang="html">
+                <span class="lang-icon"><i class="fab fa-html5"></i></span>
+                <h3>HTML</h3>
+                <p>هيكل صفحات الويب</p>
+                <div class="tool-tags"><span class="tool-tag">Web</span><span class="tool-tag">Markup</span></div>
+            </a>
+            
+            <a href="langs/css.html" class="lang-card" data-lang="css">
+                <span class="lang-icon"><i class="fab fa-css3-alt"></i></span>
+                <h3>CSS</h3>
+                <p>تصميم وتنسيق صفحات الويب</p>
+                <div class="tool-tags"><span class="tool-tag">Web</span><span class="tool-tag">Styling</span></div>
+            </a>
+            
+            <a href="langs/cpp.html" class="lang-card" data-lang="cpp">
+                <span class="lang-icon"><i class="fas fa-code"></i></span>
+                <h3>C++</h3>
+                <p>لغة قوية للأنظمة والألعاب</p>
+                <div class="tool-tags"><span class="tool-tag">Systems</span><span class="tool-tag">Performance</span></div>
+            </a>
+            
+            <a href="langs/java.html" class="lang-card" data-lang="java">
+                <span class="lang-icon"><i class="fab fa-java"></i></span>
+                <h3>Java</h3>
+                <p>لغة الأنظمة الكبيرة والأندرويد</p>
+                <div class="tool-tags"><span class="tool-tag">Enterprise</span><span class="tool-tag">Android</span></div>
+            </a>
+            
+            <a href="langs/bash.html" class="lang-card" data-lang="bash">
+                <span class="lang-icon"><i class="fas fa-terminal"></i></span>
+                <h3>Bash</h3>
+                <p>لغة الطرفية الأساسية في Linux</p>
+                <div class="tool-tags"><span class="tool-tag">Linux</span><span class="tool-tag">Shell</span></div>
+            </a>
+            
+            <a href="langs/sql.html" class="lang-card" data-lang="sql">
+                <span class="lang-icon"><i class="fas fa-database"></i></span>
+                <h3>SQL</h3>
+                <p>لغة قواعد البيانات</p>
+                <div class="tool-tags"><span class="tool-tag">Database</span><span class="tool-tag">Query</span></div>
+            </a>
+            
+            <a href="langs/php.html" class="lang-card" data-lang="php">
+                <span class="lang-icon"><i class="fab fa-php"></i></span>
+                <h3>PHP</h3>
+                <p>لغة تطوير الويب من جهة السيرفر</p>
+                <div class="tool-tags"><span class="tool-tag">Web</span><span class="tool-tag">Backend</span></div>
+            </a>
+            
+            <a href="langs/ruby.html" class="lang-card" data-lang="ruby">
+                <span class="lang-icon"><i class="fas fa-gem"></i></span>
+                <h3>Ruby</h3>
+                <p>لغة برمجة أنيقة وسهلة</p>
+                <div class="tool-tags"><span class="tool-tag">Web</span><span class="tool-tag">Rails</span></div>
+            </a>
+            
+            <a href="langs/go.html" class="lang-card" data-lang="go">
+                <span class="lang-icon"><i class="fas fa-rocket"></i></span>
+                <h3>Go</h3>
+                <p>لغة سريعة وبسيطة من Google</p>
+                <div class="tool-tags"><span class="tool-tag">Backend</span><span class="tool-tag">CLI</span></div>
+            </a>
+            
+            <a href="langs/rust.html" class="lang-card" data-lang="rust">
+                <span class="lang-icon"><i class="fas fa-shield-alt"></i></span>
+                <h3>Rust</h3>
+                <p>لغة آمنة وسريعة للأنظمة</p>
+                <div class="tool-tags"><span class="tool-tag">Systems</span><span class="tool-tag">Safety</span></div>
+            </a>
+            
+            <a href="langs/csharp.html" class="lang-card" data-lang="csharp">
+                <span class="lang-icon"><i class="fas fa-hashtag"></i></span>
+                <h3>C#</h3>
+                <p>لغة Microsoft لتطوير التطبيقات</p>
+                <div class="tool-tags"><span class="tool-tag">.NET</span><span class="tool-tag">Unity</span></div>
+            </a>
+            
+            <a href="langs/swift.html" class="lang-card" data-lang="swift">
+                <span class="lang-icon"><i class="fab fa-swift"></i></span>
+                <h3>Swift</h3>
+                <p>لغة Apple لتطوير iOS و macOS</p>
+                <div class="tool-tags"><span class="tool-tag">iOS</span><span class="tool-tag">macOS</span></div>
+            </a>
+            
+            <a href="langs/kotlin.html" class="lang-card" data-lang="kotlin">
+                <span class="lang-icon"><i class="fas fa-mobile-alt"></i></span>
+                <h3>Kotlin</h3>
+                <p>لغة Android الرسمية</p>
+                <div class="tool-tags"><span class="tool-tag">Android</span><span class="tool-tag">JVM</span></div>
+            </a>
+            
+            <a href="langs/typescript.html" class="lang-card" data-lang="typescript">
+                <span class="lang-icon"><i class="fas fa-code"></i></span>
+                <h3>TypeScript</h3>
+                <p>JavaScript مع أنواع</p>
+                <div class="tool-tags"><span class="tool-tag">Web</span><span class="tool-tag">Typed</span></div>
+            </a>
+            
+            <a href="langs/c.html" class="lang-card" data-lang="c">
+                <span class="lang-icon"><i class="fas fa-copyright"></i></span>
+                <h3>C</h3>
+                <p>أم اللغات — أساس الأنظمة</p>
+                <div class="tool-tags"><span class="tool-tag">Systems</span><span class="tool-tag">Low-level</span></div>
+            </a>
+            
+            <a href="langs/r.html" class="lang-card" data-lang="r">
+                <span class="lang-icon"><i class="fas fa-chart-line"></i></span>
+                <h3>R</h3>
+                <p>لغة تحليل البيانات والإحصاء</p>
+                <div class="tool-tags"><span class="tool-tag">Data</span><span class="tool-tag">Stats</span></div>
+            </a>
+            
+            <a href="langs/perl.html" class="lang-card" data-lang="perl">
+                <span class="lang-icon"><i class="fas fa-camel"></i></span>
+                <h3>Perl</h3>
+                <p>لغة معالجة النصوص والأتمتة</p>
+                <div class="tool-tags"><span class="tool-tag">Scripting</span><span class="tool-tag">Text</span></div>
+            </a>
+            
+            <a href="langs/scala.html" class="lang-card" data-lang="scala">
+                <span class="lang-icon"><i class="fas fa-layer-group"></i></span>
+                <h3>Scala</h3>
+                <p>لغة قوية لمعالجة البيانات الكبيرة</p>
+                <div class="tool-tags"><span class="tool-tag">Big Data</span><span class="tool-tag">JVM</span></div>
+            </a>
+            
+            <a href="langs/dart.html" class="lang-card" data-lang="dart">
+                <span class="lang-icon"><i class="fas fa-mobile"></i></span>
+                <h3>Dart</h3>
+                <p>لغة Flutter لتطوير الموبايل</p>
+                <div class="tool-tags"><span class="tool-tag">Mobile</span><span class="tool-tag">Flutter</span></div>
+            </a>
+            
+            <a href="langs/elixir.html" class="lang-card" data-lang="elixir">
+                <span class="lang-icon"><i class="fas fa-flask"></i></span>
+                <h3>Elixir</h3>
+                <p>لغة Functional حديثة</p>
+                <div class="tool-tags"><span class="tool-tag">Functional</span><span class="tool-tag">Scalable</span></div>
+            </a>
+            
+            <a href="langs/lua.html" class="lang-card" data-lang="lua">
+                <span class="lang-icon"><i class="fas fa-moon"></i></span>
+                <h3>Lua</h3>
+                <p>لغة خفيفة لـ Scripting</p>
+                <div class="tool-tags"><span class="tool-tag">Scripting</span><span class="tool-tag">Games</span></div>
+            </a>
+            
+            <a href="langs/matlab.html" class="lang-card" data-lang="matlab">
+                <span class="lang-icon"><i class="fas fa-square-root-alt"></i></span>
+                <h3>MATLAB</h3>
+                <p>لغة الحسابات الهندسية</p>
+                <div class="tool-tags"><span class="tool-tag">Math</span><span class="tool-tag">Engineering</span></div>
+            </a>
+            
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">من أنا</h2>
+        <div class="tool-content" style="max-width: 800px; margin: 0 auto;">
+            <p>أنا متعلم أمن سيبراني بدأت من الصفر. اتعلمت من صفر، وبستخدم Termux و Python. هدفي أشارك اللي اتعلمته وأساعد الناس تبدأ صح من غير ما تضيع وقت.</p>
+            <p>موقع MT ERO هو منصة تعليمية شاملة بتقدم شرح مفصل لكل أدوات الهاكر الأخلاقي ولغات البرمجة — بالعربي.</p>
+            <div class="info-box info">
+                <strong>ملحوظة:</strong> كل الأدوات دي للتعلم. متستخدمهاش على أي حاجة مش بتاعتك.
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">تواصل معي</h2>
+        <p class="section-subtitle">عندك سؤال؟ اقتراح؟ تواصل معي</p>
+        <div class="footer-links" style="justify-content: center; margin-top: 2rem;">
+            <a href="https://t.me/Mozex_3" target="_blank"><i class="fab fa-telegram"></i> Telegram: @Mozex_3</a>
+            <a href="mailto:mohamedgm484@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">MT ERO</div>
+            <p style="color: #a0a0b8;">منصة تعليمية للأمن السيبراني والبرمجة</p>
+            <div class="footer-links">
+                <a href="#tools">الأدوات</a>
+                <a href="#langs">اللغات</a>
+                <a href="#about">من أنا</a>
+                <a href="#contact">تواصل</a>
+            </div>
+            <p class="copyright">© 2025 MT ERO. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <!-- Telegram Floating Button -->
+    <a href="https://t.me/Mozex_3" target="_blank" class="telegram-float" title="تواصل معي على تيليجرام">
+        <i class="fab fa-telegram"></i>
+    </a>
+
+    <script src="js/main.js"></script>
+    
+    <script>
+        // Search Tools
+        const searchTools = document.getElementById('searchTools');
+        if (searchTools) {
+            searchTools.addEventListener('input', function() {
+                const query = this.value.toLowerCase();
+                document.querySelectorAll('#toolsGrid .tool-card').forEach(card => {
+                    const text = card.textContent.toLowerCase();
+                    card.style.display = text.includes(query) ? 'block' : 'none';
+                });
+            });
+        }
+        
+        // Search Langs
+        const searchLangs = document.getElementById('searchLangs');
+        if (searchLangs) {
+            searchLangs.addEventListener('input', function() {
+                const query = this.value.toLowerCase();
+                document.querySelectorAll('#langsGrid .lang-card').forEach(card => {
+                    const text = card.textContent.toLowerCase();
+                    card.style.display = text.includes(query) ? 'block' : 'none';
+                });
+            });
+        }
+        
+        // Filter Tools
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                const filter = this.dataset.filter;
+                document.querySelectorAll('#toolsGrid .tool-card').forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Scroll Indicator
+        document.querySelector('.scroll-indicator')?.addEventListener('click', () => {
+            document.getElementById('tools')?.scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

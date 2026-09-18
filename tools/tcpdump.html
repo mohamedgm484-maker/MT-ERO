@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tcpdump | MT ERO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><div class="logo">MT <span>| ERO</span></div><nav><ul><li><a href="../index.html">الرئيسية</a></li><li><a href="../index.html#tools">الأدوات</a></li></ul></nav></header>
+    <div class="tool-page">
+        <a href="../index.html#tools" class="back-btn"><i class="fas fa-arrow-right"></i> رجوع للأدوات</a>
+        <div class="tool-header">
+            <span class="tool-icon-big"><i class="fas fa-eye"></i></span>
+            <h1>Tcpdump</h1>
+            <p>أداة التقاط وتحليل حزم الشبكة</p>
+        </div>
+        <div class="tool-content">
+            <h2><i class="fas fa-book"></i> يعني إيه Tcpdump؟</h2>
+            <p>Tcpdump هي أداة سطر أوامر لالتقاط وتحليل حزم الشبكة. بتستخدمها لمراقبة الشبكة، تشخيص المشاكل، وتحليل البروتوكولات.</p>
+            <p>الأداة دي بتعتبر البديل الخفيف لـ Wireshark — وبتشتغل على كل أنظمة Unix/Linux.</p>
+
+            <h2><i class="fas fa-cog"></i> التثبيت</h2>
+            <div class="code-block" data-lang="Termux"><code>pkg install tcpdump -y
+tcpdump --version</code></div>
+
+            <h2><i class="fas fa-bullseye"></i> الأوامر الأساسية</h2>
+
+            <h3>1. اعرض كل الحزم</h3>
+            <div class="code-block" data-lang="Bash"><code>tcpdump</code></div>
+
+            <h3>2. اعرض واجهة معينة</h3>
+            <div class="code-block" data-lang="Bash"><code>tcpdump -i wlan0</code></div>
+
+            <h3>3. احفظ في ملف</h3>
+            <div class="code-block" data-lang="Bash"><code>tcpdump -i wlan0 -w capture.pcap</code></div>
+
+            <h3>4. فلتر حسب IP</h3>
+            <div class="code-block" data-lang="Bash"><code>tcpdump -i wlan0 host 192.168.1.1</code></div>
+
+            <h3>5. فلتر حسب البورت</h3>
+            <div class="code-block" data-lang="Bash"><code>tcpdump -i wlan0 port 80</code></div>
+
+            <div class="info-box warning"><strong><i class="fas fa-exclamation-triangle"></i> تحذير:</strong> استخدم Tcpdump على شبكتك بس.</div>
+
+            <h2><i class="fas fa-dumbbell"></i> تمارين</h2>
+            <ol>
+                <li>شغّل tcpdump على واجهة wlan0</li>
+                <li>افتح موقع وشوف الحزم</li>
+                <li>فلتر حسب IP الراوتر</li>
+            </ol>
+
+            <h2><i class="fas fa-link"></i> مصادر</h2>
+            <ul>
+                <li><a href="https://www.tcpdump.org/" target="_blank" style="color: #00d4ff;">Tcpdump Official</a></li>
+            </ul>
+        </div>
+    </div>
+    <footer><div class="footer-content"><div class="footer-logo">MT ERO</div><p class="copyright">© 2025 MT ERO.</p></div></footer>
+    <a href="https://t.me/Mozex_3" target="_blank" class="telegram-float"><i class="fab fa-telegram"></i></a>
+    <script src="../js/main.js"></script>
+</body>
+</html>

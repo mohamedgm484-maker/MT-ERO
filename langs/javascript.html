@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript | MT ERO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><div class="logo">MT <span>| ERO</span></div><nav><ul><li><a href="../index.html">الرئيسية</a></li><li><a href="../index.html#langs">اللغات</a></li></ul></nav></header>
+    <div class="tool-page">
+        <a href="../index.html#langs" class="back-btn"><i class="fas fa-arrow-right"></i> رجوع للغات</a>
+        <div class="tool-header">
+            <span class="tool-icon-big"><i class="fab fa-js"></i></span>
+            <h1>JavaScript</h1>
+            <p>لغة الويب الأساسية — Frontend و Backend</p>
+        </div>
+        <div class="tool-content">
+            <h2><i class="fas fa-book"></i> يعني إيه JavaScript؟</h2>
+            <p>JavaScript هي لغة برمجة بتشتغل في المتصفح والسيرفر. بتستخدمها لعمل صفحات ويب تفاعلية، تطبيقات ويب كاملة، وتطبيقات موبايل.</p>
+            <p>بتعتبر اللغة الأكتر استخداماً في العالم — وكل موقع بيستخدمها. وكمان بتستخدمها في الأمن السيبراني لفهم XSS وCSRF.</p>
+
+            <h3><i class="fas fa-check-circle"></i> استخدامات JavaScript</h3>
+            <ul>
+                <li>تطوير الويب (Frontend)</li>
+                <li>تطوير السيرفرات (Node.js)</li>
+                <li>تطبيقات الموبايل (React Native)</li>
+                <li>تطبيقات الديسكتوب (Electron)</li>
+                <li>الألعاب (Phaser)</li>
+                <li>الأمن السيبراني (XSS Analysis)</li>
+            </ul>
+
+            <h2><i class="fas fa-cog"></i> التثبيت</h2>
+            <div class="code-block" data-lang="Termux"><code><span class="comment"># على Termux (Node.js)</span>
+pkg install nodejs -y
+
+node --version
+npm --version</code></div>
+
+            <h2><i class="fas fa-bullseye"></i> الأساسيات</h2>
+
+            <h3>1. المتغيرات</h3>
+            <div class="code-block" data-lang="JavaScript"><code><span class="comment">// let - متغير قابل للتغيير</span>
+let name = "Ahmed";
+
+<span class="comment">// const - ثابت</span>
+const PI = 3.14;
+
+<span class="comment">// var - قديم (متستخدمهوش)</span>
+var old = "old";
+
+console.log(name);
+console.log(PI);</code></div>
+
+            <h3>2. أنواع البيانات</h3>
+            <div class="code-block" data-lang="JavaScript"><code>let string = "Hello";
+let number = 42;
+let decimal = 3.14;
+let boolean = true;
+let array = [1, 2, 3];
+let object = {name: "Ahmed", age: 25};
+let nothing = null;
+let undef = undefined;</code></div>
+
+            <h3>3. الشروط</h3>
+            <div class="code-block" data-lang="JavaScript"><code>let password = "123456";
+
+if (password.length < 8) {
+    console.log("ضعيف");
+} else if (password.length < 12) {
+    console.log("متوسط");
+} else {
+    console.log("قوي");
+}</code></div>
+
+            <h3>4. الحلقات</h3>
+            <div class="code-block" data-lang="JavaScript"><code><span class="comment">// for</span>
+for (let i = 0; i < 5; i++) {
+    console.log(i);
+}
+
+<span class="comment">// while</span>
+let count = 0;
+while (count < 5) {
+    console.log(count);
+    count++;
+}
+
+<span class="comment">// forEach</span>
+let tools = ["nmap", "hydra"];
+tools.forEach(tool => console.log(tool));</code></div>
+
+            <h3>5. الدوال</h3>
+            <div class="code-block" data-lang="JavaScript"><code><span class="comment">// دالة عادية</span>
+function greet(name) {
+    return "أهلاً " + name;
+}
+
+<span class="comment">// Arrow Function</span>
+const greet2 = (name) => "أهلاً " + name;
+
+console.log(greet("Ahmed"));
+console.log(greet2("Mohamed"));</code></div>
+
+            <h3>6. الـ DOM</h3>
+            <div class="code-block" data-lang="JavaScript"><code><span class="comment">// اختيار عنصر</span>
+const element = document.getElementById("myId");
+const elements = document.querySelectorAll(".myClass");
+
+<span class="comment">// تغيير النص</span>
+element.textContent = "نص جديد";
+
+<span class="comment">// تغيير الـ HTML</span>
+element.innerHTML = "&lt;b&gt;نص عريض&lt;/b&gt;";
+
+<span class="comment">// تغيير الستايل</span>
+element.style.color = "red";
+
+<span class="comment">// إضافة حدث</span>
+element.addEventListener("click", () => {
+    alert("تم الضغط");
+});</code></div>
+
+            <h3>7. Promises و Async/Await</h3>
+            <div class="code-block" data-lang="JavaScript"><code><span class="comment">// Promise</span>
+fetch("https://api.github.com")
+    .then(response => response.json())
+    .then(data => console.log(data));
+
+<span class="comment">// Async/Await</span>
+async function getData() {
+    const response = await fetch("https://api.github.com");
+    const data = await response.json();
+    console.log(data);
+}
+
+getData();</code></div>
+
+            <h2><i class="fas fa-lock"></i> مكتبات مهمة</h2>
+
+            <h3>1. React</h3>
+            <div class="code-block" data-lang="JavaScript"><code>import React from 'react';
+
+function App() {
+    const [count, setCount] = React.useState(0);
+    
+    return (
+        &lt;div&gt;
+            &lt;h1&gt;{count}&lt;/h1&gt;
+            &lt;button onClick={() => setCount(count + 1)}&gt;
+                زيادة
+            &lt;/button&gt;
+        &lt;/div&gt;
+    );
+}</code></div>
+
+            <h3>2. Node.js</h3>
+            <div class="code-block" data-lang="JavaScript"><code>const http = require('http');
+
+const server = http.createServer((req, res) => {
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.end('Hello World');
+});
+
+server.listen(3000);</code></div>
+
+            <h3>3. Express.js</h3>
+            <div class="code-block" data-lang="JavaScript"><code>const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+    res.send('Hello World');
+});
+
+app.listen(3000);</code></div>
+
+            <h2><i class="fas fa-graduation-cap"></i> خطة التعلم</h2>
+
+            <h3>المستوى 1: المبتدئ (شهر)</h3>
+            <ul>
+                <li>الأساسيات: Variables, Functions</li>
+                <li>Arrays و Objects</li>
+                <li>DOM Manipulation</li>
+                <li>Events</li>
+            </ul>
+
+            <h3>المستوى 2: المتوسط (2-3 شهور)</h3>
+            <ul>
+                <li>ES6+ (Arrow, Destructuring, Spread)</li>
+                <li>Promises و Async/Await</li>
+                <li>Fetch API</li>
+                <li>Local Storage</li>
+            </ul>
+
+            <h3>المستوى 3: المتقدم (6 شهور)</h3>
+            <ul>
+                <li>React/Vue/Angular</li>
+                <li>Node.js + Express</li>
+                <li>MongoDB + Mongoose</li>
+                <li>JWT Authentication</li>
+            </ul>
+
+            <h3>المستوى 4: الاحتراف (سنة+)</h3>
+            <ul>
+                <li>TypeScript</li>
+                <li>Next.js</li>
+                <li>GraphQL</li>
+                <li>Testing (Jest)</li>
+                <li>Docker</li>
+            </ul>
+
+            <h2><i class="fas fa-dumbbell"></i> تمارين</h2>
+            <ol>
+                <li>اكتب آلة حاسبة بسيطة</li>
+                <li>اعمل To-Do List</li>
+                <li>اعمل Weather App بـ API</li>
+                <li>اعمل Chat App</li>
+            </ol>
+
+            <h2><i class="fas fa-link"></i> مصادر</h2>
+            <ul>
+                <li><a href="https://www.w3schools.com/js/" target="_blank" style="color: #00d4ff;">W3Schools JavaScript</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" style="color: #00d4ff;">MDN JavaScript</a></li>
+                <li><a href="https://javascript.info/" target="_blank" style="color: #00d4ff;">JavaScript.info</a></li>
+                <li><a href="https://elzero.org/category/courses/javascript-bootcamp/" target="_blank" style="color: #00d4ff;">Elzero JavaScript (عربي)</a></li>
+            </ul>
+        </div>
+    </div>
+    <footer><div class="footer-content"><div class="footer-logo">MT ERO</div><p class="copyright">© 2025 MT ERO.</p></div></footer>
+    <a href="https://t.me/Mozex_3" target="_blank" class="telegram-float"><i class="fab fa-telegram"></i></a>
+    <script src="../js/main.js"></script>
+</body>
+</html>

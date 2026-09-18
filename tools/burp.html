@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burp Suite | MT ERO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><div class="logo">MT <span>| ERO</span></div><nav><ul><li><a href="../index.html">الرئيسية</a></li><li><a href="../index.html#tools">الأدوات</a></li></ul></nav></header>
+    <div class="tool-page">
+        <a href="../index.html#tools" class="back-btn"><i class="fas fa-arrow-right"></i> رجوع للأدوات</a>
+        <div class="tool-header">
+            <span class="tool-icon-big"><i class="fas fa-spider"></i></span>
+            <h1>Burp Suite</h1>
+            <p>أداة اعتراض وتحليل طلبات HTTP/HTTPS</p>
+        </div>
+        <div class="tool-content">
+            <h2><i class="fas fa-book"></i> يعني إيه Burp Suite؟</h2>
+            <p>Burp Suite هي أداة اختبار اختراق لتطبيقات الويب. بتشتغل كـ Proxy بين المتصفح والسيرفر، بتعترض كل الطلبات والردود وتخليك تعدل فيها وتحللها.</p>
+            <p>الأداة دي بتعتبر الأهم في مجال Web Application Security — وأي مختبر اختراق محترف لازم يتقنها. وبتستخدمها شركات كتير في اختبار مواقعها.</p>
+
+            <h3><i class="fas fa-check-circle"></i> المكونات</h3>
+            <ul>
+                <li><strong>Proxy:</strong> اعتراض الطلبات</li>
+                <li><strong>Repeater:</strong> إعادة إرسال الطلبات</li>
+                <li><strong>Intruder:</strong> هجمات أوتوماتيكية</li>
+                <li><strong>Scanner:</strong> فحص الثغرات (Pro)</li>
+                <li><strong>Decoder:</strong> تشفير/فك تشفير</li>
+                <li><strong>Comparer:</strong> مقارنة</li>
+            </ul>
+
+            <h2><i class="fas fa-cog"></i> التثبيت</h2>
+            <div class="code-block" data-lang="Kali"><code><span class="comment"># Burp مش بيشتغل على Termux</span>
+<span class="comment"># على Kali Linux (مثبت أصلاً)</span>
+burpsuite
+
+<span class="comment"># أو حمّله من</span>
+<span class="comment">https://portswigger.net/burp/communitydownload</span></code></div>
+
+            <h2><i class="fas fa-bullseye"></i> الخطوات</h2>
+            <h3>1. تشغيل Burp</h3>
+            <p>افتح Burp Suite → Temporary Project → Start Burp</p>
+
+            <h3>2. إعداد الـ Proxy</h3>
+            <p>Proxy → Options → تأكد إن البورت 8080</p>
+
+            <h3>3. إعداد المتصفح</h3>
+            <p>في المتصفح: اضبط الـ Proxy على 127.0.0.1:8080</p>
+
+            <h3>4. تفعيل شهادة SSL</h3>
+            <p>افتح http://burp → تحميل الشهادة → إضافتها للمتصفح</p>
+
+            <h3>5. اعتراض الطلبات</h3>
+            <p>Proxy → Intercept → On</p>
+
+            <h3>6. تحليل الطلبات</h3>
+            <p>شوف الطلبات في HTTP History</p>
+
+            <h2><i class="fas fa-list"></i> المميزات الرئيسية</h2>
+            <ul>
+                <li><strong>Intercept:</strong> اعتراض وتعديل الطلبات</li>
+                <li><strong>Repeater:</strong> تجربة الطلبات مرات كتير</li>
+                <li><strong>Intruder:</strong> هجمات Brute Force</li>
+                <li><strong>Decoder:</strong> فك تشفير Base64, URL</li>
+                <li><strong>Comparer:</strong> مقارنة ردود</li>
+            </ul>
+
+            <div class="info-box info"><strong><i class="fas fa-info-circle"></i> ملحوظة:</strong> Burp Suite Community Edition مجاني. Pro بفلوس (399$/سنة).</div>
+
+            <div class="info-box warning"><strong><i class="fas fa-exclamation-triangle"></i> تحذير:</strong> متستخدمش Burp على مواقع مش بتاعتك.</div>
+
+            <h2><i class="fas fa-dumbbell"></i> تمارين</h2>
+            <ol>
+                <li>سجّل في PortSwigger Academy</li>
+                <li>جرب Burp على DVWA</li>
+                <li>اتعلم Repeater</li>
+                <li>اتعلم Intruder</li>
+            </ol>
+
+            <h2><i class="fas fa-link"></i> مصادر</h2>
+            <ul>
+                <li><a href="https://portswigger.net/burp/documentation" target="_blank" style="color: #00d4ff;">Burp Docs</a></li>
+                <li><a href="https://portswigger.net/web-security" target="_blank" style="color: #00d4ff;">PortSwigger Academy</a></li>
+            </ul>
+        </div>
+    </div>
+    <footer><div class="footer-content"><div class="footer-logo">MT ERO</div><p class="copyright">© 2025 MT ERO.</p></div></footer>
+    <a href="https://t.me/Mozex_3" target="_blank" class="telegram-float"><i class="fab fa-telegram"></i></a>
+    <script src="../js/main.js"></script>
+</body>
+</html>

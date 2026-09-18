@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruby | MT ERO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><div class="logo">MT <span>| ERO</span></div><nav><ul><li><a href="../index.html">الرئيسية</a></li><li><a href="../index.html#langs">اللغات</a></li></ul></nav></header>
+    <div class="tool-page">
+        <a href="../index.html#langs" class="back-btn"><i class="fas fa-arrow-right"></i> رجوع للغات</a>
+        <div class="tool-header">
+            <span class="tool-icon-big"><i class="fas fa-gem"></i></span>
+            <h1>Ruby</h1>
+            <p>لغة برمجة أنيقة وسهلة</p>
+        </div>
+        <div class="tool-content">
+            <h2><i class="fas fa-book"></i> يعني إيه Ruby؟</h2>
+            <p>Ruby هي لغة برمجة ديناميكية، مفتوحة المصدر، ومركزة على البساطة والإنتاجية. بتستخدم في تطوير الويب (Ruby on Rails) وكتابة السكربتات.</p>
+            <p>بتعتبر من أجمل اللغات في القراءة — وكودها قريب من اللغة الإنجليزية.</p>
+
+            <h3><i class="fas fa-check-circle"></i> استخدامات Ruby</h3>
+            <ul>
+                <li>تطوير الويب (Rails)</li>
+                <li>كتابة سكربتات</li>
+                <li>الأتمتة</li>
+                <li>أدوات الأمن السيبراني (Metasploit مكتوب بـ Ruby)</li>
+            </ul>
+
+            <h2><i class="fas fa-bullseye"></i> الأساسيات</h2>
+
+            <h3>1. البرنامج الأول</h3>
+            <div class="code-block" data-lang="Ruby"><code>puts "Hello World"</code></div>
+
+            <h3>2. المتغيرات</h3>
+            <div class="code-block" data-lang="Ruby"><code>name = "Ahmed"
+age = 25
+salary = 5000.50
+is_hacker = true
+
+puts "أهلاً #{name}"
+puts "عمرك #{age}"</code></div>
+
+            <h3>3. الشروط</h3>
+            <div class="code-block" data-lang="Ruby"><code>age = 20
+
+if age >= 18
+    puts "بالغ"
+elsif age >= 13
+    puts "مراهق"
+else
+    puts "طفل"
+end</code></div>
+
+            <h3>4. الحلقات</h3>
+            <div class="code-block" data-lang="Ruby"><code><span class="comment"># for</span>
+for i in 0...5
+    puts i
+end
+
+<span class="comment"># each</span>
+tools = ["nmap", "hydra"]
+tools.each do |tool|
+    puts tool
+end
+
+<span class="comment"># while</span>
+count = 0
+while count &lt; 5
+    puts count
+    count += 1
+end</code></div>
+
+            <h3>5. الدوال</h3>
+            <div class="code-block" data-lang="Ruby"><code>def greet(name)
+    "أهلاً #{name}"
+end
+
+def add(a, b)
+    a + b
+end
+
+puts greet("Ahmed")
+puts add(5, 3)</code></div>
+
+            <h3>6. الكلاسات (OOP)</h3>
+            <div class="code-block" data-lang="Ruby"><code>class User
+    def initialize(name, age)
+        @name = name
+        @age = age
+    end
+    
+    def greet
+        "أهلاً #{@name}"
+    end
+end
+
+user = User.new("Ahmed", 25)
+puts user.greet</code></div>
+
+            <h3>7. المصفوفات والهاش</h3>
+            <div class="code-block" data-lang="Ruby"><code>tools = ["nmap", "hydra", "sqlmap"]
+user = {
+    "name" =&gt; "Ahmed",
+    "age" =&gt; 25
+}
+
+puts tools[0]
+puts user["name"]
+
+<span class="comment"># Symbol keys</span>
+user = { name: "Ahmed", age: 25 }
+puts user[:name]</code></div>
+
+            <h2><i class="fas fa-graduation-cap"></i> خطة التعلم</h2>
+
+            <h3>المستوى 1: المبتدئ (شهر)</h3>
+            <ul>
+                <li>الأساسيات</li>
+                <li>Arrays و Hashes</li>
+                <li>Methods</li>
+            </ul>
+
+            <h3>المستوى 2: المتوسط (2-3 شهور)</h3>
+            <ul>
+                <li>OOP</li>
+                <li>Modules</li>
+                <li>Blocks و Procs</li>
+                <li>File I/O</li>
+            </ul>
+
+            <h3>المستوى 3: الاحتراف (6 شهور)</h3>
+            <ul>
+                <li>Ruby on Rails</li>
+                <li>REST APIs</li>
+                <li>Testing (RSpec)</li>
+                <li>Gems</li>
+            </ul>
+
+            <h2><i class="fas fa-link"></i> مصادر</h2>
+            <ul>
+                <li><a href="https://www.ruby-lang.org/" target="_blank" style="color: #00d4ff;">Ruby Official</a></li>
+                <li><a href="https://tryruby.org/" target="_blank" style="color: #00d4ff;">Try Ruby</a></li>
+                <li><a href="https://www.codecademy.com/learn/learn-ruby" target="_blank" style="color: #00d4ff;">Codecademy Ruby</a></li>
+            </ul>
+        </div>
+    </div>
+    <footer><div class="footer-content"><div class="footer-logo">MT ERO</div><p class="copyright">© 2025 MT ERO.</p></div></footer>
+    <a href="https://t.me/Mozex_3" target="_blank" class="telegram-float"><i class="fab fa-telegram"></i></a>
+    <script src="../js/main.js"></script>
+</body>
+</html>

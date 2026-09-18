@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dart | MT ERO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><div class="logo">MT <span>| ERO</span></div><nav><ul><li><a href="../index.html">الرئيسية</a></li><li><a href="../index.html#langs">اللغات</a></li></ul></nav></header>
+    <div class="tool-page">
+        <a href="../index.html#langs" class="back-btn"><i class="fas fa-arrow-right"></i> رجوع للغات</a>
+        <div class="tool-header">
+            <span class="tool-icon-big"><i class="fas fa-mobile"></i></span>
+            <h1>Dart</h1>
+            <p>لغة Flutter لتطوير الموبايل</p>
+        </div>
+        <div class="tool-content">
+            <h2><i class="fas fa-book"></i> يعني إيه Dart؟</h2>
+            <p>Dart هي لغة برمجة من Google، بتستخدم في تطوير التطبيقات (موبايل، ويب، ديسكتوب) باستخدام Flutter.</p>
+            <p>بتعتبر بديل ممتاز لتطوير تطبيقات تعمل على Android و iOS بكود واحد.</p>
+
+            <h2><i class="fas fa-bullseye"></i> الأساسيات</h2>
+
+            <h3>1. البرنامج الأول</h3>
+            <div class="code-block" data-lang="Dart"><code>void main() {
+    print("Hello World");
+}</code></div>
+
+            <h3>2. المتغيرات</h3>
+            <div class="code-block" data-lang="Dart"><code>String name = "Ahmed";
+int age = 25;
+double salary = 5000.50;
+bool isHacker = true;
+
+<span class="comment">// Dynamic</span>
+var city = "Cairo";
+
+print(name);
+print(age);</code></div>
+
+            <h3>3. الشروط</h3>
+            <div class="code-block" data-lang="Dart"><code>int age = 20;
+
+if (age >= 18) {
+    print("بالغ");
+} else if (age >= 13) {
+    print("مراهق");
+} else {
+    print("طفل");
+}</code></div>
+
+            <h3>4. الحلقات</h3>
+            <div class="code-block" data-lang="Dart"><code>for (int i = 0; i &lt; 5; i++) {
+    print(i);
+}
+
+int count = 0;
+while (count &lt; 5) {
+    print(count);
+    count++;
+}
+
+var tools = ["nmap", "hydra"];
+tools.forEach((tool) =&gt; print(tool));</code></div>
+
+            <h3>5. الدوال</h3>
+            <div class="code-block" data-lang="Dart"><code>String greet(String name) {
+    return "أهلاً $name";
+}
+
+int add(int a, int b) =&gt; a + b;
+
+void main() {
+    print(greet("Ahmed"));
+    print(add(5, 3));
+}</code></div>
+
+            <h3>6. Classes</h3>
+            <div class="code-block" data-lang="Dart"><code>class User {
+    String name;
+    int age;
+    
+    User(this.name, this.age);
+    
+    String greet() {
+        return "أهلاً $name";
+    }
+}
+
+void main() {
+    var user = User("Ahmed", 25);
+    print(user.greet());
+}</code></div>
+
+            <h2><i class="fas fa-graduation-cap"></i> خطة التعلم</h2>
+
+            <h3>المستوى 1: المبتدئ (شهر)</h3>
+            <ul>
+                <li>الأساسيات</li>
+                <li>OOP</li>
+                <li>Collections</li>
+            </ul>
+
+            <h3>المستوى 2: المتوسط (3 شهور)</h3>
+            <ul>
+                <li>Flutter Basics</li>
+                <li>Widgets</li>
+                <li>State Management</li>
+                <li>Async/Await</li>
+            </ul>
+
+            <h3>المستوى 3: الاحتراف (6 شهور)</h3>
+            <ul>
+                <li>Advanced Flutter</li>
+                <li>Firebase</li>
+                <li>REST APIs</li>
+                <li>App Store Publishing</li>
+            </ul>
+
+            <h2><i class="fas fa-link"></i> مصادر</h2>
+            <ul>
+                <li><a href="https://dart.dev/" target="_blank" style="color: #00d4ff;">Dart Official</a></li>
+                <li><a href="https://flutter.dev/" target="_blank" style="color: #00d4ff;">Flutter</a></li>
+            </ul>
+        </div>
+    </div>
+    <footer><div class="footer-content"><div class="footer-logo">MT ERO</div><p class="copyright">© 2025 MT ERO.</p></div></footer>
+    <a href="https://t.me/Mozex_3" target="_blank" class="telegram-float"><i class="fab fa-telegram"></i></a>
+    <script src="../js/main.js"></script>
+</body>
+</html>

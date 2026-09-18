@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lua | MT ERO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><div class="logo">MT <span>| ERO</span></div><nav><ul><li><a href="../index.html">الرئيسية</a></li><li><a href="../index.html#langs">اللغات</a></li></ul></nav></header>
+    <div class="tool-page">
+        <a href="../index.html#langs" class="back-btn"><i class="fas fa-arrow-right"></i> رجوع للغات</a>
+        <div class="tool-header">
+            <span class="tool-icon-big"><i class="fas fa-moon"></i></span>
+            <h1>Lua</h1>
+            <p>لغة خفيفة لـ Scripting</p>
+        </div>
+        <div class="tool-content">
+            <h2><i class="fas fa-book"></i> يعني إيه Lua؟</h2>
+            <p>Lua هي لغة برمجة نصية خفيفة وسريعة. بتستخدم في الألعاب (Roblox, WoW)، الأنظمة المدمجة، وتطبيقات الأدوات.</p>
+            <p>بتعتبر الأشهر في مجال Scripting الألعاب — وبتحتل مكانة كبيرة في Scripting في الألعاب.</p>
+
+            <h2><i class="fas fa-bullseye"></i> الأساسيات</h2>
+
+            <h3>1. البرنامج الأول</h3>
+            <div class="code-block" data-lang="Lua"><code>print("Hello World")</code></div>
+
+            <h3>2. المتغيرات</h3>
+            <div class="code-block" data-lang="Lua"><code>name = "Ahmed"
+age = 25
+salary = 5000.50
+is_hacker = true
+
+print("أهلاً " .. name)
+print("عمرك " .. age)</code></div>
+
+            <h3>3. الشروط</h3>
+            <div class="code-block" data-lang="Lua"><code>age = 20
+
+if age &gt;= 18 then
+    print("بالغ")
+elseif age &gt;= 13 then
+    print("مراهق")
+else
+    print("طفل")
+end</code></div>
+
+            <h3>4. الحلقات</h3>
+            <div class="code-block" data-lang="Lua"><code><span class="comment">-- For</span>
+for i = 0, 4 do
+    print(i)
+end
+
+<span class="comment">-- While</span>
+count = 0
+while count &lt; 5 do
+    print(count)
+    count = count + 1
+end
+
+<span class="comment">-- For in</span>
+tools = {"nmap", "hydra", "sqlmap"}
+for i, tool in ipairs(tools) do
+    print(tool)
+end</code></div>
+
+            <h3>5. الدوال</h3>
+            <div class="code-block" data-lang="Lua"><code>function greet(name)
+    return "أهلاً " .. name
+end
+
+function add(a, b)
+    return a + b
+end
+
+print(greet("Ahmed"))
+print(add(5, 3))</code></div>
+
+            <h3>6. الجداول (Tables)</h3>
+            <div class="code-block" data-lang="Lua"><code>tools = {"nmap", "hydra", "sqlmap"}
+print(tools[1])
+
+user = {
+    name = "Ahmed",
+    age = 25
+}
+print(user.name)</code></div>
+
+            <h2><i class="fas fa-graduation-cap"></i> خطة التعلم</h2>
+
+            <h3>المستوى 1: المبتدئ (أسبوع)</h3>
+            <ul>
+                <li>الأساسيات</li>
+                <li>Tables</li>
+                <li>Functions</li>
+            </ul>
+
+            <h3>المستوى 2: المتوسط (شهر)</h3>
+            <ul>
+                <li>Metatables</li>
+                <li>Modules</li>
+                <li>Coroutines</li>
+                <li>OOP</li>
+            </ul>
+
+            <h3>المستوى 3: الاحتراف (3 شهور)</h3>
+            <ul>
+                <li>Roblox Lua</li>
+                <li>Game Development</li>
+                <li>LÖVE Framework</li>
+                <li>Embedded Systems</li>
+            </ul>
+
+            <h2><i class="fas fa-link"></i> مصادر</h2>
+            <ul>
+                <li><a href="https://www.lua.org/" target="_blank" style="color: #00d4ff;">Lua Official</a></li>
+                <li><a href="https://www.lua.org/manual/5.4/" target="_blank" style="color: #00d4ff;">Lua Manual</a></li>
+            </ul>
+        </div>
+    </div>
+    <footer><div class="footer-content"><div class="footer-logo">MT ERO</div><p class="copyright">© 2025 MT ERO.</p></div></footer>
+    <a href="https://t.me/Mozex_3" target="_blank" class="telegram-float"><i class="fab fa-telegram"></i></a>
+    <script src="../js/main.js"></script>
+</body>
+</html>

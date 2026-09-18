@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML | MT ERO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><div class="logo">MT <span>| ERO</span></div><nav><ul><li><a href="../index.html">الرئيسية</a></li><li><a href="../index.html#langs">اللغات</a></li></ul></nav></header>
+    <div class="tool-page">
+        <a href="../index.html#langs" class="back-btn"><i class="fas fa-arrow-right"></i> رجوع للغات</a>
+        <div class="tool-header">
+            <span class="tool-icon-big"><i class="fab fa-html5"></i></span>
+            <h1>HTML</h1>
+            <p>هيكل صفحات الويب</p>
+        </div>
+        <div class="tool-content">
+            <h2><i class="fas fa-book"></i> يعني إيه HTML؟</h2>
+            <p>HTML (HyperText Markup Language) هي لغة توصيف النص التشعبي. بتستخدمها لبناء هيكل صفحات الويب — بتحدد العناوين، الفقرات، الصور، الروابط، وغيرها.</p>
+            <p>HTML هي أساس أي موقع — وأي حد بيتعلم برمجة ويب لازم يبدأ بيها. وهي مش لغة برمجة (مفيهاش منطق) بس لغة توصيف.</p>
+
+            <h3><i class="fas fa-check-circle"></i> ليه HTML مهمة؟</h3>
+            <ul>
+                <li>الأساس في تطوير الويب</li>
+                <li>سهلة جداً — أي حد يتعلمها في يوم</li>
+                <li>بتشتغل على كل المتصفحات</li>
+                <li>معاها CSS و JavaScript بتعمل مواقع كاملة</li>
+            </ul>
+
+            <h2><i class="fas fa-bullseye"></i> الأساسيات</h2>
+
+            <h3>1. هيكل الصفحة</h3>
+            <div class="code-block" data-lang="HTML"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ar" dir="rtl"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;عنوان الصفحة&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;أهلاً بيك&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></div>
+
+            <h3>2. العناوين</h3>
+            <div class="code-block" data-lang="HTML"><code>&lt;h1&gt;عنوان رئيسي&lt;/h1&gt;
+&lt;h2&gt;عنوان فرعي&lt;/h2&gt;
+&lt;h3&gt;عنوان أصغر&lt;/h3&gt;
+&lt;h4&gt;عنوان أصغر&lt;/h4&gt;
+&lt;h5&gt;عنوان أصغر&lt;/h5&gt;
+&lt;h6&gt;عنوان أصغر&lt;/h6&gt;</code></div>
+
+            <h3>3. الفقرات</h3>
+            <div class="code-block" data-lang="HTML"><code>&lt;p&gt;دي فقرة نص عادية&lt;/p&gt;
+&lt;br&gt;  <span class="comment">&lt;!-- سطر جديد --&gt;</span>
+&lt;hr&gt;  <span class="comment">&lt;!-- خط فاصل --&gt;</span></code></div>
+
+            <h3>4. الروابط والصور</h3>
+            <div class="code-block" data-lang="HTML"><code>&lt;a href="https://example.com"&gt;اضغط هنا&lt;/a&gt;
+&lt;a href="https://example.com" target="_blank"&gt;فتح في تاب جديد&lt;/a&gt;
+
+&lt;img src="image.jpg" alt="وصف الصورة"&gt;</code></div>
+
+            <h3>5. القوائم</h3>
+            <div class="code-block" data-lang="HTML"><code><span class="comment">&lt;!-- قائمة مرتبة --&gt;</span>
+&lt;ol&gt;
+    &lt;li&gt;العنصر الأول&lt;/li&gt;
+    &lt;li&gt;العنصر الثاني&lt;/li&gt;
+&lt;/ol&gt;
+
+<span class="comment">&lt;!-- قائمة غير مرتبة --&gt;</span>
+&lt;ul&gt;
+    &lt;li&gt;عنصر&lt;/li&gt;
+    &lt;li&gt;عنصر&lt;/li&gt;
+&lt;/ul&gt;</code></div>
+
+            <h3>6. الجداول</h3>
+            <div class="code-block" data-lang="HTML"><code>&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;الاسم&lt;/th&gt;
+        &lt;th&gt;العمر&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;أحمد&lt;/td&gt;
+        &lt;td&gt;25&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></div>
+
+            <h3>7. النماذج (Forms)</h3>
+            <div class="code-block" data-lang="HTML"><code>&lt;form action="/submit" method="POST"&gt;
+    &lt;input type="text" name="username" placeholder="الاسم"&gt;
+    &lt;input type="email" name="email" placeholder="الإيميل"&gt;
+    &lt;input type="password" name="password" placeholder="الباسورد"&gt;
+    &lt;input type="submit" value="إرسال"&gt;
+&lt;/form&gt;</code></div>
+
+            <h3>8. الوسوم الدلالية (Semantic Tags)</h3>
+            <div class="code-block" data-lang="HTML"><code>&lt;header&gt;الرأس&lt;/header&gt;
+&lt;nav&gt;القائمة&lt;/nav&gt;
+&lt;main&gt;المحتوى الرئيسي&lt;/main&gt;
+&lt;section&gt;قسم&lt;/section&gt;
+&lt;article&gt;مقال&lt;/article&gt;
+&lt;aside&gt;جانبي&lt;/aside&gt;
+&lt;footer&gt;التذييل&lt;/footer&gt;</code></div>
+
+            <h2><i class="fas fa-graduation-cap"></i> خطة التعلم</h2>
+
+            <h3>المستوى 1: المبتدئ (أسبوع)</h3>
+            <ul>
+                <li>الهيكل الأساسي</li>
+                <li>العناوين والفقرات</li>
+                <li>الروابط والصور</li>
+                <li>القوائم والجداول</li>
+            </ul>
+
+            <h3>المستوى 2: المتوسط (شهر)</h3>
+            <ul>
+                <li>النماذج</li>
+                <li>Semantic HTML</li>
+                <li>Meta Tags</li>
+                <li>SEO Basics</li>
+            </ul>
+
+            <h3>المستوى 3: الاحتراف (شهرين)</h3>
+            <ul>
+                <li>HTML5 APIs</li>
+                <li>Accessibility (a11y)</li>
+                <li>Performance</li>
+                <li>Best Practices</li>
+            </ul>
+
+            <h2><i class="fas fa-dumbbell"></i> تمارين</h2>
+            <ol>
+                <li>اعمل صفحة شخصية</li>
+                <li>اعمل نموذج تسجيل</li>
+                <li>اعمل جدول أسعار</li>
+                <li>اعمل صفحة بورتفوليو</li>
+            </ol>
+
+            <h2><i class="fas fa-link"></i> مصادر</h2>
+            <ul>
+                <li><a href="https://www.w3schools.com/html/" target="_blank" style="color: #00d4ff;">W3Schools HTML</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" style="color: #00d4ff;">MDN HTML</a></li>
+                <li><a href="https://elzero.org/category/courses/html/" target="_blank" style="color: #00d4ff;">Elzero HTML (عربي)</a></li>
+            </ul>
+        </div>
+    </div>
+    <footer><div class="footer-content"><div class="footer-logo">MT ERO</div><p class="copyright">© 2025 MT ERO.</p></div></footer>
+    <a href="https://t.me/Mozex_3" target="_blank" class="telegram-float"><i class="fab fa-telegram"></i></a>
+    <script src="../js/main.js"></script>
+</body>
+</html>

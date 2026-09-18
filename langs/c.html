@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C | MT ERO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><div class="logo">MT <span>| ERO</span></div><nav><ul><li><a href="../index.html">الرئيسية</a></li><li><a href="../index.html#langs">اللغات</a></li></ul></nav></header>
+    <div class="tool-page">
+        <a href="../index.html#langs" class="back-btn"><i class="fas fa-arrow-right"></i> رجوع للغات</a>
+        <div class="tool-header">
+            <span class="tool-icon-big"><i class="fas fa-copyright"></i></span>
+            <h1>C</h1>
+            <p>أم اللغات — أساس الأنظمة</p>
+        </div>
+        <div class="tool-content">
+            <h2><i class="fas fa-book"></i> يعني إيه C؟</h2>
+            <p>C هي لغة برمجة إجرائية، بتعتبر أم كل اللغات الحديثة. بتستخدم في تطوير أنظمة التشغيل، الأدوات، والأنظمة المدمجة.</p>
+            <p>Linux و Windows و macOS كلهم مكتوبين بـ C. وكتير من اللغات التانية (C++, Java, Python) مبنية على C.</p>
+
+            <h3><i class="fas fa-check-circle"></i> استخدامات C</h3>
+            <ul>
+                <li>أنظمة التشغيل</li>
+                <li>الأدوات والنظم</li>
+                <li>الأنظمة المدمجة</li>
+                <li>قواعد البيانات</li>
+                <li>الألعاب</li>
+                <li>الأدوات الأمنية</li>
+            </ul>
+
+            <h2><i class="fas fa-cog"></i> التثبيت</h2>
+            <div class="code-block" data-lang="Termux"><code>pkg install clang -y
+clang --version</code></div>
+
+            <h2><i class="fas fa-bullseye"></i> الأساسيات</h2>
+
+            <h3>1. البرنامج الأول</h3>
+            <div class="code-block" data-lang="C"><code>#include &lt;stdio.h&gt;
+
+int main() {
+    printf("Hello World\n");
+    return 0;
+}</code></div>
+
+            <h3>2. المتغيرات</h3>
+            <div class="code-block" data-lang="C"><code>int age = 25;
+float salary = 5000.50;
+double pi = 3.14159;
+char letter = 'A';
+char name[] = "Ahmed";
+
+printf("%d\n", age);
+printf("%s\n", name);
+printf("%.2f\n", salary);</code></div>
+
+            <h3>3. المدخلات</h3>
+            <div class="code-block" data-lang="C"><code>int age;
+printf("اكتب عمرك: ");
+scanf("%d", &amp;age);
+printf("عمرك %d\n", age);</code></div>
+
+            <h3>4. الشروط</h3>
+            <div class="code-block" data-lang="C"><code>int age = 20;
+
+if (age >= 18) {
+    printf("بالغ\n");
+} else if (age >= 13) {
+    printf("مراهق\n");
+} else {
+    printf("طفل\n");
+}</code></div>
+
+            <h3>5. الحلقات</h3>
+            <div class="code-block" data-lang="C"><code><span class="comment">// for</span>
+for (int i = 0; i &lt; 5; i++) {
+    printf("%d\n", i);
+}
+
+<span class="comment">// while</span>
+int count = 0;
+while (count &lt; 5) {
+    printf("%d\n", count);
+    count++;
+}</code></div>
+
+            <h3>6. الدوال</h3>
+            <div class="code-block" data-lang="C"><code>int add(int a, int b) {
+    return a + b;
+}
+
+void greet(char name[]) {
+    printf("أهلاً %s\n", name);
+}
+
+int main() {
+    printf("%d\n", add(5, 3));
+    greet("Ahmed");
+    return 0;
+}</code></div>
+
+            <h3>7. المصفوفات</h3>
+            <div class="code-block" data-lang="C"><code>int numbers[5] = {1, 2, 3, 4, 5};
+
+for (int i = 0; i &lt; 5; i++) {
+    printf("%d\n", numbers[i]);
+}
+
+<span class="comment">// String</span>
+char name[] = "Ahmed";
+printf("%s\n", name);</code></div>
+
+            <h3>8. المؤشرات (Pointers)</h3>
+            <div class="code-block" data-lang="C"><code>int x = 10;
+int *ptr = &amp;x;
+
+printf("القيمة: %d\n", x);
+printf("العنوان: %p\n", ptr);
+printf("القيمة من المؤشر: %d\n", *ptr);</code></div>
+
+            <h2><i class="fas fa-graduation-cap"></i> خطة التعلم</h2>
+
+            <h3>المستوى 1: المبتدئ (شهرين)</h3>
+            <ul>
+                <li>الأساسيات</li>
+                <li>Pointers</li>
+                <li>Arrays و Strings</li>
+                <li>Functions</li>
+            </ul>
+
+            <h3>المستوى 2: المتوسط (3 شهور)</h3>
+            <ul>
+                <li>Structs</li>
+                <li>Dynamic Memory</li>
+                <li>File I/O</li>
+                <li>Preprocessor</li>
+            </ul>
+
+            <h3>المستوى 3: الاحتراف (6 شهور)</h3>
+            <ul>
+                <li>Data Structures</li>
+                <li>Algorithms</li>
+                <li>Multithreading</li>
+                <li>Network Programming</li>
+            </ul>
+
+            <h2><i class="fas fa-link"></i> مصادر</h2>
+            <ul>
+                <li><a href="https://www.w3schools.com/c/" target="_blank" style="color: #00d4ff;">W3Schools C</a></li>
+                <li><a href="https://www.learn-c.org/" target="_blank" style="color: #00d4ff;">Learn-C</a></li>
+            </ul>
+        </div>
+    </div>
+    <footer><div class="footer-content"><div class="footer-logo">MT ERO</div><p class="copyright">© 2025 MT ERO.</p></div></footer>
+    <a href="https://t.me/Mozex_3" target="_blank" class="telegram-float"><i class="fab fa-telegram"></i></a>
+    <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP | MT ERO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><div class="logo">MT <span>| ERO</span></div><nav><ul><li><a href="../index.html">الرئيسية</a></li><li><a href="../index.html#langs">اللغات</a></li></ul></nav></header>
+    <div class="tool-page">
+        <a href="../index.html#langs" class="back-btn"><i class="fas fa-arrow-right"></i> رجوع للغات</a>
+        <div class="tool-header">
+            <span class="tool-icon-big"><i class="fab fa-php"></i></span>
+            <h1>PHP</h1>
+            <p>لغة تطوير الويب من جهة السيرفر</p>
+        </div>
+        <div class="tool-content">
+            <h2><i class="fas fa-book"></i> يعني إيه PHP؟</h2>
+            <p>PHP (Hypertext Preprocessor) هي لغة برمجة نصية بتشتغل على السيرفر. بتستخدمها لتطوير مواقع ويب ديناميكية وتطبيقات ويب كاملة.</p>
+            <p>بتعتبر من أشهر لغات تطوير الويب — ومواقع كتير زي Facebook و WordPress بتستخدمها. وفي الأمن السيبراني، PHP مهمة لفهم ثغرات الويب.</p>
+
+            <h3><i class="fas fa-check-circle"></i> استخدامات PHP</h3>
+            <ul>
+                <li>تطوير المواقع الديناميكية</li>
+                <li>أنظمة إدارة المحتوى (WordPress)</li>
+                <li>الـ APIs</li>
+                <li>المتاجر الإلكترونية</li>
+                <li>أنظمة تسجيل الدخول</li>
+            </ul>
+
+            <h2><i class="fas fa-cog"></i> التثبيت</h2>
+            <div class="code-block" data-lang="Termux"><code>pkg install php -y
+php --version</code></div>
+
+            <h2><i class="fas fa-bullseye"></i> الأساسيات</h2>
+
+            <h3>1. البرنامج الأول</h3>
+            <div class="code-block" data-lang="PHP"><code>&lt;?php
+echo "Hello World";
+?&gt;</code></div>
+
+            <h3>2. المتغيرات</h3>
+            <div class="code-block" data-lang="PHP"><code>&lt;?php
+$name = "Ahmed";
+$age = 25;
+$salary = 5000.50;
+$is_hacker = true;
+
+echo "أهلاً $name";
+echo "عمرك $age";
+?&gt;</code></div>
+
+            <h3>3. الشروط</h3>
+            <div class="code-block" data-lang="PHP"><code>&lt;?php
+$age = 20;
+
+if ($age >= 18) {
+    echo "بالغ";
+} elseif ($age >= 13) {
+    echo "مراهق";
+} else {
+    echo "طفل";
+}
+?&gt;</code></div>
+
+            <h3>4. الحلقات</h3>
+            <div class="code-block" data-lang="PHP"><code>&lt;?php
+for ($i = 0; $i &lt; 5; $i++) {
+    echo $i;
+}
+
+$count = 0;
+while ($count &lt; 5) {
+    echo $count;
+    $count++;
+}
+
+$tools = ["nmap", "hydra"];
+foreach ($tools as $tool) {
+    echo $tool;
+}
+?&gt;</code></div>
+
+            <h3>5. الدوال</h3>
+            <div class="code-block" data-lang="PHP"><code>&lt;?php
+function greet($name) {
+    return "أهلاً $name";
+}
+
+function add($a, $b) {
+    return $a + $b;
+}
+
+echo greet("Ahmed");
+echo add(5, 3);
+?&gt;</code></div>
+
+            <h3>6. المصفوفات</h3>
+            <div class="code-block" data-lang="PHP"><code>&lt;?php
+$tools = ["nmap", "hydra", "sqlmap"];
+$user = [
+    "name" =&gt; "Ahmed",
+    "age" =&gt; 25
+];
+
+echo $tools[0];
+echo $user["name"];
+?&gt;</code></div>
+
+            <h3>7. النماذج (Forms)</h3>
+            <div class="code-block" data-lang="PHP"><code>&lt;?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+    
+    echo "أهلاً $name";
+}
+?&gt;
+
+&lt;form method="POST"&gt;
+    &lt;input type="text" name="name"&gt;
+    &lt;input type="email" name="email"&gt;
+    &lt;input type="submit"&gt;
+&lt;/form&gt;</code></div>
+
+            <h3>8. التعامل مع قواعد البيانات</h3>
+            <div class="code-block" data-lang="PHP"><code>&lt;?php
+$conn = new mysqli("localhost", "user", "pass", "mydb");
+
+if ($conn-&gt;connect_error) {
+    die("Connection failed");
+}
+
+$sql = "SELECT * FROM users";
+$result = $conn-&gt;query($sql);
+
+while ($row = $result-&gt;fetch_assoc()) {
+    echo $row["name"];
+}
+
+$conn-&gt;close();
+?&gt;</code></div>
+
+            <h2><i class="fas fa-lock"></i> PHP في الأمن السيبراني</h2>
+
+            <h3>ثغرات شائعة في PHP</h3>
+            <ul>
+                <li>SQL Injection</li>
+                <li>File Inclusion (LFI/RFI)</li>
+                <li>Command Injection</li>
+                <li>XSS</li>
+                <li>File Upload Vulnerabilities</li>
+            </ul>
+
+            <div class="code-block" data-lang="PHP"><code><span class="comment">// كود خطير</span>
+&lt;?php
+$file = $_GET['file'];
+include($file);  <span class="comment">// LFI</span>
+?&gt;</code></div>
+
+            <h2><i class="fas fa-graduation-cap"></i> خطة التعلم</h2>
+
+            <h3>المستوى 1: المبتدئ (شهر)</h3>
+            <ul>
+                <li>الأساسيات</li>
+                <li>Forms و GET/POST</li>
+                <li>Arrays</li>
+            </ul>
+
+            <h3>المستوى 2: المتوسط (2-3 شهور)</h3>
+            <ul>
+                <li>MySQL Integration</li>
+                <li>Sessions و Cookies</li>
+                <li>File Handling</li>
+                <li>OOP in PHP</li>
+            </ul>
+
+            <h3>المستوى 3: الاحتراف (6 شهور)</h3>
+            <ul>
+                <li>Laravel Framework</li>
+                <li>REST APIs</li>
+                <li>Security Best Practices</li>
+                <li>Composer</li>
+            </ul>
+
+            <h2><i class="fas fa-link"></i> مصادر</h2>
+            <ul>
+                <li><a href="https://www.w3schools.com/php/" target="_blank" style="color: #00d4ff;">W3Schools PHP</a></li>
+                <li><a href="https://www.php.net/manual/" target="_blank" style="color: #00d4ff;">PHP Manual</a></li>
+                <li><a href="https://elzero.org/category/courses/php/" target="_blank" style="color: #00d4ff;">Elzero PHP (عربي)</a></li>
+            </ul>
+        </div>
+    </div>
+    <footer><div class="footer-content"><div class="footer-logo">MT ERO</div><p class="copyright">© 2025 MT ERO.</p></div></footer>
+    <a href="https://t.me/Mozex_3" target="_blank" class="telegram-float"><i class="fab fa-telegram"></i></a>
+    <script src="../js/main.js"></script>
+</body>
+</html>

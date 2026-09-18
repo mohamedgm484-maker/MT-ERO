@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bash | MT ERO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><div class="logo">MT <span>| ERO</span></div><nav><ul><li><a href="../index.html">الرئيسية</a></li><li><a href="../index.html#langs">اللغات</a></li></ul></nav></header>
+    <div class="tool-page">
+        <a href="../index.html#langs" class="back-btn"><i class="fas fa-arrow-right"></i> رجوع للغات</a>
+        <div class="tool-header">
+            <span class="tool-icon-big"><i class="fas fa-terminal"></i></span>
+            <h1>Bash</h1>
+            <p>لغة الطرفية الأساسية في Linux</p>
+        </div>
+        <div class="tool-content">
+            <h2><i class="fas fa-book"></i> يعني إيه Bash؟</h2>
+            <p>Bash (Bourne Again SHell) هي لغة برمجة نصية (Shell Scripting) بتستخدم في Linux و macOS. بتستخدمها في الأتمتة، إدارة الأنظمة، وكتابة السكربتات.</p>
+            <p>بتعتبر أساسية في الأمن السيبراني — لأن كل أدوات الاختراق بتشتغل من الطرفية.</p>
+
+            <h2><i class="fas fa-bullseye"></i> الأساسيات</h2>
+
+            <h3>1. أول سكربت</h3>
+            <div class="code-block" data-lang="Bash"><code>#!/bin/bash
+echo "Hello World"
+
+<span class="comment"># تصريح</span>
+chmod +x script.sh
+./script.sh</code></div>
+
+            <h3>2. المتغيرات</h3>
+            <div class="code-block" data-lang="Bash"><code>name="Ahmed"
+age=25
+
+echo "أهلاً $name"
+echo "عمرك $age"</code></div>
+
+            <h3>3. المدخلات</h3>
+            <div class="code-block" data-lang="Bash"><code>read -p "اكتب اسمك: " name
+echo "أهلاً $name"</code></div>
+
+            <h3>4. الشروط</h3>
+            <div class="code-block" data-lang="Bash"><code>if [ $age -gt 18 ]; then
+    echo "بالغ"
+elif [ $age -gt 13 ]; then
+    echo "مراهق"
+else
+    echo "طفل"
+fi</code></div>
+
+            <h3>5. الحلقات</h3>
+            <div class="code-block" data-lang="Bash"><code><span class="comment"># for</span>
+for i in {1..5}; do
+    echo "رقم: $i"
+done
+
+<span class="comment"># while</span>
+count=0
+while [ $count -lt 5 ]; do
+    echo $count
+    ((count++))
+done</code></div>
+
+            <h3>6. الدوال</h3>
+            <div class="code-block" data-lang="Bash"><code>greet() {
+    echo "أهلاً $1"
+}
+
+greet "Ahmed"</code></div>
+
+            <h3>7. معالجة الملفات</h3>
+            <div class="code-block" data-lang="Bash"><code><span class="comment"># قراءة</span>
+while read line; do
+    echo $line
+done &lt; file.txt
+
+<span class="comment"># كتابة</span>
+echo "Hello" &gt; file.txt
+
+<span class="comment"># إضافة</span>
+echo "World" &gt;&gt; file.txt</code></div>
+
+            <h2><i class="fas fa-lock"></i> استخدامات في الأمن السيبراني</h2>
+
+            <h3>1. Automated Scanning</h3>
+            <div class="code-block" data-lang="Bash"><code>#!/bin/bash
+for ip in 192.168.1.{1..254}; do
+    ping -c 1 -W 1 $ip &gt; /dev/null &amp;&amp; echo "$ip up"
+done</code></div>
+
+            <h3>2. Backup Script</h3>
+            <div class="code-block" data-lang="Bash"><code>#!/bin/bash
+DATE=$(date +%Y-%m-%d)
+tar -czf backup-$DATE.tar.gz /home/user</code></div>
+
+            <h2><i class="fas fa-graduation-cap"></i> خطة التعلم</h2>
+
+            <h3>المستوى 1: المبتدئ (شهر)</h3>
+            <ul>
+                <li>الأوامر الأساسية</li>
+                <li>المتغيرات</li>
+                <li>الشروط والحلقات</li>
+            </ul>
+
+            <h3>المستوى 2: المتوسط (شهرين)</h3>
+            <ul>
+                <li>الدوال</li>
+                <li>معالجة النصوص (grep, sed, awk)</li>
+                <li>Pipes و Redirection</li>
+            </ul>
+
+            <h3>المستوى 3: الاحتراف (3 شهور)</h3>
+            <ul>
+                <li>Cron Jobs</li>
+                <li>System Administration</li>
+                <li>Penetration Testing Scripts</li>
+            </ul>
+
+            <h2><i class="fas fa-link"></i> مصادر</h2>
+            <ul>
+                <li><a href="https://www.gnu.org/software/bash/manual/" target="_blank" style="color: #00d4ff;">Bash Manual</a></li>
+                <li><a href="https://explainshell.com/" target="_blank" style="color: #00d4ff;">ExplainShell</a></li>
+            </ul>
+        </div>
+    </div>
+    <footer><div class="footer-content"><div class="footer-logo">MT ERO</div><p class="copyright">© 2025 MT ERO.</p></div></footer>
+    <a href="https://t.me/Mozex_3" target="_blank" class="telegram-float"><i class="fab fa-telegram"></i></a>
+    <script src="../js/main.js"></script>
+</body>
+</html>

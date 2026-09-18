@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireshark | MT ERO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><div class="logo">MT <span>| ERO</span></div><nav><ul><li><a href="../index.html">الرئيسية</a></li><li><a href="../index.html#tools">الأدوات</a></li></ul></nav></header>
+    <div class="tool-page">
+        <a href="../index.html#tools" class="back-btn"><i class="fas fa-arrow-right"></i> رجوع للأدوات</a>
+        <div class="tool-header">
+            <span class="tool-icon-big"><i class="fas fa-satellite-dish"></i></span>
+            <h1>Wireshark</h1>
+            <p>أداة تحليل حزم الشبكة</p>
+        </div>
+        <div class="tool-content">
+            <h2><i class="fas fa-book"></i> يعني إيه Wireshark؟</h2>
+            <p>Wireshark هي أداة مفتوحة المصدر لتحليل حزم الشبكة (Packet Analyzer). بتعرضلك كل البيانات اللي بتعدي على الشبكة في الوقت الفعلي. بتستخدمها في تحليل المشاكل، اكتشاف الهجمات، وتحليل البروتوكولات.</p>
+            <p>الأداة دي بتعتبر من أهم أدوات تحليل الشبكات في العالم — وبتستخدمها الشركات الكبيرة لمراقبة شبكاتها. وبتقدر تفكك كل بروتوكول على حدة وتعرضلك تفاصيله.</p>
+
+            <h3><i class="fas fa-check-circle"></i> الاستخدامات</h3>
+            <ul>
+                <li>تحليل حركة الشبكة</li>
+                <li>اكتشاف الهجمات</li>
+                <li>تحليل البروتوكولات</li>
+                <li>حل مشاكل الشبكة</li>
+                <li>اعتراض بيانات (على شبكتك)</li>
+            </ul>
+
+            <h2><i class="fas fa-cog"></i> التثبيت</h2>
+            <div class="code-block" data-lang="Termux"><code><span class="comment"># على Termux (بديل خفيف)</span>
+pkg install tcpdump -y
+
+<span class="comment"># Wireshark مش بيشتغل على Termux</span>
+<span class="comment"># للاستخدام الكامل، استخدم كمبيوتر</span></code></div>
+
+            <h2><i class="fas fa-bullseye"></i> الأوامر الأساسية (tcpdump)</h2>
+            <h3>1. اعرض كل الحزم</h3>
+            <div class="code-block" data-lang="Bash"><code>tcpdump</code></div>
+
+            <h3>2. اعرض حزم واجهة معينة</h3>
+            <div class="code-block" data-lang="Bash"><code>tcpdump -i wlan0</code></div>
+
+            <h3>3. احفظ في ملف</h3>
+            <div class="code-block" data-lang="Bash"><code>tcpdump -i wlan0 -w capture.pcap</code></div>
+
+            <h3>4. فلتر حسب IP</h3>
+            <div class="code-block" data-lang="Bash"><code>tcpdump -i wlan0 host 192.168.1.1</code></div>
+
+            <h3>5. فلتر حسب البورت</h3>
+            <div class="code-block" data-lang="Bash"><code>tcpdump -i wlan0 port 80</code></div>
+
+            <h2><i class="fas fa-list"></i> الفلاتر في Wireshark</h2>
+            <ul>
+                <li><code>ip.addr == 192.168.1.1</code> — حسب IP</li>
+                <li><code>tcp.port == 80</code> — حسب البورت</li>
+                <li><code>http</code> — حزم HTTP</li>
+                <li><code>dns</code> — حزم DNS</li>
+                <li><code>tcp</code> — حزم TCP</li>
+                <li><code>udp</code> — حزم UDP</li>
+            </ul>
+
+            <div class="info-box warning"><strong><i class="fas fa-exclamation-triangle"></i> تحذير:</strong> استخدم Wireshark على شبكتك بس.</div>
+
+            <h2><i class="fas fa-dumbbell"></i> تمارين</h2>
+            <ol>
+                <li>شغّل tcpdump على واجهة wlan0</li>
+                <li>افتح موقع وشوف الحزم</li>
+                <li>فلتر حسب IP الراوتر</li>
+            </ol>
+
+            <h2><i class="fas fa-link"></i> مصادر</h2>
+            <ul>
+                <li><a href="https://www.wireshark.org/docs/" target="_blank" style="color: #00d4ff;">Wireshark Docs</a></li>
+                <li><a href="https://tryhackme.com/room/wireshark" target="_blank" style="color: #00d4ff;">TryHackMe Wireshark</a></li>
+            </ul>
+        </div>
+    </div>
+    <footer><div class="footer-content"><div class="footer-logo">MT ERO</div><p class="copyright">© 2025 MT ERO.</p></div></footer>
+    <a href="https://t.me/Mozex_3" target="_blank" class="telegram-float"><i class="fab fa-telegram"></i></a>
+    <script src="../js/main.js"></script>
+</body>
+</html>
